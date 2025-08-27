@@ -33,7 +33,7 @@
 |-|-|
 |Email|[📭](boody123@naver.com)|
 |Github|[🔗](https://github.com/suda77881/fullstack_junyong)|
-|-|-|
+
 
 <br/>
 <br/>
