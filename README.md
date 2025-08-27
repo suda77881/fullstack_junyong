@@ -31,7 +31,7 @@
 
 |이름|신준용|
 |-|-|
-|Email|[📭](boody123@naver.com)|
+|Email|boody123@naver.com|
 |Github|[🔗](https://github.com/suda77881/fullstack_junyong)|
 
 
