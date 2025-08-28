@@ -9,6 +9,6 @@ public class A002_ex {
 		
 		System.out.printf("도시 : %s , 인구 : %d " , "인천" , 1000000 );
 	
-	}
+	} 
 
 }
