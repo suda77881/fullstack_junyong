@@ -1,4 +1,4 @@
-**⚙트러블슈팅**
+**트러블슈팅**
 =
 
 
@@ -22,23 +22,12 @@ From https://github.com/suda77881/fullstack_junyong
 Auto-merging day005.md
 CONFLICT (content): Merge conflict in day005.md
 Automatic merge failed; fix conflicts and then commit the result.
-
-발생문제 : 로컬과 원격 저장소의 파일이 일치하지않아 생긴 문제.
-해결방안 : 해결방안에는 가 있다, 첫 번째, merge를 실행해서 inc
 ```
 
-```bash
-$ git push origin master
-To https://github.com/suda77881/fullstack_junyong.git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'https://github.com/suda77881/fullstack_junyong.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-```
+발생문제 : git pull origin master 명령어를 실행했을 때, day005.md 파일에서 병합 충돌 (Merge Conflict)이 발생했다. 이는 로컬 저장소와 원격 저장소의 해당 파일 내용이 서로 다를 경우 자동 병합에 실패하면서 나타나는 에러다.
 
+해결방안 : VSCode에서 충돌된 파일을 열면 **Accept Current Change, Accept Incoming Change, Accept Both Changes** 등의 옵션이 제공된다.
+상황에 맞게 선택하여 충돌을 해결한 뒤, 변경사항을 커밋하면 된다.
 
 **■ HTML**
 -
@@ -60,26 +49,19 @@ Error: An img element must have an alt attribute, except under certain condition
 From line 12, column 16; to line 12, column 104
 ```
 <br>
+
+문제가된 코드 : `<img src="#.png" style="..." />` 
+
+해결방법 : alt 속성이 누락되어 발생한 문제로  `<img src="#.png" style="..." alt="" />` 에 alt 속성을 추가하면 정상적으로 에러가 표시되지않는다.
+
 <br>
-🛠️ 해결 방법 
 
-당신의 코드에서 문제된 부분은:
-
-`<img src="#.png" style="..." />`
-
-
-여기서 alt 속성이 빠져 있어요. 아래처럼 수정하면 오류가 사라집니다:
-
-`<img src="#.png" style="..." alt="사용자 프로필 사진" />`
+**예외** 
+- 이미지가 장식용(decorative)이거나, role="presentation" 또는 빈 alt=""를 명시한 경우 
+- `<figure>` 요소 안에 `<figcaption>` 으로 설명이 충분히 제공된 경우
+- 이메일처럼 이미지를 볼 수 있는 대상에게만 전달되는 문서일 경우 
 
 
-
-💡 언제 alt를 생략할 수 있을까?
-아주 특별한 경우에만 alt를 생략할 수 있어요:
-- 이미지가 **순수 장식용(decorative)**이고, role="presentation" 또는 빈 alt=""를 명시한 경우
-- <figure> 요소 안에 <figcaption>으로 설명이 충분히 제공된 경우
-- 이메일처럼 이미지를 볼 수 있는 대상에게만 전달되는 문서일 경우
-하지만 일반적인 웹페이지에서는 항상 alt를 넣는 게 원칙입니다.
 
 > 느낀점 : img 태그에서 alt 요소를 누락시켜서 발생한 문제로 접근성 향상을 위해 설계되고 검색엔진과 브라우저에 인식 시켜주는 요소라는것을 알게되었다. 
 
@@ -170,6 +152,7 @@ System.out.println("이름: " + name);  // ✅ 정상 출력
 - System.out.println() 안에 쉼표(,) 대신 +를 사용해야 함
 
 ```
+
 해결방법 : `System.outprintln(a"+"b);` 에서 `System.outprintln(a+"+"+b);` 로 문법에 맞춰 수정하여 기대한 출력 값을 얻음 
 
 느낀점 : 문법 문제로인해 발생한 오류였음, 자바 문법이 굉장히 어렵다고 느낌.

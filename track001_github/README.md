@@ -8,12 +8,12 @@
 
 
 
-<image src="./track001_github/me.png" alt="프로필" width="200">
+<image src="./me.png" alt="프로필" width="200">
 
 |이름|신준용|
 |-|-|
 |Email|boody123@naver.com|
-|Github|[🔗](https://github.com/suda77881/fullstack_junyong)|
+|Github|https://github.com/suda77881/fullstack_junyong|
 
 
 <br/>
