@@ -16,7 +16,6 @@ public class VarEx002 {
 		double c = 10.0;
 		double d = 3.0;
 				
-		
 		System.out.println(a+" / "+b+" = "+(c));
 		
 		System.out.printf("%d+%d=%d\n", a, b, a+b	);
