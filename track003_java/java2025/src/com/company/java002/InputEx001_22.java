@@ -14,3 +14,4 @@ public class InputEx001_22 {
 		
 	}
 }
+

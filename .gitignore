@@ -5,6 +5,7 @@
 eclipse/
 
 # 빌드 결과물 무시
+triple1/
 /bin/
 /build/
 
