@@ -1,5 +1,5 @@
 package com.company.java003;
-
+import java.util.Scanner;
 public class Operator001 {
 
 	public static void main(String[] args) {
@@ -41,13 +41,21 @@ public class Operator001 {
 		System.out.println(false   ||   true); // false
 		
 		//Q1. a가 2의 배수 이면서 5의 배수라면 true / false
-		//Q2. a가 2의 배수 이면서 3의 배수라면 true / false
+		//Q2. a가 2의 배수 이거나 3의 배수라면 true / false
 		
 		System.out.println(a%2 == 0 && a%5 == 0);
-		System.out.println(a%2 == 0 && a%3 == 0);
+		System.out.println(a%2 == 0 || a%3 == 0);
 		
 		//4. 삼항연산자 (조건)? 참: 거짓
 		System.out.println( a==10 ? "10이다" : "10이 아니다");
+		
+		//q3.  숫자를 입력받아 0보다 크면 양수, 0보다 작으면 음수, 아니라면 0
+		Scanner sc = new Scanner(System.in);
+		int q3 = sc.nextInt();
+		//				조건    ?  참    :	거짓
+		String result = q3 > 0 ? "양수" :		q3 < 0 ? "음수" : "0" ;
+				
+		
 		
 	}
 }
