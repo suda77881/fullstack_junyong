@@ -8,7 +8,7 @@ eclipse/
 triple1/
 /bin/
 /build/
-release/
+release_note/
 notes/
 # IDE관련
 .idea
