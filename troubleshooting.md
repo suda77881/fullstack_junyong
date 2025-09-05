@@ -102,8 +102,12 @@ At line 52, column 15
 *2025.08.28*
 
 
+<!-- 수정필요 AI답변 그대로 -->
+
 오류메세지:
-```ECLIPS
+```
+ECLIPS
+
     >Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
    Syntax error on token ""+"", invalid AssignmentOperator
    at com.company.java002_ex.VarEx002.main(VarEx002.java:15)
@@ -156,3 +160,5 @@ System.out.println("이름: " + name);  // ✅ 정상 출력
 해결방법 : `System.outprintln(a"+"b);` 에서 `System.outprintln(a+"+"+b);` 로 문법에 맞춰 수정하여 기대한 출력 값을 얻음 
 
 느낀점 : 문법 문제로인해 발생한 오류였음, 자바 문법이 굉장히 어렵다고 느낌.
+
+<!-- 수정필요 AI답변 그대로 -->
