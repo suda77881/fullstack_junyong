@@ -1,22 +1,59 @@
+<!-- 시작 -->
 
-<!-- 주석 -->
+<style>
+  h1 {text-align:center; font-size:40px; font-weight:bold;}
+  body {background-image:url(./img/pexels-ollivves-1078981.jpg); background-size:; text-align:left; font-size:20px; font-family:'segoe UI', sans-serif;}
+  body::before {filter:blur(100px);}
+  .profile.card {padding:20px; width:255px; }
+  .profile.img {width:250px; background-color:#fff; border-radius:50%; border:4px solid #333}
+  .introduce {padding:0 20px; margin:0 auto; width:600px;}
+  .golds.card {padding:20px; width:220px }
+  .golds.card ul {transform:translate(-20px,-20px); font-weight:bold; font-size:16px;}
+  .portfolio {margin:-53px auto;}
+  .card {border-radius:15px; margin:50px; border:3px solid transparent; background:linear-gradient(0deg, #8a855aff, #1f957fff);}
+  .card:hover {transition:all 0.8s ease; background:linear-gradient(135deg, #5a744fff, #1d7baeff); transform:scale(1.1);}
+  .stack {float:left;}
+  .clear {clear:both;}
+  .troubleshooting {background-color:#000; padding:60px 20px; margin:0 auto; border:3px solid transparent; border-radius:15px; box-sizing:border-box;}
+</style>
+
 
 <br/>
 <br/>
 
-# Contact & Link
+
+<div class="portfolio">
+<h1> Contact & Link </h1>
+
+<body>
+
 <br/>
 
-
-<image src="./me.png" alt="프로필" width="200">
+<div class="profile card">
+<image src="./img/me.png" class="profile img" alt="프로필" />
 
 <br/>
 <br/>
 
 |이름|신준용|
 |-|-|
-|Email|boody123@naver.com|
-|Github|https://github.com/suda77881/fullstack_junyong|
+|e-mail|[📧](boody123@naver.com)|
+|Github|<a href="https://github.com/suda77881/fullstack_junyong" title="깃허브링크"><img src="./img/free-icon-github-2111432.png" width="25px" alt="깃허브아이콘"/><a>|
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="introduce card">
+
+## 자기소개 
+
+
+<span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;"> 🖐 안녕하세요 🖐 <br/><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; text-decoration:underline"><br/>프론트엔드 주니어 개발자 지망생</span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; color:">신준용 </span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">입니다.</span><br/><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">전방위 기술 스택을 실무에 도입하여 개발자간의 원할한 협업과 사용자를 위한 웹페이지 디자인을 추구하고싶습니다.</span>
+
+</div>
 
 
 
@@ -24,55 +61,19 @@
 <br/>
 <br/>
 
-## 자기소개
+<div class="golds card">
 
-<!--  -->
-
-<span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;"> 🖐 안녕하세요 🖐 <br/><span style="color:red">문제 해결과 협력,</span> 그리고 <span style="color:red">기능 구현</span>의 효율성을 추구하는</span><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; text-decoration:underline"><br/>프론트엔드 주니어 개발자 지망생</span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; color:steelblue">신준용 </span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">입니다.</span><br/><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">전방위 기술 스택을 실무에 도입하여<br/>개발자간의 원할한 협업과 웹페이지 디자인에 완벽을 추구하고싶습니다.</span>
-
-
-<!-- <pre style="color:red">문제 해결과 더나은 유저 경험을 위해
-사용자 경험 인터페이스를 구현하고, 맞춤형 인터페이스 </pre> -->
-
-<!-- JAVA, HTML+CSS+JS/JQUERY .... -->
-<!-- ##포트폴리오 
-## 🧩 실전형 풀스택 개발자 포트폴리오
-
-> 완벽보다는 완성을 향해  
-**기획부터 배포까지, 사용자 흐름을 설계하고 끝까지 해결하는 개발자**
-> 프론트엔드부터 백엔드, 인프라까지  
-**전방위 기술 스택을 실전에서 다뤄본 경험**으로  
-기획-개발-배포 전 과정을 주도하며  
-**사용자 중심의 제품 개발**을 실현합니다.
----
-## 기술스택 기반 cs역량
-
---- -->
+## 📌 Golds
 
 <br/>
-<br/>
-<br/>
-
-
-<!-- 1,2일 차에 넣은 트러블슈팅들 -->
-
-<br/>
-<br/>
-<br/>
-
-# 📌 Golds
-
-<br/>
-
-- <span style="font-weight:bold; font-size:16px">Git & GitHub</span> 
-
-- <span style="font-weight:bold; font-size:16px">Markdown</span>
-
-- <span style="font-weight:bold; font-size:16px">HTML5 & CSS3</span>
-
-- <span style="font-weight:bold; font-size:16px">AI (Copilot, ChatGPT)</span>
-
-- <span style="font-weight:bold; font-size:16px">Java</span>
+<ul>
+<li>Git & GitHub</li>
+<li>Markdown</li>
+<li>HTML5 & CSS3</li>
+<li>AI (Copilot, ChatGPT)</li>
+<li>Java</li>
+</ul>
+</div>
 
 <br/>
 <br/>
@@ -82,7 +83,7 @@
 <br/> -->
 
 
-| <p style="font-size:20px"><strong>기술 스택</strong></p>       | <strong><p style="font-size:20px">CS 역량 및 학습 / 실습 경험</strong></p>                                                                 |
+<!-- | <p style="font-size:20px"><strong>기술 스택</strong></p>       | <strong><p style="font-size:20px">CS 역량 및 학습 / 실습 경험</strong></p>                                                                 |
 |----------------|------------------------------------------------------------------------------------------|
 | <strong>Git & GitHub</strong>   | 로컬 환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 문제 해결 경험         |
 | <strong>VS Code</strong>        | 프로젝트 구조 관리, 확장 기능 설치/활용, HTML/CSS 문서 작성 지원 학습                    |
@@ -90,7 +91,39 @@
 | <strong>HTML5</strong>   | HTML 문서 구조 설계, 웹 접근성 점검 및 개선 실습                 |
 | <strong>Markdown</strong>       | 문서 구조화, 가독성 중심 작성법 학습, README 및 학습 기록 문서 작성 경험                |
 | <strong>AI 도구 활용</strong>   | Copilot, ChatGPT 등을 활용한 코드 트러블슈팅 해결 및 개선 피드백 점검 학습               |
-| <strong>Java (Eclipse)</strong> | Java 코딩 환경 구축, 패키지와 클래스의 계층 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험 |
+| <strong>Java (Eclipse)</strong> | Java 코딩 환경 구축, 패키지와 클래스의 계층 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험 | -->
+
+<br/>
+<br/>
+
+
+
+<div class="stack HTML&CSS card">
+
+|<Strong> HTML & CSS </Strong>|
+|-|
+|웹 접근성 이해하고 지키려고 노력합니다.|
+|웹 페이지의 태그 작성과 속성을 학습|
+|인라인 스타일를 활용하여 스타일 속성 학습|
+|태그 작성시 가독성을 중시한 작성법을 학습|
+|내부 스타일을 활용하여 카드 프로필 제작 및 정렬 학습.|
+|폰트, 색상, 그림자, 경계, 그래디언트 효과 활용 학습 |
+|포지션과 여백 설정을 통한 콘텐츠의 배치 방법과 공간확보 방법 학습|
+|이동, 회전, 지연속도, 투명도, 우선순위 설정 등 특수효과 활용 학습|
+
+</div>
+
+<div class="stack Github card">
+
+|<Strong> Github & Git </Strong>|
+|-|
+|markdown 문서 작성 학습|
+|브런치를 활용한 팀 프로젝트 구조 학습|
+|외부 기여 방식의 프로젝트 참여방법 학습|
+
+
+
+</div>
 
 
 
@@ -104,228 +137,12 @@
 <br/>
 
 
+<div class="clear troubleshooting">
 
-# 📌 트러블슈팅 
-<br/>
-
-## Github & Git
+## 📌 트러블슈팅 
 
 <br/>
 <br/>
-
-
-<!-- 2025.08.25 -->
-
-## 📖 case 1
-
-<br/>
-
-
-
-```
-gitbash
-
- $ git commit -m "git 수정 후 다시올리기"
-...
- no changes added to commit (use "git add" and/or "git commit -a")
-```
-<br/>
-
-
-### ⚠️ 문제 발생 명령어
-
-
-```gitbash
- $ git commit -m "..."
-```
-<br/>
-<br/>
-
-### 🔎 문제점 분석 <br/>
-
-> 수정된 파일이 존재하지만 **'git add '** 를 선행 하지 않아 커밋 대상에 포함되지 않고 트러블 슈팅이 발생함.
-<br/>
-즉, `스테이징되지 않은 변경사항이 있어 커밋이 실패`함.
-
-<br/>
-<br/>
-
-### 🛠 해결방법
-
-<br/>
-
-
-수정된 파일을 커밋에 포함시키기 다음 순서로 진행
-<br/><br/> 1. 커밋할 대상이되는 `파일을 저장`<br/> 2. `git add (파일명.md)` 또는  `git add .`(변경된 파일을 모두 스테이지에 포함시킬 경우)<br/> 3. `git commit -m "..."` 
-또는 전체 변경사항을 자동으로 포함하려면:
-`git commit -a -m "..."` 
-
-<br/>
-
-#### 💭 느낀점 <br/>
-
-이 문제는 명령어 실행 순서를 지키지 않아 발생한 단순한 오류였으며, 절차를 정확히 따르면 쉽게 해결할 수 있다는 점을 깨달았다.
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-<!-- 2025.08.26 -->
-
-## 📖 case 2
-<br/>
-
-```
-gitbash
-
-$ git pull origin master
-...
-CONFLICT (content): Merge conflict in *.md
-```
-
-
-<br/>
-
-### ⚠️ 문제 발생 명령어
-
-
-```gitbash
-$ git pull origin master
-```
-<br/>
-
-### 🔎 문제점 분석
-
-> 원격 저장소와 로컬 저장소 간의 동일 파일(*.md)에 병합 충돌(Merge Conflict) 발생.<br/>자동 병합이 불가능하여 수동으로 충돌을 해결해야 함.
-
-<br/>
-
-### 🛠 해결방법
-
-1. 충돌 파일 열기
-2. `<<<<<<<, =======, >>>>>>>` 구문을 기준으로 원하는 내용을 선택 및 수정<br/>
-3. 수정 후 저장
-4. 충돌 해결 완료 후 커밋 진행 `git add (파일명)` 입력후
-`git commit -m "..."`
-
-<br/>
-
-#### 💭 느낀점 <br/>
-
-파일을 작업할 때 발생할 수 있는 문제로 다른 사용자와 같은 파일을 작업하게되면 이런 문제가 발생하여, 혼란을 겪을 수 있다고 생각했으나, 생각보다 간단하게 채택 또는 수정사항을 반영하여 최종적으로 업로드가 가능하다고 느낌
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-## 📖 case 3
-<br/>
-
-```
-git bash
-
-$ git pull origin master
-error: You have not concluded your merge (MERGE_HEAD exists).
-```
-
-<br/>
-<br/>
-
-### ⚠️ 문제 발생 명령어
-
-
-```gitbash
-$ git pull origin master
-```
-
-<br/>
-
-### 🔎 문제점 분석
-
- > 이전 `병합(Merge)`이 완료되지 않은 상태에서 다시 'git pull'을 시도함. <br/>Git은 병합 중인 상태에서는 새로운 병합을 허용하지 않는다.</p>
-
-<br/>
-
-### 🛠 해결방법
-<br/>
-
-1. 먼저 병합을 완료하거나 취소해야 함.<br/><br/>
-2. 병합 완료 : `git add (파일명)` ->
-`git commit -m "..."`<br/>병합 취소 : `git merge --abort` <br/><br/>
-3. 그 후 다시 'git pull'을 시도하면 정상적으로 작동함.
-
-<br/>
-
-#### 💭 느낀점 <br/>
-
- 먼저 발생한 트러블 슈팅을 완료하지 않을 경우 발생한 문제로 기존 문제 해결후 새로운 병합을 허용하는 상태로 바뀜 순차적으로 문제해결을 진행해야 된다는점을 알게되었다. 
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-## 📖 case 4 <!-- 2025.08.29 -->
-<br/>
-
-```
-git bash
-
-$ git pull origin master
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (3/3), 928 bytes | 10.00 KiB/s, done.
-From https://github.com/suda77881/fullstack_junyong
- * branch            master     -> FETCH_HEAD
-   7a2d154..b0edc2b  master     -> origin/master
-Auto-merging day005.md
-CONFLICT (content): Merge conflict in day005.md
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-<br/>
-<br/>
-
-### ⚠️ 문제 발생 명령어
-
-
-```gitbash
-$ git pull origin master
-```
-
-<br/>
-
-### 🔎 문제점 분석
-
- > git pull origin master 명령어를 실행했을 때, day005.md 파일에서 병합 충돌 (Merge Conflict)이 발생했다. 이는 로컬 저장소와 원격 저장소의 해당 파일 내용이 서로 다를 경우 자동 병합에 실패하면서 나타나는 에러다.
-
-<br/>
-
-### 🛠 해결방법
-<br/>
-
-VSCode에서 충돌된 파일을 열면 **Accept Current Change, Accept Incoming Change, Accept Both Changes** 등의 옵션이 제공된다.
-상황에 맞게 선택하여 충돌을 해결한 뒤, 변경사항을 커밋하면 된다.
-
-<br/>
-
-#### 💭 느낀점 <br/>
-
- 이전 발생한 Merge Conflict와 같은 문제로 로컬과 원격 저장소 간의 파일 내용이 충돌한 것이다. 이번 해결은 각각의 옵션의 내용을 확인하여 수동으로 Merge Conflict를 해결해 보았다, 이후 배우게될 브런치를 사용해서 좀 더 원할한 수정 배포 전략이 가능하다고 느꼈다.
-
-<br/>
-<br/>
-<br/>
-<br/>
-
 
  ## HTML & CSS
 
@@ -334,12 +151,14 @@ VSCode에서 충돌된 파일을 열면 **Accept Current Change, Accept Incoming
 
 <!-- 2025.08.29 -->
 
-## 📖 case 1 웹 접근성 점수 / 필수 속성 누락
+## 📖 case 1  / img 태그 필수 속성 누락
 
 
 <br/>
 
-```validator.w3.org
+```
+validator.w3.org
+
 Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
 From line 12, column 16; to line 12, column 104
 ```
@@ -347,38 +166,191 @@ From line 12, column 16; to line 12, column 104
 <br/>
 
 
-### ⚠️ 문제 발생 코드
+### ⚠️ 원인
 
 
 ```VS Code
 <img src="..." />
 ```
+ img 태그 사용시 `alt 속성(대체설명)` 이 누락되어 발생한 문제.<br/> 이미지 오류시 대체 텍스트, 검색엔진과 스크린 리더(시각 장애인용 보조기기)의 대신 읽어주기 기능을 담당하는 태그로 누락되면 웹 접근성 에러 메세지가 발생한다. 
 
-<br/>
-<br/>
 
-### 🔎 문제점 분석 <br/>
-
-> img 태그 사용시 필수 `alt 속성(대체설명) 이 누락`되어 발생한 문제로 이는 이미지 오류시 alternative text(대체 텍스트), 검색엔진(이해를 돕는)과 스크린 리더(시각 장애인용 보조기기)등의 기능을 최적화 하는 요소로서 누락되었을때 웹 접근성 오류가 발생한다. 
-
-<br/>
 <br/>
 
 ### 🛠 해결방법
 
-<br/>
 
-* `<img src="profile.jpg" alt="프로필 사진" />`<br>
-img 태그의 src 속성 이후로 `alt 속성`을 `추가`해주면 웹 접근성 오류가 해결되는것을 확인할 수 있다.
+```
+<img src="profile.jpg" alt="..." />
+```
 
-<br/>
-
-#### 💭 느낀점 <br/>
-
-img 태그 자체는 alt 속성이 누락되어도 이미지 표시 자체는 가능 그러나 이미지가 표시 안될때, 시각 장애인을 위한 기기가 정상 동작하기 위해 그리고 검색엔진이 이미지를 이해할 수 있게 해주는 요소로 웹 접근성에 중요한 것이라고 느낌.
+img 태그의 src 속성 이후로 `alt 속성`을 추가해주면 웹 접근성 오류 해결.
 
 <br/>
+
+#### 💭 배운점 
+
+> alt 속성이 누락되어도 이미지 표시 자체는 가능 그러나 이미지가 표시 안될 때의 텍스트, 시각 장애인을 위한 기기가 정상 동작하기 위해 그리고 검색엔진이 이미지를 이해할 수 있게 해주는 요소로 웹 접근성에 중요한 것이라고 알게되었다.
+
 <br/>
+
+
+---
+<br/>
+<br/>
+
+<!-- 2025.09.05 -->
+
+## 📖 case 2 / 클래스 누락 문제
+
+
+<br/>
+
+```
+VSCode
+
+<style>
+.container {border:3px solid #333; border-radius:15px;}
+...
+    <body>
+        <h1>나의 포트폴리오</h1>
+        <div class="card">
+            <p><img src="./img/portfolio1.jpg"/>
+            ...
+
+        </div>
+```
+내부 스타일로 card 클래스에 'margin:auto; width:50%;' 지정했지만 CSS 적용에 실패함.
+
+
+<br/>
+
+
+### ⚠️ 원인
+
+
+<!-- ```VS Code``` -->
+
+container 클래스가 속성에 없는 상태에서 style 만 구현되어 있어서 card 클래스에 스타일을 적용하지 못함.
+ 
+
+
+<br/>
+
+### 🛠 해결방법
+
+
+```
+VSCode
+
+<style>
+.container {border:3px solid #333; border-radius:15px;}
+...
+    <body>
+
+      <div class="container"> // div 태그와 container class 추가
+
+        <h1>나의 포트폴리오</h1>
+        <div class="card">
+            <p><img src="./img/portfolio1.jpg"/>
+            ...
+
+        </div>
+```
+
+card class 의 margin, width를 담당할 `<div class="container">` 태그를 추가하여 스타일이 정상적으로 적용되었다.
+
+<br/>
+
+#### ❕ 배운점 
+
+> style을 지정하더라도 짝이되는 class, 태그, id 가 원하는 위치에 존재해야 style을 적용할 수 있다고 배웠다.
+
+<br/>
+
+---
+
+<br/>
+<br/>
+
+<!-- 2025.09.05 -->
+
+## 📖 case 3 / 우선순위 문제 
+
+
+
+
+
+<br/>
+
+```
+VSCode
+
+   .card::before{
+    content: "";
+    position: absolute;
+    top:-3px; left: -3px; right: -3px; bottom: -3px;
+    background-image: linear-gradient(45deg, #00c9ff,#92fe9d);
+    border-radius: 15px;
+    opacity:0;
+    transition: opacity 0.5s ease;
+   }
+   .card:hover:before{
+    opacity:1;
+   }
+```
+카드를 구현하고 아래에 그라디언트 테두리를 구현할 목적으로 배경 이미지를 생성했다. 마우스를 올렸을 때 before의 요소가 카드내용을 가리는 문제 발생.
+
+<!-- “마우스를 올렸을 때 ::before 요소가 카드 내용보다 위에 렌더링되어, 내용이 가려지는 문제가 발생함” -->
+
+
+
+<br/>
+
+
+### ⚠️ 원인
+
+카드에 마우스를 올렸을 때 우선 순위가 바뀌는 것이 원인이다. 
+ 
+
+
+<br/>
+
+### 🛠 해결방법
+
+
+```
+VSCode
+
+   .card::before{
+    content: "";
+    position: absolute;
+    top:-3px; left: -3px; right: -3px; bottom: -3px;
+    background-image: linear-gradient(45deg, #00c9ff,#92fe9d);
+    border-radius: 15px;
+    opacity:0;
+    z-index: -1              // 우선 순위를 -1로 설정
+    transition: opacity 0.5s ease;
+   }
+   .card:hover:before{
+    opacity:1;
+   }
+```
+card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 우선순위를 -1로 설정한다 (기본값:auto)
+
+<!-- 기본적으로 ::before는 부모 요소와 같은 z축에 위치하며, 명시적으로 z-index: -1을 설정해 카드 뒤로 배치함. -->
+
+<br/>
+
+#### ❕ 배운점 
+
+> 화면상에 출력되는 HTML & CSS 요소에 우선순위가 있으며, 임의로 설정하여 배경이나 테두리를 구현할 수 있다는 것을 배웠다.
+
+<br/>
+
+
+
+
 
 
 ---
@@ -391,3 +363,8 @@ img 태그 자체는 alt 속성이 누락되어도 이미지 표시 자체는 �
 - [Markdown 가이드](https://www.markdownguide.org/basic-syntax/)  
 - [VS Code 공식 사이트](https://code.visualstudio.com/)  
 - [AI 프롬프트 작성 팁](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/prompt-engineering)
+
+
+</div><!-- -->
+</body>
+</div><!-- end portfolio -->
