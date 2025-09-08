@@ -88,7 +88,6 @@
 <br/> -->
 
 
-                                                        |
 <!-- | <p style="font-size:20px"><strong>기술 스택</strong></p>       | <strong><p style="font-size:20px">CS 역량 및 학습 / 실습 경험</strong></p>                                                                 |
 |----------------|------------------------------------------------------------------------------------------|
 | <strong>Git & GitHub</strong>   | 로컬 환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 문제 해결 경험         |
@@ -357,33 +356,8 @@ card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 
 
 <!-- 기본적으로 ::before는 부모 요소와 같은 z축에 위치하며, 명시적으로 z-index: -1을 설정해 카드 뒤로 배치함. -->
 
-
-```
-VSCode
-
-   .card::before{
-    content: "";
-    position: absolute;
-    top:-3px; left: -3px; right: -3px; bottom: -3px;
-    background-image: linear-gradient(45deg, #00c9ff,#92fe9d);
-    border-radius: 15px;
-    opacity:0;
-    z-index: -1              // 우선 순위를 -1로 설정
-    transition: opacity 0.5s ease;
-   }
-   .card:hover:before{
-    opacity:1;
-   }
-```
-card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 우선순위를 -1로 설정한다 (기본값:auto)
-
-<!-- 기본적으로 ::before는 부모 요소와 같은 z축에 위치하며, 명시적으로 z-index: -1을 설정해 카드 뒤로 배치함. -->
-
 <br/>
 
-#### ❕ 배운점 
-
-> 화면상에 출력되는 HTML & CSS 요소에 우선순위가 있으며, 임의로 설정하여 배경이나 테두리를 구현할 수 있다는 것을 배웠다.
 #### ❕ 배운점 
 
 > 화면상에 출력되는 HTML & CSS 요소에 우선순위가 있으며, 임의로 설정하여 배경이나 테두리를 구현할 수 있다는 것을 배웠다.
