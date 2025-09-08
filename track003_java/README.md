@@ -95,6 +95,7 @@
 |제어문과 삼항 연산자 학습|
 |Scanner를 통한 사용자 입력방법 학습|
 |연산자를 통한 값 계산 및 비교, 연산 우선순위 학습 |
+|반복문과 switch를 통해 제어문 학습|
 
 </div>
 
@@ -291,7 +292,7 @@ else if (ch <= 'Z' && ch >= 'A' ){System.out.println("당신이 입력한 문자
 
 ### 배운점
 
-long변수 값 뒤에 L, float변수 값 뒤에 f를 붙이는 것처럼 char 변수 사용시 특정 문법이 필요한 것을 배웠다.
+> long변수 값 뒤에 L, float변수 값 뒤에 f를 붙이는 것처럼 char 변수 사용시 특정 문법이 필요한 것을 배웠다.
 
 <br/>
 
@@ -343,6 +344,124 @@ String 뒤에 `[]`를 추가하여 문법 오류를 해결 해준다.
 - 배열 기호를 생략하면 자바가 main()을 올바른 시작점으로 인식하지 못해 컴파일 오류가 발생한다.
 - 이 과정을 통해 배열 기호의 중요성과 자바의 진입점 구조를 배웠다는 의미. -->
 
+<br/>
+
+## case.5	//	for문 세미콜론 사용 문제
+
+```
+Java
+
+for (int i = 0; i < 5; i++); {
+    System.out.println("Hello");
+}
+```
+5회 반복문을 작성후 실행했지만, 출력문의 Hello가 한번만 출력되는 문제 발생,
+컴파일 에러는 발생하지 않았지만 의도한 기능과 다르게 실행되었다.
+
+<br/>
+
+### 원인
+
+```
+Java
+
+for (int i = 0; i < 5; i++); {		//	for (변수선언; 종료조건; 증감식) {실행문;} 형태로 작성되어야함
+    System.out.println("Hello");
+}
+```
+반복문 사용시 잘못된 위치에 `;(세미콜론)`이 반복문의 본문을 비워 버리게되어 발생한 문제.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+Java
+
+for (int i = 0; i < 5; i++) {		//	;(세미콜론) 제거
+    System.out.println("Hello");
+}
+```
+잘못된 위치에 작성된 세미콜론을 제거한다.
+
+
+
+<br/>
+
+#### 배운점
+
+> 습관적으로 `';'`(세미콜론)을 붙이게 되지만, 대신 클래스나 메서드의 본문, 블록 `'{ }'`을 사용하는 경우도 있으니 의미를 알고 사용하는 것이 중요하다는 것을 배웠다. 
+
+
+<br/>
+
+## case.6	//	for문 중복된 case 값
+
+```
+Java
+
+int num = 2;
+switch (num) {
+    case 1:
+        System.out.println("One");  
+		break;
+    case 1:
+        System.out.println("Also One");
+        break;
+}
+```
+
+case에 중복된 값이 입력되면서 컴파일 에러가 발생했다.
+
+<br/>
+
+### 원인
+
+```
+Java
+
+int num = 2;
+switch (num) {
+    case 1:			//					case 1로 조건 분기
+        System.out.println("One"); 
+		break;
+    case 1:			//					다시 같은 값으로 조건 분기
+        System.out.println("Also One");
+        break;
+}
+```
+
+switch문은 각각의 case를 독립된 값을 써야 그에 맞는 조건분기가 이루어지기 때문에 중복된 값으로는 실행되지 않는다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+Java
+
+int num = 2;
+switch (num) {
+    case 1:
+        System.out.println("One");  
+		break;
+    case 2:			//					case 1과 겹치지않게 다른값으로 변경해준다.
+        System.out.println("Also One");
+        break;
+}
+```
+해결방법은 두가지가 있다. `중복된 case 값을 다른 값으로 변경`, `해당 case 분기를 삭제` 하는것이다.
+
+
+<br/>
+
+#### 배운점
+
+> switch문도 그렇지만 대체적으로 if문이나 for문에서도 중복된 값이 else if, i값으로 존재하면 한쪽의 실행문이 정상적으로 작동안하거나, 무한루프에 걸리는 상황이 생길수 있다는 것을 알게되었다.
 
 
 
