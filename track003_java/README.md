@@ -29,6 +29,7 @@
 <!--  -->
 
 <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;"> 🖐 안녕하세요 🖐 <br/><span style="color:red">문제 해결과 협력,</span> 그리고 <span style="color:red">기능 구현</span>의 효율성을 추구하는</span><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; text-decoration:underline"><br/>주니어 백엔드 개발자 지망생</span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; color:steelblue">신준용 </span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">입니다.</span><br/><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">전방위 기술 스택을 실무에 도입하여<br/>개발자간의 원할한 협업과 서비스 개선을 실현하려고 노력중입니다 😎</span>
+<span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;"> 🖐 안녕하세요 🖐 <br/><span style="color:red">문제 해결과 협력,</span> 그리고 <span style="color:red">기능 구현</span>의 효율성을 추구하는</span><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; text-decoration:underline"><br/>주니어 백엔드 개발자 지망생</span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold; color:steelblue">신준용 </span> <span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">입니다.</span><br/><span style="font-size:20px; font-family:'seoge UI', sans-serif; font-weight:bold;">전방위 기술 스택을 실무에 도입하여<br/>개발자간의 원할한 협업과 서비스 개선을 실현하려고 노력중입니다 😎</span>
 
 
 <!-- <pre style="color:red">문제 해결과 더나은 유저 경험을 위해
@@ -112,6 +113,36 @@
 </div>
 
 
+<div class="stack java card">
+
+|<Strong> Java </Strong>|
+|-|
+|Class 작성과 기본구조 학습|
+|출력문의 종류와 출력 문법 학습|
+|변수 종류, 저장 크기와 데이터 보장 범위 학습|
+|변수 타입과 캐스팅(형변환) 학습|
+|AI를 통한 문제 해결방법 학습|
+|제어문과 삼항 연산자 학습|
+|Scanner를 통한 사용자 입력방법 학습|
+|연산자를 통한 값 계산 및 비교, 연산 우선순위 학습 |
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="stack Github card">
+
+|<Strong> Github & Git </Strong>|
+|-|
+|markdown 문서 작성 학습|
+|브런치를 활용한 팀 프로젝트 구조 학습|
+|외부 기여 방식의 프로젝트 참여방법 학습|
+
+</div>
+
+
 <br/>
 <br/>
 <br/>
@@ -126,6 +157,8 @@
 # 📌 트러블슈팅 
 <br/>
 
+**■ Java**
+=
 **■ Java**
 =
 
