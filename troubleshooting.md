@@ -325,3 +325,4 @@ else if (ch <= Z && ch >= A ){System.out.println("당신이 입력한 문자는 
 에러가 발생한 부분
 
 >public static void main(String args) {}  
+
