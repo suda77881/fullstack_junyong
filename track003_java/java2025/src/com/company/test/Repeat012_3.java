@@ -1,0 +1,37 @@
+package com.company.test;
+
+public class Repeat012_3 {
+	
+	public static void main(String[] args) {
+		
+		int i;
+
+		
+
+	   for (i=1; i <= 5 ; i++) {
+		   
+		   System.out.print(i+" ");
+	   }
+	   
+	   i = 0;
+	   
+	   System.out.println("");
+	   
+	   for (i=5; i >= 1; i--) {
+		   
+		   System.out.print(i+" ");
+	   }
+	   
+	   i = 0;
+	   
+	   System.out.println("");
+	   
+	   for (i=1; i <= 3; i++) {
+		   
+		   System.out.print("JAVA" + i + " ");
+	   }
+	   
+	    
+	}
+
+}

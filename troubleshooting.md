@@ -239,7 +239,7 @@ VSCode
 
 ### ⚠️ 원인
 
-카드에 마우스를 올렸을 때 우선 순위가 바뀌는 것이 원인이다. 
+카드에 마우스를 올렸을 때 테두리와 카드의 우선 순위가 바뀌는 것이 원인이다. 
  
 
 
@@ -259,7 +259,7 @@ VSCode
     background-image: linear-gradient(45deg, #00c9ff,#92fe9d);
     border-radius: 15px;
     opacity:0;
-    z-index: -1              	// 	우선 순위를 -1로 설정
+    z-index: -1              	// 	z축 우선 순위를 -1로 설정
     transition: opacity 0.5s ease;
    }
    .card:hover:before{
@@ -267,7 +267,7 @@ VSCode
    }
 ```
 
-card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 우선순위를 -1로 설정한다 (기본값:auto)
+card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축 우선순위를 -1로 설정한다 (기본값:auto)
 
 <!-- 기본적으로 ::before는 부모 요소와 같은 z축에 위치하며, 명시적으로 z-index: -1을 설정해 카드 뒤로 배치함. -->
 
@@ -292,7 +292,7 @@ card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 
 
 
 
-**case.1**
+case.1  //  변수와 문자열 문법 오류
 -
 
 <br/>
@@ -302,7 +302,8 @@ card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축의 
 
 <br/>
 
-## 오류메세지
+에러메세지
+-
 
 ```
 Java
@@ -333,7 +334,7 @@ System.out.println( a "+" b );
 ```
 Java
 
-System.out.println(a + "+" + b);
+System.out.println(a + "+" + b);    //  변수와 문자열 사이에 +를 추가
 ```
 문법 오류를 해결하려면 `변수 + "문자열" + 변수` 구조로 수정해주면 해결된다.
 
@@ -354,7 +355,9 @@ System.out.println(a + "+" + b);
 
 <br/>
 
----
+case.2  //  외부 클래스 인식문제
+-
+
 ### 에러메세지
 
 ```
@@ -391,7 +394,7 @@ Java
 
 package com.company.java002;
 
-import java.util.Scanner; 
+import java.util.Scanner;   //  import Scanner 추가
 
 public class input1 { 
 
@@ -405,14 +408,15 @@ public class input1 {
 
 #### 배운점
 
-> 외부 클래스를 사용할때, import 과정을 생략하면 자바가 인식하지 못하는 것이 주소도 안 알려주고 편지를 보내는 일과 비슷하다고 생각했다.
+> 외부 클래스를 사용할 때는 반드시 import를 추가 해야한다는 점을 배웠다.
 
 <br/>
 <br/>
 <br/>
 
 
-2. char 변수 사용시 ''로 값을 감싸주지 않아서 발생하는 문제
+case.3  //  char 변수 사용시 문법 오류
+-
 
 ### 에러메시지
 
@@ -426,6 +430,7 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problems:
 	A cannot be resolved to a variable
 ```
 
+<br/>
 
 ### 원인
 
@@ -445,17 +450,26 @@ if (ch <= 'z' && ch >= 'a' ) {System.out.println("당신이 입력한 문자는 
 else if (ch <= 'Z' && ch >= 'A' ){System.out.println("당신이 입력한 문자는 대문자입니다.");}	//	비교값에 ''추가
 ```
 
-문법에 맞게 변수와 비교하는 값에 `''`를 추가해준다.
+문법에 맞게 변수와 비교하는 값에 `' '`를 추가해준다.
+
+<br/>
 
 #### 배운점
 
->char 타입 변수를 값과 계산하거나 비교할때 `''`로 감싸주는것 처럼, long 타입 변수는 L, float타입 변수는 f값을 뒤에 붙이는 것을 알게되었다.
+>char 타입 변수를 값과 계산하거나 비교할때 `' '`로 감싸주는것 처럼, long 타입 변수는 뒤에 L, float타입 변수는 f값을 뒤에 붙여야 문법 상의 오류가 없다는 것을 알게되었다.
 
+<br/>
+<br/>
+<br/>
 
+<!-- 설명 수정 필요 -->
 
+case.4   //  main 메서드 선언 시 문자열 배열 누락
+-
 
+<br/>
 
-에러메세지
+### 에러메세지
 
 ```
 오류: com.company.java004_ex.IfEx004 클래스에서 기본 메소드를 찾을 수 없습니다. 다음 형식으로 기본 메소드를 정의하십시오.
@@ -463,10 +477,65 @@ else if (ch <= 'Z' && ch >= 'A' ){System.out.println("당신이 입력한 문자
 또는 JavaFX 애플리케이션 클래스는 javafx.application.Application을(를) 확장해야 합니다.
 ```
 
+<br/>
 
 ### 원인
 
 ```
-public static void main(String args) {} 
+public static void main(String args)    //  String 뒤에 [ ] 가 누락되어있다.
 ``` 
 
+String으로 선언된 경우 자바가 실행인자를 배열로 받을 수 없기 때문에 [ ]를 붙여서 배열로 받을 수 있도록 수정을 요구하는 것이다.
+
+<br/>
+
+### 해결방법
+
+```
+public static void main(String[] args)    //  자바가 실행 인자를 배열로 받을 수 있도록 String[] arg 형태로 수정해준다.
+``` 
+
+에러메세지에서 제시한 해결법을 따라 String이 문자열을 배열로 받을 수 있도록 수정해준다.
+
+<br/>
+
+#### 배운점
+
+>기본 메서드를 정의할때 string으로 정의하는 경우 문자열을 하나만 담을 수 있기 때문에 클래스에서 필요로 하는 여러가지 기능을 수행하기엔 부족하다는것을 배웠다.
+
+<!-- 설명 수정 필요 -->
+
+<br/>
+<br/>
+<br/>
+
+
+case.5 // 세미콜론( ; ) 오기 문제
+-
+
+
+### 에러메세지
+
+```
+Java
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+   Syntax error on token(s), misplaced construct(s)
+   Syntax error on token ")", { expected after this token
+
+   at com.company.java005_ex.ForEx001.main(ForEx001.java:80)
+```
+컴파일 단계에서 문법 오류가 발생해서 main 메서드가 실행되지 못한 상태 라고 축약가능?
+
+### 원인
+
+```
+ for (int i=0; i<=18; i=i+2) {System.out.print((i==0? "": ",") + i +"t";)}
+
+```
+
+세미콜론(;)의 위치가 잘못 입력되어서 발생한 문제
+
+for (int i=0; i<=18; i=i+2) {System.out.print((i==0? "": ",") + i +"t");}
+
+세미콜론(;)의 위치를 수정해주면 정상적으로 작동한다.

@@ -1,0 +1,21 @@
+# Eclips 관련 폴더 및 파일무시
+.classpath
+.project
+.settings/
+eclipse/
+
+# 빌드 결과물 무시
+triple1/
+/bin/
+/build/
+release_note/
+notes/
+# IDE관련
+.idea
+*.iml
+# OS변 임시파일
+*.DS_Store
+Thumbs.db 
+
+# 로그파일
+*.loggit 
