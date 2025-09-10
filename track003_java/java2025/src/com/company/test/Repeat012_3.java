@@ -13,7 +13,7 @@ public class Repeat012_3 {
 		   System.out.print(i+" ");
 	   }
 	   
-	   i = 0;
+
 	   
 	   System.out.println("");
 	   
@@ -22,7 +22,7 @@ public class Repeat012_3 {
 		   System.out.print(i+" ");
 	   }
 	   
-	   i = 0;
+
 	   
 	   System.out.println("");
 	   
@@ -35,3 +35,4 @@ public class Repeat012_3 {
 	}
 
 }
+/*
