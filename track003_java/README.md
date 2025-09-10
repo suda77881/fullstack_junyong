@@ -96,6 +96,7 @@
 |Scanner를 통한 사용자 입력방법 학습|
 |연산자를 통한 값 계산 및 비교, 연산 우선순위 학습 |
 |반복문과 switch를 통해 제어문 학습|
+|for문을 while, do while문으로 변환하여 동일한 실행문 수행 및 문법 구조 학습 |
 
 </div>
 
@@ -572,7 +573,100 @@ Java
 
 
 ### 배운점
-> 코딩에서 시작과 끝 맺음이 상당히 중요하다고 배웠다.코드가 전체가 문제가 생긴다던가 생각보다 심각한 오류다.
+> 이번 코딩에서 시작과 끝 맺음이 상당히 중요하다고 배웠다.
+코드가 전체가 문제가 생기는 일도 있어서 심각한 오류다.
+
+
+<br/>
+
+
+<!-- 이후 용어적 수정필요 좀더 이해필요 -->
+
+## case.8   //    Scanner 입력 스트림 누락 
+
+```
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+   The constructor Scanner() is undefined
+   Syntax error, insert "( )" to complete Expression
+```
+컴파일에 실패하고 new Scanner 부분에 The constructor Scanner() is undefined(Scanner객체를 생성할 때 잘못된 방식으로 생성자 호출) 가 표시되는 오류가 발생했다.
+
+<br/>
+
+### 원인
+
+```
+Scanner sc = new Scanner();     //   오류가 발생된 부분
+```
+Scanner() 생성자 호출시 입력스트림이 누락되어 오류가 발생한 것이다.
+Scanner는 사용자의 입력을 처리하기 위해 입력 소스가 반드시 필요하다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+Scanner sc = new Scanner(System.in);     //  빈 생성자 호출부분에 System.in을 입력
+```
+new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **System.in** 키보드 입력을 의미하는 표준입력 스트림이다.
+
+
+
+
+<br/>
+
+#### 배운점
+> 처음에 배운 Scanner의 기본적인 구조에서 System.in이 어떤 역할을 하는 입력스트림인지 알게되었다. 그리고 Scanner구조상 입력스트림을 누락시키면 동작하지 않는다는 것을 배웠다.
+
+<!-- 이후 용어적 수정필요 -->
+
+
+<!-- 표현 개선 제안
+|  |  | 
+| Scanner객체를 생성할 때 잘못된 방식으로 생성자 호출 | Scanner 객체를 생성할 때 입력 스트림을 지정하지 않아 컴파일러가 적절한 생성자를 찾지 못함 | 
+| new Scanner()에 입력스트림이 누락되어 발생된 문제. | new Scanner() 호출 시 입력 스트림이 누락되어 컴파일 오류가 발생함. | 
+| Scanner는 사용자의 입력값을 반환하기 위해 입력 소스가 반드시 필요하다. | Scanner는 사용자 입력을 처리하기 위해 반드시 입력 소스를 지정해야 한다. | 
+| 빈 생성자 호출부분에 System.in을 입력 | 입력 스트림이 없는 생성자 대신 System.in을 전달하여 Scanner 객체를 생성 | 
+| new Scanner이후에 ()안에 입력스트림을 작성해준다. | new Scanner() 호출 시 괄호 안에 입력 스트림을 명시해야 한다. | 
+| System.in 키보드 입력을 의미하는 표준입력 스트림이다. | System.in은 키보드 입력을 의미하는 자바의 표준 입력 스트림이다. |  -->
+
+
+<br/>
+
+## case.9   //    
+
+```
+
+```
+
+<br/>
+
+### 원인
+
+```
+
+```
+
+
+
+<br/>
+
+### 해결방법
+
+```
+
+```
+
+
+
+<br/>
+
+### 배운점
+> 
+
+
 ---
 <br/> 
 <br/>
