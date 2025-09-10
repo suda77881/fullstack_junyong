@@ -43,7 +43,9 @@ public class ForEx006_2 {
 			case '/' : {result = num1 / num2;}break;
 			
 
-			System.out.println("" + num1 + op + num2 + "=" + 
-								(op!='/'? "" +(int)result : String.format("%.2f", result)));
+//			System.out.println("" + num1 + op + num2 + "=" + 
+//								(op!='/'? "" +(int)result : String.format("%.2f", result)));
 		}
+}
+		
 }

@@ -2,7 +2,7 @@ package com.company.test;
 
 import java.util.Scanner;
 
-public class bank {
+public class Bank {
 
 
 	public static void main(String[] args) {
@@ -30,7 +30,19 @@ public class bank {
 			System.out.print(menu); select = sc.nextInt();
 			
 			switch (select) {
-
+			
+			
+//			case 2 : case 3 : case 4 : case 5 : {
+//				System.out.print("아이디를 입력해주세요 >");	tempid = sc.next();
+//				System.out.print("비밀번호를 입력해주세요 >");temppass = sc.next();
+//				
+//				switch (select) {
+//				
+//				case 2 : System.out.println("2을 입력하면 조회기능");
+//				case 3 : 
+//				case 4 : 
+//				case 5 :
+//			}
 			case 1:
 				if (login == 1) {System.out.println("현재 로그인중 입니다.");}
 				else 
@@ -47,11 +59,12 @@ public class bank {
 
 				// 입력 2-1. 사용자에게 임시 아이디와 임시 비밀번호 입력받기
 				
-				if (login == 0) {
+//				if (login == 0) {
 				System.out.print("아이디를 입력해주세요 >");
 				tempid = sc.next();
 				System.out.print("비밀번호를 입력해주세요 >");
-				temppass = sc.next();}
+				temppass = sc.next();
+//				}
 				
 				
 
