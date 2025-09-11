@@ -6,7 +6,9 @@ public class Bank4 {
 
 	public static void main(String[] args) {
 		// 변수
+		// 변수
 		int select = 0, age = 0, login = 0, input = 0, money = 0;
+
 
 		String id = "";
 		String pass = "";
@@ -157,6 +159,7 @@ public class Bank4 {
 				if (delete.equals("Y") || delete.equals("y")) {
 					id = "";
 					pass = "";
+					pass = "";
 					balance = 0.0;
 					tempid = "";
 					temppass = "";
@@ -189,6 +192,13 @@ public class Bank4 {
 			case 9: {
 				System.out.println("9을 입력하면 종료 입니다. 출력구문 까지만"); // exit?
 				login = 0;
+				break;
+			}
+			default:
+				break;
+			} // switch
+		} // end for
+	} // end main
 				break;
 			}
 			default:
