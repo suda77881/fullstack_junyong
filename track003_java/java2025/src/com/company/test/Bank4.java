@@ -6,24 +6,26 @@ public class Bank4 {
 
 	public static void main(String[] args) {
 		// 변수
-		// 변수
 		int select = 0, age = 0, login = 0, input = 0, money = 0;
-
 
 		String id = "";
 		String pass = "";
 
 		double balance = 0.0;
 
-		String menu = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n😎😎무엇을 도와드릴까요? >>> ";
-		String menu1 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n👶🧒무엇을 도와드릴까요? >>> ";
-		String menu2 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n👨👩무엇을 도와드릴까요? >>> ";
-		String menu3 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n👨👩무엇을 도와드릴까요? >>> ";
+		String menu =  "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* " 
+		+ "4.출금\n* 5.삭제\n* 9.종료\n😎😎무엇을 도와드릴까요? >>> ";
+		String menu1 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* " 
+		+ "4.출금\n* 5.삭제\n* 9.종료\n👶🧒무엇을 도와드릴까요? >>> ";
+		String menu2 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* " 
+		+ "4.출금\n* 5.삭제\n* 9.종료\n👨👩무엇을 도와드릴까요? >>> ";
+		String menu3 = "\n======BANK======\n* 1.추가\n* 2.조회\n* 3.입금\n* " 
+		+ "4.출금\n* 5.삭제\n* 9.종료\n👨👩무엇을 도와드릴까요? >>> ";
 		String tempid = "", temppass = "";
 
 		Scanner sc = new Scanner(System.in);
 		// 입력 + 처리+ 출력
-		
+
 //		int scc = (int)(Math.random() * 9000) + 1000; // 1000 ~ 9999
 //		System.out.println("보안문자: " + scc);
 
@@ -31,7 +33,8 @@ public class Bank4 {
 
 		for (;;) {
 //			System.out.println("현재나이 : "+age); // 디버그용
-			System.out.print("" + (age <= 13 && age >= 6 ? menu1 : age >= 18 ? menu2 : age >= 30 ? menu3 : menu));
+			System.out.print("" + (age <= 13 && age >= 6 ? menu1 : 
+				age >= 18 ? menu2 : age >= 30 ? menu3 : menu));
 			select = sc.nextInt();
 
 			switch (select) {
@@ -46,13 +49,15 @@ public class Bank4 {
 				age = sc.nextInt();
 				System.out.print("잔액 입력 : >");
 				balance = sc.nextDouble();
-				int bnkbook = (int)(Math.random()*90000000)+10000000;
+				int bnkbook = (int) (Math.random() * 90000000) + 10000000;
 				if (balance >= 100000) {
 					System.out.print("회원가입을 축하합니다. \n당신은 VIP입니다");
 				} else {
 					System.out.println(
-							"반갑습니다." + (age <= 13 ? "어린이 고객님" : age <= 20 ? "학생 고객님" : age <= 50 ? "성인 고객님" : "고객님"));
-				};
+							"반갑습니다." + (age <= 13 ? "어린이 고객님" : 
+								age <= 20 ? "학생 고객님" : age <= 50 ? "성인 고객님" : "고객님"));
+				}
+				;
 				System.out.print("고객님의 통장이 개설 되었습니다.\n계좌번호는 : " + bnkbook + "입니다.");
 
 				break;
@@ -92,11 +97,13 @@ public class Bank4 {
 			case 2:
 				System.out.print("🧨🧨🧨🧨🧨🧨\n아이디 : " + id + "\n비밀번호 : " + pass);
 				double chance = (Math.random());
-				if (chance < 0.5) 
-				{System.out.print("이자가 입금되었습니다. + " + (balance / 1000)+"원")
-					;balance += (balance / 1000);}
-				System.out.printf("\n나이 : %d\n잔액 : %.2f", age, balance);
-				{break;}
+				if (chance < 0.5) {
+					System.out.print("이자가 입금되었습니다. + " + (balance / 1000) + "원");
+					balance += (balance / 1000);
+				}
+				System.out.printf("\n나이 : %d\n잔액 : %.2f", age, balance); {
+				break;
+			}
 
 			case 3:
 				for (;;) {
@@ -127,9 +134,11 @@ public class Bank4 {
 
 			case 4:
 				for (;;) {
-					System.out.print("현재 잔액은 : " + "" + balance + "원 입니다." + "\n출금하실 금액을 입력해주세요 : ");
+					System.out.print("현재 잔액은 : " + "" + balance + "원 입니다." 
+				+ "\n출금하실 금액을 입력해주세요 : ");
 					money = sc.nextInt();
-					if (money > balance) {System.out.println("잔액이 부족합니다.");
+					if (money > balance) {
+						System.out.println("잔액이 부족합니다.");
 						continue;
 					}
 					balance -= money;
@@ -149,45 +158,49 @@ public class Bank4 {
 			case 5:
 				System.out.println("5을 입력하면 삭제기능입니다.");
 				System.out.println("😥😥😥😥😥😥😥😥😥😥");
-				System.out.println("정말로 삭제하겠습니까? (Y/N)");String delete = sc.next();
-				int scc = (int)(Math.random() * 9000)+1000;
-				
-				System.out.println("보안문자를 따라 입력해주세요. : " + scc); int checkscc = sc.nextInt();
-				
+				System.out.println("정말로 삭제하겠습니까? (Y/N)");
+				String delete = sc.next();
+				int scc = (int) (Math.random() * 9000) + 1000;
+
+				System.out.println("보안문자를 따라 입력해주세요. : " + scc);
+				int checkscc = sc.nextInt();
+
 				if (scc == checkscc) {
-				
-				if (delete.equals("Y") || delete.equals("y")) {
-					id = "";
-					pass = "";
-					pass = "";
-					balance = 0.0;
-					tempid = "";
-					temppass = "";
-					age = 0;
-					delete = "N";
-					login = 0;
-					scc = 0;
-					checkscc = 0;
-					System.out.println("╭────────────────────╮");
-					System.out.println("│ 계정이 삭제되었습니다   │");
-					System.out.println("│   다음에 또 만나요 　  │");
-					System.out.println("╰────────────────────╯");
-					
-					try {
-						Thread.sleep(2000);break; // 2초 동안 멈춤
-					} catch (InterruptedException e) {
-						e.printStackTrace();
+
+					if (delete.equals("Y") || delete.equals("y")) {
+						id = "";
+						pass = "";
+						pass = "";
+						balance = 0.0;
+						tempid = "";
+						temppass = "";
+						age = 0;
+						delete = "N";
+						login = 0;
+						scc = 0;
+						checkscc = 0;
+						System.out.println("╭────────────────────╮");
+						System.out.println("│ 계정이 삭제되었습니다   │");
+						System.out.println("│   다음에 또 만나요 　  │");
+						System.out.println("╰────────────────────╯");
+
+						try {
+							Thread.sleep(2000);
+							break; // 2초 동안 멈춤
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					} else if (delete.equals("n") || delete.equals("N")) {
+						System.out.println("취소되었습니다.");
+						break;
+					} else {
+						System.out.println("취소되었습니다.");
+						break;
 					}
-				} else if (delete.equals("n") || delete.equals("N")) {
-					System.out.println("취소되었습니다.");
-					break;
 				} else {
-					System.out.println("취소되었습니다.");
-					break;
+					System.out.println("보안문자를 잘못 입력되었습니다.");
 				}
-				}
-				else {System.out.println("보안문자를 잘못 입력되었습니다.");}continue;
-				
+				continue;
 
 			case 9: {
 				System.out.println("9을 입력하면 종료 입니다. 출력구문 까지만"); // exit?
@@ -199,12 +212,4 @@ public class Bank4 {
 			} // switch
 		} // end for
 	} // end main
-				break;
-			}
-			default:
-				break;
-			} // switch
-		} // end for
-	} // end main
-
-}// end class
+} // end class
