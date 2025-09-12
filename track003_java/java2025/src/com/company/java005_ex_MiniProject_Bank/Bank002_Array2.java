@@ -27,13 +27,22 @@ public class Bank002_Array2 {
              // ver-2    if( 0번이 null      ){ find는 0}  if( 1번이 null    ){ find는 1 }
              // ver-3    if( id[0] == null  ){ find=0; }  if( id[1] == null  ){ find=1; } 
              // ver-4    찾았으면 나오기 추가 -  백만개의 자료있다라고하면 ~!   시간 오래걸림.
-             int find=-1; 
-             for(int i=0; i<id.length; i++){ if( id[i] == null  ){ find=i; break;  }  }
-             
-             //1-2. 유저 계정에 입력받기 
-             System.out.print("[1]아이디   입력 > ");   id[find] = scanner.next();
-             System.out.print("[2]비밀번호 입력 > ");    pass[find] = scanner.next();
-             System.out.print("[3]금액    입력 > ");    balance[find] = scanner.nextDouble();
+//             int find=-1; 
+//             for(int i=0; i<id.length; i++){ if( id[i] == null  ){ find=i; break;  }  }
+//             
+//             //1-2. 유저 계정에 입력받기 
+//             System.out.print("[1]아이디   입력 > ");   id[find] = scanner.next();
+//             System.out.print("[2]비밀번호 입력 > ");    pass[find] = scanner.next();
+//             System.out.print("[3]금액    입력 > ");    balance[find] = scanner.nextDouble();
+        	  
+        	  int find = -1;	//	아닌값에 두기
+        	  for (int i=0; i<id.length; i++)	// 아이디의 저장공간만큼
+        	  {
+        		  if (id[i] == null) {find=i; break;}	//	빈 칸인지 검사의도
+        	  }
+        	  System.out.print("[1]아이디 입력>"); id[find] = scanner.next();	//	빈칸에 아이디
+        	  System.out.print("[2]비밀번호   입력 >");	pass[find] = scanner.next();	//	빈칸에 비밀번호
+        	  System.out.print("[3]금액   입력 >");   balance[find] = scanner.nextDouble();	//	빈칸에 금액
           }
           else if(num==2 || num==3 || num==4 || num==5){ 
              /* >>>>>> 2-1. 인증정보 */
@@ -45,16 +54,30 @@ public class Bank002_Array2 {
              System.out.print("[2]비밀번호 입력 > ");    tempPass = scanner.next();
              //처리
              //3. ver-0  int find=-1;   없는 번호      / 문자열비교는 equals
+             find=-1; 
+             for (int i=0; i<id.length; i++)
+             {
+            	 if(!(id[i]==null)) {find = i;break;}
+             }
+             if (id[find] == tempId) {for (int i=0; i<pass.length; i++)
+             {
+            	 if(!(pass[i]==null)) {find = i;break;}
+             }if(pass[find] == tempPass) {break;}
+             }}}
+             
+             
              //3. ver-1   사용자에게입력받은아이디와  id[0]번이 같고  사용자에게입력받은비밀번호와 pass[0]번이면  사용자번호는0
              //3. ver-1   사용자에게입력받은아이디와  id[1]번이 같고  사용자에게입력받은비밀번호와 pass[1]번이면  사용자번호는1
              //3. ver-2 if(사용자에게입력받은아이디와  id[1]번이 같고  사용자에게입력받은비밀번호와 pass[1]번이면){사용자번호는1}
                            
              //출력
              //4. 만약 find==-1 이라면 유저정보 못찾음!
+             int find =-1;
              if(find ==1) {  System.out.println("아이디와 비밀번호를 확인해주세요! ");  continue; }
               
           }
           else{  System.out.println("메뉴를 확인해주세요. ");    }
+          
       }
    }// end main
 }//end class
@@ -73,6 +96,8 @@ for(;;){ 무한반복
              case 3 : 입금 break;
              case 4 : 출금 break;
              case 5 : 삭제 break;
+             
+             
           }
    } // end else if
 }// end for
