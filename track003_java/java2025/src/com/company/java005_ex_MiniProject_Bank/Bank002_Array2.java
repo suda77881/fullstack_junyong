@@ -57,7 +57,7 @@ public class Bank002_Array2 {
              find=-1; 
              for (int i=0; i<id.length; i++)
              {
-            	 if(!(id[i]==null)) {find = i;break;}
+            	 if(!(id[]==null)) {find = i;break;}
              }
              if (id[find] == tempId) {for (int i=0; i<pass.length; i++)
              {

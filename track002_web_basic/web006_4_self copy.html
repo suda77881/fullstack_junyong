@@ -12,9 +12,13 @@
 <style>/*--------------------------- STYLE -------------------------------------*/
     /* visual */
     div#demo{height:300px; overflow:hidden;}  /*높이 300 지정및 남는영역 자르기*/
-    body {background:linear-gradient(135deg,#000000,#ffc861);}
-    .info {background-color:; border-radius:15px;}
-    .profile img{background-color:#fff;}
+    body {font-family:'segoe UI', sans-serif; text-decoration:none; 
+      background:linear-gradient(135deg,#0f85c4,#a26d31,#ffaf7b);}
+    body ul {margin-left:-30px;}
+    .info {color:#ffffff;background-color:#000000; 
+      border-radius:15px; margin:50px;;}
+    .profile img{background-color:#fff; 
+      border-radius:50px;}
 
     
 </style>
@@ -27,7 +31,7 @@
 <!-- header -->
   <header class="header">
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+    <nav class="navbar navbar-expand-sm navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">devsjy</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -92,9 +96,9 @@
     
   <section class="info">
     <div class="container">
-      <h3>About Me</h3>
+      <h3 style="margin-top:0px">　</h3>
       <div class="row">
-        <div class="col-sm-4">1<!-- w-25 w-50 w-75 w-100 -->
+        <div class="col-sm-4" style="margin-top:60px;"><!-- 1 w-25 w-50 w-75 w-100 -->
         <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p><!--img-fluid(부모사이즈에 맞춤) w-사이즈(50%-부모사이즈절반정도)--> 
         <h4>Shin jun yong</h4>
         <ul>
@@ -104,32 +108,39 @@
             </a></li>
         </ul>
         </div>
-        <div class="col-sm-4">2
-        <h4>Education</h4>
+        <div class="col-sm-4"><!--2-->
+
+          
+          <h4>Education</h4>
+        <br/>
         <ul>
             <li>MSA기반 플러터(Dart)활용 자바(JAVA)프론트엔드 
                 백엔드 풀스택 웹(앱)개발 ( 25.08.25 ~ 26.02.27 )</li>
         </ul>
+        <br/>
+        <br/>
         <h4>KeyWord</h4>
+        <br/>
         <ul class="d-flex">
-            <li><input type="button" value="열정" class="btn btn-danger"/></li>
-            <li><input type="button" value="성실" class="btn btn-primary"/></li>
-            <li><input type="button" value="끈기" class="btn btn-success"/></li>
+            <input type="button" value="열정" class="btn btn-danger"/></li>
+            <input type="button" value="성실" class="btn btn-primary"/></li>
+            <input type="button" value="끈기" class="btn btn-success"/></li>
         </ul>
         </div>
-        <div class="col-sm-4">3
-            <h4>SKILLS</h4>
+        <div class="col-sm-4"><!--3-->
+            <h4 style="text-align:center;;">SKILLS</h4>
+            <br/>
             <div class="progress-bar bg-danger progress-bar-striped" 
-                 style="width:80%">JAVA 80%</div>
+                 style="width:80%; margin-left:25px;">JAVA 45%</div>
             <div class="progress-bar bg-warning progress-bar-striped" 
-                 style="width:80%">SPRING 90%</div>
-            <div class="progress-bar bg-primary progress-bar-striped" 
+                 style="width:80%; margin-left:25px;">HTML/CSS 55%</div>
+            <!-- <div class="progress-bar bg-primary progress-bar-striped" 
                  style="width:80%">ORACLE 90%</div>
             <div class="progress-bar bg-dark progress-bar-striped" 
                  style="width:80%">REACT 85%</div>
             <div class="progress-bar bg-warning progress-bar-striped" 
                  style="width:80%">AWS 85%</div>
-        
+         -->
 
         </div>
       </div>
