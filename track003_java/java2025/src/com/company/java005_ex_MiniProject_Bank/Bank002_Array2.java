@@ -63,7 +63,7 @@ public class Bank002_Array2 {
              {
             	 if(!(pass[i]==null)) {find = i;break;}
              }if(pass[find] == tempPass) {break;}
-             }}}
+             }
              
              
              //3. ver-1   사용자에게입력받은아이디와  id[0]번이 같고  사용자에게입력받은비밀번호와 pass[0]번이면  사용자번호는0
@@ -72,8 +72,8 @@ public class Bank002_Array2 {
                            
              //출력
              //4. 만약 find==-1 이라면 유저정보 못찾음!
-             int find =-1;
-             if(find ==1) {  System.out.println("아이디와 비밀번호를 확인해주세요! ");  continue; }
+//             int find =-1;
+//             if(find ==1) {  System.out.println("아이디와 비밀번호를 확인해주세요! ");  continue; }
               
           }
           else{  System.out.println("메뉴를 확인해주세요. ");    }
