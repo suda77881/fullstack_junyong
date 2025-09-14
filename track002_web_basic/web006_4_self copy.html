@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,132 +10,161 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<style>/*--------------------------- STYLE -------------------------------------*/
+  <style>
+    /*--------------------------- STYLE -------------------------------------*/
     /* visual */
-    div#demo{height:300px; overflow:hidden;}  /*높이 300 지정및 남는영역 자르기*/
-    body {font-family:'segoe UI', sans-serif; text-decoration:none; 
-      background:linear-gradient(135deg,#0f85c4,#a26d31,#ffaf7b);}
-    body ul {margin-left:-30px;}
-    .info {color:#ffffff;background-color:#000000; 
-      border-radius:15px; margin:50px;;}
-    .profile img{background-color:#fff; 
-      border-radius:50px;}
+    div#demo {
+      height: 300px;
+      overflow: hidden;
+    }
 
-    
-</style>
+    /*높이 300 지정및 남는영역 자르기*/
+    body {
+      color: #ffffff;
+      font-family: 'segoe UI', sans-serif;
+      text-decoration: none;
+      background: linear-gradient(135deg, #0f85c4, #a26d31, #ffaf7b);
+    }
+
+    body ul {
+      margin-left: -30px;
+    }
+
+    .info {
+      background-color: #000000;
+      border-radius: 15px;
+      margin: 50px;
+      ;
+    }
+
+    .profile img {
+      background-color: #ffffff;
+      border-radius: 50px;
+    }
+
+    .portfolio {
+      background-color: #333;
+    }
+
+    /* .col-sm-4 {border:2px solid white; border-radius:5px; margin:-4px} */
+  </style>
 
 
 </head>
+
 <body>
   <!-- 여기에 콘텐츠를 추가하세요 -->
 
-<!-- header -->
+  <!-- header -->
   <header class="header">
 
-    <nav class="navbar navbar-expand-sm navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">devsjy</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">포트폴리오</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header><!-- header end -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:rgba(0,0,0, 0.7)">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">devsjy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">포트폴리오</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header><!-- header end -->
 
-    <!--visual-->
+  <!--visual-->
   <section class="visual">
 
     <!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
 
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/bg/digitization-7265424_1920.jpg" alt="Los Angeles" class="d-block w-100">
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/bg/digitization-7265424_1920.jpg" alt="Los Angeles" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/bg/ai-generated-8348887_1920.jpg" alt="Chicago" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/bg/architecture-1868272_1920.jpg" alt="New York" class="d-block w-100">
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
-    <div class="carousel-item">
-      <img src="./img/bg/ai-generated-8348887_1920.jpg" alt="Chicago" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/bg/architecture-1868272_1920.jpg" alt="New York" class="d-block w-100">
-    </div>
-  </div>
+  </section><!--visual end-->
 
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-</section><!--visual end-->
 
-    
   <section class="info">
     <div class="container">
-      <h3 style="margin-top:0px">　</h3>
+      <h3 style="margin:-20px">　</h3>
       <div class="row">
-        <div class="col-sm-4" style="margin-top:60px;"><!-- 1 w-25 w-50 w-75 w-100 -->
-        <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p><!--img-fluid(부모사이즈에 맞춤) w-사이즈(50%-부모사이즈절반정도)--> 
-        <h4>Shin jun yong</h4>
-        <ul>
+        <div class="col-sm-4" style="margin-top:20px;margin-right:-20px;"><!-- 1 w-25 w-50 w-75 w-100 -->
+          <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p>
+          <!--img-fluid(부모사이즈에 맞춤) w-사이즈(50%-부모사이즈절반정도)-->
+          <h4>Shin jun yong</h4>
+          <ul>
             <li>abre2e2@gmail.com</li>
             <li><a href="https://github.com/suda77881/fullstack_junyong">
-                깃허브 포트폴리오
-            </a></li>
-        </ul>
+                <img src="./img/free-icon-github-2111432.png"
+                 alt="깃허브링크" style="background-color:#ffff;
+                 width:25px; border-radius:3px;">
+              </a></li>
+          </ul>
         </div>
         <div class="col-sm-4"><!--2-->
 
-          
+
           <h4>Education</h4>
-        <br/>
-        <ul>
-            <li>MSA기반 플러터(Dart)활용 자바(JAVA)프론트엔드 
-                백엔드 풀스택 웹(앱)개발 ( 25.08.25 ~ 26.02.27 )</li>
-        </ul>
-        <br/>
-        <br/>
-        <h4>KeyWord</h4>
-        <br/>
-        <ul class="d-flex">
-            <input type="button" value="열정" class="btn btn-danger"/></li>
-            <input type="button" value="성실" class="btn btn-primary"/></li>
-            <input type="button" value="끈기" class="btn btn-success"/></li>
-        </ul>
+          <br />
+          <ul>
+            <li>MSA기반 플러터(Dart)활용<br />
+              자바(JAVA)프론트엔드 백엔드 <br />
+              풀스택 웹(앱)개발 <br />( 25.08.25 ~ 26.02.27 )</li>
+          </ul>
+          <br />
+          <br />
+          <h4>KeyWord</h4>
+          <br />
+          <ul class="d-flex">
+            <input type="button" value="열정" class="btn btn-danger" /></li>
+            <input type="button" value="성실" class="btn btn-primary" /></li>
+            <input type="button" value="끈기" class="btn btn-success" /></li>
+          </ul>
         </div>
         <div class="col-sm-4"><!--3-->
-            <h4 style="text-align:center;;">SKILLS</h4>
-            <br/>
-            <div class="progress-bar bg-danger progress-bar-striped" 
-                 style="width:80%; margin-left:25px;">JAVA 45%</div>
-            <div class="progress-bar bg-warning progress-bar-striped" 
-                 style="width:80%; margin-left:25px;">HTML/CSS 55%</div>
-            <!-- <div class="progress-bar bg-primary progress-bar-striped" 
+          <h4 style="text-align:center;">SKILLS</h4>
+          <br />
+          <div class="progress-bar bg-danger progress-bar-striped" style="width:80%; margin-left:43px;">JAVA 45%</div>
+          <div class="progress-bar bg-success progress-bar-striped" style="width:80%; margin-left:43px;">HTML/CSS 55%
+          </div>
+          <!-- <div class="progress-bar bg-primary progress-bar-striped" 
                  style="width:80%">ORACLE 90%</div>
             <div class="progress-bar bg-dark progress-bar-striped" 
                  style="width:80%">REACT 85%</div>
@@ -149,24 +179,38 @@
 
 
   </section>
-  
+
   <!-- header end -->
 
-  <div class="portfolio">
+  <div class="portfolio" style="background-color:#000000">
+    <div class="row">
+      <h4 style="text-align:center; margin-top:30px;">Gallery</h4>
+      <div class="col-sm-10"><!--1-->
+        <p><a href="https://www.youtube.com/watch?v=lDgME6b8qHY" targer="_blank" title="미니프로젝트링크">
+            <img src="./img/miniproject_fishing(bank).png" style="border:3px,solid,#ce6d39; margin:40px;width:240px;"
+              alt="미니프로젝트뱅크_신준용" /></a>Java 미니 프로젝트 fishing</p>
+      </div><!--fix해서 더 깔끔한 버전으로-->
+      <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
 
 
-  </section><!-- header end -->
 
-  <section class="contrat">
-
-
-  </section><!-- header end -->
-
-  <section class="footer">
+      </div>
 
 
-  </section><!-- header end -->
-  
-  
+
+      </section><!-- header end -->
+
+      <section class="contrat">
+
+
+      </section><!-- header end -->
+
+      <section class="footer">
+
+
+      </section><!-- header end -->
+
+
 </body>
+
 </html>
