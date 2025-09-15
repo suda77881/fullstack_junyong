@@ -282,6 +282,63 @@ card::before 속성에 **z-index**: -1 를 추가하여 명시적으로 z축 우
 <br/>
 <br/>
 
+<!-- 2025.09.15 -->
+
+## 📖 case 4 / 폼 요소 연결 오류: Label과 Input ID 불일치
+
+
+
+<br/>
+
+
+```
+Error: The value of the for attribute of the label element must be the ID of a non-hidden form control.
+
+```
+
+외부 템플릿에서 폼 태그를 적용할때 수정을 진행하다가 기존 입력된 아이디와 폼 부분을 연결할때 오탈자 발생
+
+<!-- “마우스를 올렸을 때 ::before 요소가 카드 내용보다 위에 렌더링되어, 내용이 가려지는 문제가 발생함” -->
+
+
+
+<br/>
+
+<!-- 
+### ⚠️ 원인
+
+카드에 마우스를 올렸을 때 테두리와 카드의 우선 순위가 바뀌는 것이 원인이다.  -->
+ 
+
+
+<br/>
+
+### 🛠 해결방법
+
+
+
+```
+<label for="title" class="form-label">제목:</label> // 이부분(tile → title). 
+<input type="text" class="form-control" id="title" ... >
+```
+
+id="title" 에 나와있는 요소와 label for="title"으로 이름을 동일하게 변경해준다.(연결누락)
+
+
+<!-- 기본적으로 ::before는 부모 요소와 같은 z축에 위치하며, 명시적으로 z-index: -1을 설정해 카드 뒤로 배치함. -->
+
+<br/>
+
+#### 💭 배운점 
+
+> 대부분의 태그 속성, css값의 미적용이 우선순위 문제가 아니면 오탈자로 인한 문제라는 것을 배우고있다.
+
+
+<br/>
+<br/>
+<br/>
+
+
 
 
 **■ Java**

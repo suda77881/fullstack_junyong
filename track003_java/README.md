@@ -637,10 +637,12 @@ new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **Syste
 
 <br/>
 
-## case.9   //    
+## case.9   //  for문 사용시 인덱스 초과 문제
 
 ```
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
 
+	at com.company.java007_ex.Array2Ex008_3.main(Array2Ex008_3.java:2)
 ```
 
 <br/>
@@ -648,8 +650,23 @@ new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **Syste
 ### 원인
 
 ```
+        int[][] datas = {	//	datas의 인덱스 범위 [4 x 3]
+            {10, 10, 10, 10},
+            {20, 20, 20, 20},
+            {30, 30, 30, 30}
+        };
+
+        int[][] result = new int[datas.length + 1][datas[0].length + 1]; // datas의 인덱스값에서 + 1씩 더한 [4 x 3]
+
+
+
+for (int ch = 0; ch < datas.length; ch++) {
+            for (int kan = 0; kan < datas[ch].length+1; kan++) {	//	이부분에 data[ch].length+1;
+                result[ch][kan] = datas[ch][kan]; 
 
 ```
+
+for문 사용시 잘못지정된 인덱스 범위 초과 문제로 저장된 값을 불러오지 못하고 컴파일 에러가 발생했다.
 
 
 
@@ -658,15 +675,16 @@ new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **Syste
 ### 해결방법
 
 ```
-
+for (int ch = 0; ch < datas.length; ch++) {
+            for (int kan = 0; kan < datas[ch].length; kan++) {	//	+1을 제거하고 인덱스 범위를 변수에서 불러올 수 있는 범위로 변경해준다.
+                result[ch][kan] = datas[ch][kan]; 
 ```
-
-
+datas[ch].length+1 일때 kan==4 가 되므로 datas에서 인덱스값 0~3까지만 갖고있기 때문에 동작 가능한 범위로 수정해주면 해결된다.
 
 <br/>
 
 ### 배운점
-> 
+> 인덱스 범위 지정에 대한 어려움에 대해 많이 느끼고 다시 한번 공부하게되었다.
 
 
 ---
