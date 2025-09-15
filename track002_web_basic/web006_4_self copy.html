@@ -46,6 +46,12 @@
       background-color: #333;
     }
 
+    .info h4 {margin: 5% 0;}
+
+    h3 {text-decoration:underline; font-size:2.2em;}
+
+    .keyWord li {list-style-type:none; margin-right:10px; }
+
     /* .col-sm-4 {border:2px solid white; border-radius:5px; margin:-4px} */
   </style>
 
@@ -123,7 +129,7 @@
 
   <section class="info">
     <div class="container">
-      <h3 style="margin:-20px">　</h3>
+      <h3 class="text-center mb-2">about me</h3>
       <div class="row">
         <div class="col-sm-4" style="margin-top:20px;margin-right:-20px;"><!-- 1 w-25 w-50 w-75 w-100 -->
           <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p>
@@ -151,7 +157,7 @@
           <br />
           <h4>KeyWord</h4>
           <br />
-          <ul class="d-flex" style="color:transparent;">
+          <ul class="d-flex keyWord">
             <li><input type="button" value="열정" class="btn btn-danger" /></li>
             <li><input type="button" value="성실" class="btn btn-primary" /></li>
             <li><input type="button" value="끈기" class="btn btn-success" /></li>
@@ -189,43 +195,40 @@
     </div>
       <section class="contact mt-2">
         <div class="container bg-success" style="display:flex; flex-direction:column; ">
-          <h4 style="text-align:center;">Contact Me</h4>
+          <h3 style="text-align:center;">Contact Me</h3>
           <br /><br />
           <p style="text-align:center;">dev sjy에게 문의주세요!</p>
 
-          <div class="row">
-            <p>제목</p>
-            <div class="form-floating mb-5 mt-1">
-              <input type="text" class="form-control" id="email" placeholder="Enter email" name="email"> <label
-                for="email">Email</label>
-            </div>
-          </div>
-
-          <div class="row">
-            <p>내용</p>
-            <div class="form-floating mb-5 mt-1">
-              <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
-              <label for="comment">Comments</label>
-            </div>
-          </div>
+          <form action="/action_page.php">
+      <div class="mb-3 mt-3">
+        <label for="title" class="form-label">제목:</label>
+        <input type="text" class="form-control" id="title" placeholder="제목을 적어주세요!" name="tilte">
+      </div>
+      <div class="mb-3">
+        <label for="comment">Comments:</label>
+        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+      </div>
+      <div class="mb-3 text-end"> </div>
+      <button type="submit" class="btn btn-primary mb-2">메일보내기</button>
+    </form>
+    </div>
         
 
-        <input type="button" 
-        style="color:#ffffff;" 
-        class="bg-primary m-auto mb-2" value="메일 보내기">
-
-        </div>
 
 
-      </section><!-- cntact end -->
 
-      <section class="footer">
-        <div class="container mt-5">
-          <p style="background-color:#333; border-radius:10px;; text-align: center; padding:1%;">@2025
-            sjy</p>
+      </section><!-- contact end -->
 
-        </div>
-      </section><!-- footer end -->
+      <footer class="footer text-center bg-secondary p-5">
+
+
+
+     &copy; copyrights 2025 all.right reserved
+
+      </footer><!-- footer end -->
+
+
+
 
 
 </body>
