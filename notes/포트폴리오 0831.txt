@@ -1,0 +1,154 @@
+Git을 setup하고 Github repository를 생성하여 개발자에 맞는 로컬 작업 환경을 갖추고 git bash 상에 user config setting과 
+VS Code 앱을 통한 문서의 구조를 익히고, 확장툴 활용, github 작업환경 설정, remote repository를 이용하여 CI/CD 기능을 활용할 때 
+발생하는 트러블 슈팅을 AI를 이용하고, 스스로 연구하며 해결하고 지속적인 협력 방식을 습득함.
+Java 11버전을 Windows 환경변수를 setting 하므로써 VS Code와 ECLIPS를 개발툴로 이용하고 HTML를 통한 
+프론트엔드의 화면 배치와 CSS를 이용하여 Style의 text / image / box / border / color 등 속성의 사용과 
+bold, bottom, width 등의 속성 값을 이용하여 사용자의 화면상 출력되는 배치요소의 디자인 요소를 변경, 문서의 웹 접근성에 맞춘 설계 방법으로 소스코드의 보완과 
+ECLIPS 사용시 perspective와 preferences 조정을 통한 백엔드 개발자의 코딩 환경 설정과 Java 환경에서 사용하는 src-package-class로 이어지는 코드 작성법과
+public 방식을 채택한 전원부 작성 방식, 텍스트의 출력, 그 과정에서 변수와 상수 그리고 import로 기존 개발자들이 구축 해놓은 유용한 코드 작성 방식의 활용
+각각의 변수 저장 방식과 그에 따른 데이터 보장 방식에 대한 이해와 학습을 완료
+
+
+GIthub와 Git 사용을 통한 개발자의 CI/CD와 VSC를 통한 문서 작성,
+
+Commit을 통해 발생할 수 있는 Merge Conflict 에 대한 문제해결, 개발자 실무의 Workflow를 학습
+
+markdown 문법의 이해와 문서의 작업자간에 가독성 향상을 중시한 작성법을 학습
+
+VSC상에 문서분류 방식과 작성된 HTML/CSS 문서의 구조를 이해할 수 있고, 
+HTML 코드를 작성할 때 웹 페이지에 준수 해야할 웹 접근성에 대한 보수 방식 적용, 코드 가독성을 고려한 문서 작성화,
+HTML 코드와 CSS 인라인 방식에 대한 적절한 활용이 가능함.
+
+ECLIPS를 통한 Java(11) 코딩 환경 구축과 src-package-class로 이어지는 문서의 구조를 이해완료
+Java 기초 문법 학습을 통해 전원부 작성과 변수, 상수 사용, 데이터 분류에 따른 최대 보장 범위와 변환 방식을 학습
+코딩 과정에서 사용할 수 있는 기존 Java 개발자들이 작성한 데이터 활용가능
+
+
+
+
+- Git & GitHub를 활용한 버전 관리 및 협업 워크플로우 이해
+- Commit 및 Merge Conflict 상황에서의 문제 해결 능력 향상
+- Eclipse 기반 Java(11) 개발 환경 구축 및 기초 문법/자료형/입출력 구조 학습
+- 기존 Java 코드 활용을 통한 실무 코드 분석 및 응용 능력 향상
+- Markdown 문법을 활용한 가독성 중심의 문서화 역량 강화
+- VS Code를 활용한 문서 분류 및 실시간 개발 환경 구성 경험
+- HTML/CSS 문서 구조 이해 및 웹 접근성 준수 기반 UI 설계 역량 확보
+
+
+
+
+## 🔧 기술스택 기반 CS 역량
+
+<br/>
+
+| 기술스택         | CS 역량 및 실무 적용 사례                                                                                   |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| **Git & GitHub** | 로컬 환경 설정, 원격 저장소 연결, CI/CD 흐름 이해. Merge Conflict 해결 및 협업 중심 워크플로우 실습 경험 |
+| **Markdown**     | 문서 구조화 및 가독성 향상 중심의 작성법 학습. README 및 기술 문서 작성 역량 강화                         |
+| **VS Code**      | 확장툴 설치 및 디버깅 환경 구성. 문서 분류 방식 이해 및 실시간 협업 환경 경험                             |
+| **HTML5 & CSS3** | 웹 접근성 준수 기반 UI 설계. 텍스트, 이미지, 박스, 색상 등 스타일 속성 활용을 통한 사용자 중심 화면 구성 |
+| **Java (Eclipse)** | Java 11 환경 구축 및 src-package-class 구조 이해. 변수/상수/입출력 문법 학습 및 라이브러리 활용 능력 확보 |
+| **AI 도구 활용** | Copilot, ChatGPT 등 AI를 통한 트러블슈팅 및 코드 리뷰 자동화. 문제 해결 속도 향상 및 실무 적응력 강화     |
+
+---
+
+기술 스택 CS역량및 실무 적용사례
+
+|Git & Github|로컬 개발환경 설정, 원격 저장소 연결, CI/CD 흐름 이해. Merge Confict 해결 및 협업 중심 워크플로우 실습 경험|
+|Markdown|문서 구조화 및 가독성 향상 중심의 작성법 학습. README 및 기술 문서 작성 역량 강화|
+|VS Code|확장툴 사용 및 디버깅 환경 구성. 문서 분류 방식의 이해 및 실시간 협업 환경 경험|
+|HTML5 &CSS3| 웹 접근성 준수 기반 UI 설계. 텍스트, 이미지, 박스, 색상 등 스타일 속성 활용을 통한 사용자 중심 화면 구성 및 디자인|
+|Java (ECLIPSE)|Java 11 환경 구축 및 src-package-calss 구조 이해. 변수/상수/입출력 문법 학습 및 import를 통한 라이브러리 활용 능력 확보|
+|AI 도구 활용 | Copilot, ChatGPT 등 AI를 통한 코드 트러블슈팅 및 개선 피드백 점검. 문제 확인·해결 속도 향상 및 실무 적응력 강화|
+
+
+
+Golds
+
+Git & GitHub를 활용한 버전 관리 및 협업 흐름 학습
+
+Merge Conflict 실습을 통한 충돌 해결 경험
+
+Eclipse 기반 Java(11) 환경 구축 및 기초 문법, 자료형, 입출력 구조 학습
+
+기존 예제 코드 분석 및 import를 통한 라이브러리 활용 경험
+
+VS Code 확장 기능 활용 및 프로젝트 구조 관리 학습
+
+Markdown 문서 작성과 구조화 학습
+
+HTML을 통한 페이지 구조 설계 및 CSS 기초 스타일링 학습
+
+웹 접근성 개념 이해 및 기본 개선 경험
+
+AI 도구(Copilot, ChatGPT)를 활용한 코드 트러블슈팅 및 개선 피드백 점검 학습
+
+기술 스택 · CS 역량 및 학습/실습 경험
+
+Git & GitHub	로컬 개발환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 실습 경험
+Markdown	문서 구조화 및 가독성 중심 작성법 학습. README 및 학습 기록 문서 작성 경험
+VS Code	확장 기능 설치 및 활용, HTML/CSS 문서 작성 지원, 프로젝트 구조 관리 학습
+HTML5 & CSS3	HTML 문서 구조 설계, CSS 인라인 스타일 적용, 웹 접근성 개념 학습 및 기본 개선 실습
+Java (Eclipse)	Java 11 환경 구축, src → package → class 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험
+AI 도구 활용	Copilot, ChatGPT 등을 활용한 코드 트러블슈팅 및 개선 피드백 점검 학습
+
+
+---
+
+Golds
+
+Git & GitHub를 활용한 버전 관리 및 협업 흐름 학습
+
+ECLIPSE 기반 Java 코딩 환경 구축 및 기초 문법, 자료형, 입출력 구조 학습
+
+HTML을 통한 페이지 구조 설계 및 기초 CSS 스타일링 학습
+
+VS Code 확장 기능 활용 및 프로젝트 구조 관리 학습
+
+Markdown 문서 작성과 구조화 학습
+
+AI 도구(Copilot, ChatGPT)를 활용한 코드 트러블슈팅 및 개선 피드백 점검 학습
+
+웹 접근성 개념 이해 및 기본 개선 경험
+
+기술 스택 · CS 역량 및 학습/실습 경험
+
+기술 스택	CS 역량 및 학습/실습 경험
+Git & GitHub	로컬 개발환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 실습 경험
+Markdown	문서 구조화 및 가독성 중심 작성법 학습. README 및 학습 기록 문서 작성 경험
+VS Code	확장 기능 설치 및 활용, HTML/CSS 문서 작성 지원, 프로젝트 구조 관리 학습
+HTML5 & CSS3	HTML 문서 구조 설계, 인라인 CSS 스타일 적용, 웹 접근성 점검 및 기본 개선 실습
+Java (ECLIPSE)	Java 코딩 환경 구축, src → package → class 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험
+AI 도구 활용	Copilot, ChatGPT 등을 활용한 코드 트러블슈팅 및 개선 피드백 점검 학습
+
+
+---
+
+
+Golds (간결 키워드 중심)
+
+Git & GitHub
+
+Java 문법/자료형/입출력
+
+VS Code 확장 기능 활용
+
+AI 도구 활용 (Copilot, ChatGPT)
+
+HTML 구조 설계 & CSS 스타일링
+
+Markdown 문서 작성
+
+
+웹 접근성 이해
+
+기술 스택
+
+기술 스택	CS 역량 및 학습/실습 경험
+Git & GitHub	로컬 환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 문제 해결 경험
+Java (Eclipse)	Java 환경 구축, 패키지와 클래스의 계층 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험
+AI 도구 활용	Copilot, ChatGPT 등을 활용한 코드 트러블슈팅 해결 및 개선 피드백 점검 학습
+VS Code	            프로젝트 구조 관리, 확장 기능 설치/활용, HTML/CSS 문서 작성 지원 학습
+HTML5 & CSS3	HTML 문서 구조 설계, 인라인 CSS 스타일 적용, 웹 접근성 점검 및 개선 실습
+Markdown	문서 구조화, 가독성 중심 작성법 학습, README 및 학습 기록 문서 작성 경험
+

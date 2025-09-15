@@ -1,0 +1,71 @@
+if (num == 1) {System.out.print("one");}
+else if (num==2) {System.out.print("two");}
+else if (num==2) {System.out.print("three");}
+else {System.out.print("1,2,3이 아니다.")}
+
+반복문을 통해
+
+break; 와 continue를 통해 반복문을 탈출하거나 스킵할수있다.
+
+탈출루트로 갈때 continue;(아래에 적힌 조건수행없음)로 다시 시작지점으로 되돌리거나
+
+반복될때 조건을 충족시켜서 break; (바로 루프문 탈출)로 탈출할수있다.
+
+A.equals(B)
+
+삼항연산자를 통해 if문을 어느정도 대체하는게 가능한듯
+
+level = avg >=90? "수" : avg >= 80? "우" : avg >= 80? "미" : avg >= 80? "양" : "가"; 
+
+레벨 = 평균 90점이하? true 수 아닐경우(:) 평균 80점이하? 마지막자리에 false값;을 가져가면 됨
+
+
+if식에서 먼저 else if 나 else로 진입하려면 초기값을 if의 범위에 없게 하면됨
+
+
+제어문에서 초기값 설정을 통해 바로 false(else) else if 값으로 조정하는것도 가능하고,
+
+반복문이라면 먼저 false시> 입력해주세요 메세지를 먼저 출력하는 구조로 갈수도있다 (이떄 if는 출력이 아니니까)
+
+(!(a >= 100 && a <= 0 || b == 5 && b != 30)) 이런식으로 부정문도 가능하고, a != b+c 구조도 가능하다, 연산할떄
+
+
+
+1.무한반복 코드
+
+에러메세지 
+
+Unreachable code 
+
+// 절대로 도달할수없는 코드 발생(데드코드)
+
+
+무한으로 반복되는 코드 for (;;) {System.out.println("");}를 작성하니 밑에 
+Unreachable code 가 발생했다.
+
+해결법
+
+for (;;)에서 탈출조건을 설정하는것과 실행문에 break;를 설정하여 
+다른 코드에도 도달할 수 있게 변경
+
+
+
+
+
+
+2. 문법오류
+
+에러메세지
+Syntax error on token "+", invalid AssignmentOperator
+
+switch 문에서 발생한 문제로
+
+switch (a) {
+case 1 {...;} 형태로 되어있을때 case 값 뒤에 : 표시를 누락시켜서 발생한 문제
+}
+
+
+
+마이너스 통장 x 
+
+아이디 비번 입력 부분 축약(필요없는부분없애기?)

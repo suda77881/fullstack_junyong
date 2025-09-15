@@ -1,0 +1,36 @@
+1강에서 배운내용
+
+1. git 설치
+git-scm.com으로 접속
+
+다운로드 64bit 경우에 따라 arm 버전 선택
+
+시작에서 > git bash 실행
+
+git config --global user.name "유저이름" 
+git config --global user.email "유저이메일주소"
+
+유저이름과 이메일주소를 입력한다.
+
+git config --list 입력하여 적용됐는지 확인
+
+2. visual studio code 기동
+
+파일에서 폴더를 실행한다.
+
+만들어둔 폴더를 지정하고 안에 (md파일이 존재할 경우 자동으로 열림)
+
+3. 로컬 저장소 생성 및 깃허브(클라우드) 연결
+
+git init로 로컬 저장소를 생성하고
+
+git remote add origin "깃허브 주소" 원격으로 깃허브 주소에 연결한다.
+
+git remote -v 로 원격 상태를 확인하고
+
+git add . 으로 파일을 만들고, 저장소에 넣는다. 이때 변경점이 필요하다, " . 은 모든 파일을 뜻하는 듯"
+
+git commit -m "설명" 설명을 덧붙여서 커밋을 한다
+
+git push origin master 마스터 권한으로 깃허브 주소에 파일을 저장한다.
+

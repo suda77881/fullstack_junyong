@@ -1,0 +1,25 @@
+임포트 import java.util.
+변수 선언 int korean;
+입력 korean = scanner.nextint();
+처리 
+출력 print
+
+
+
+
+
+package com.company.회사명;
+import java.util.Scanner
+public static void main(String[] args){
+
+
+
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+	Duplicate local variable a
+	Duplicate local variable b
+
+	at com.company.java003.Casting001.main(Casting001.java:38)
+
+
+강제 형변환 오류

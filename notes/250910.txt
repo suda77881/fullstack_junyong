@@ -1,0 +1,66 @@
+변수선언;
+while(조건) {
+
+실행문
+증감문}
+
+do {실행문
+
+증감문} while(조건)
+
+
+
+
+1. 트러블슈팅 : Scanner 입력 스트림 누락 
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+	The constructor Scanner() is undefined
+	Syntax error, insert "( )" to complete Expression
+
+	at com.company.test.Bank4.main(Bank4.java:20)
+
+원인 : Scanner scanner = new Scanner(); //  Scanner(); 부분 괄호안에 입력스트림이 누락됨
+
+
+해결방법 : Scanner scanner = new Scanner(System.in); 입력스트림이 빠진 부분에 System.in(키보드 입력스트림)을 작성해준다. 
+
+
+
+2. for문 종료조건 설정 누락
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "; ; ) Statement" to complete ForStatement
+
+원인 : for ( ) <<
+{ 실행문 } 
+
+for문의 세가지 구성요소중 하나이상이 빠져있기 때문에 발생한문제
+
+해결방법 : for (;;) {실행문} // ;; or int i=1; i <= 5; i++
+
+종료조건을 만들어주거나, 무한반복을 설정하고 싶다면 ;;로 대체한다.
+
+
+
+
+
+display: flex; 로 자식요소들을 가로로 정렬하고 유연한 레이아웃
+
+flex-direction: row; 가 기본값으로 정해져있고
+flex-direction: column-reverse; 로 배열을 뒤집을수있다.
+
+flex : none으로 항목들 사이즈 크기를 한번에 설정
+margin-left:auto; 로 마지막항목을 오른쪽 끝으로 정렬
+
+flex-direction : column; height :300px; 세로방향으로?
+
+justify-content: space-between 으로 아이템들을 좌우 끝에 배치 가운데 여백은 자동생성
+
+display:fle
+
+
+
+display: flex 자식요소들 가로방향나열해줘
+justify-content: center; /*space-between 좌우 끝에 배치*/
+flex-wrap:wrap; /* */
+

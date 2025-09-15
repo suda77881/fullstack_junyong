@@ -15,6 +15,7 @@ public class Bank002_Array2 {
          System.out.println( Arrays.toString(id));
          System.out.println( Arrays.toString(pass));
          System.out.println( Arrays.toString(balance));
+         
           //■기능 1. 메뉴판
           System.out.print("\n\n🌟💰 WELCOME TO BANK SYSTEM 💰🌟\n" + 
              "\n[1] ➕ 계좌 추가" + "\n[2] 🔍 계좌 조회" + "\n[3] 💵 입금하기" + "\n[4] 💸 출금하기" + "\n[5] 🗑️ 계좌 삭제  "
@@ -54,17 +55,16 @@ public class Bank002_Array2 {
              System.out.print("[2]비밀번호 입력 > ");    tempPass = scanner.next();
              //처리
              //3. ver-0  int find=-1;   없는 번호      / 문자열비교는 equals
-             find=-1; 
+// 
              for (int i=0; i<id.length; i++)
              {
-            	 if(!(id[]==null)) {find = i;break;}
-             }
-             if (id[find] == tempId) {for (int i=0; i<pass.length; i++)
-             {
-            	 if(!(pass[i]==null)) {find = i;break;}
-             }if(pass[find] == tempPass) {break;}
+            	 if(!(id[i]==null)) {find = i;}
+             	if (tempId == id[find] && tempPass == pass[find]) {System.out.println("로그인성공");break;}
              }
              
+             	
+//             
+//             
              
              //3. ver-1   사용자에게입력받은아이디와  id[0]번이 같고  사용자에게입력받은비밀번호와 pass[0]번이면  사용자번호는0
              //3. ver-1   사용자에게입력받은아이디와  id[1]번이 같고  사용자에게입력받은비밀번호와 pass[1]번이면  사용자번호는1

@@ -151,10 +151,10 @@
           <br />
           <h4>KeyWord</h4>
           <br />
-          <ul class="d-flex">
-            <input type="button" value="열정" class="btn btn-danger" />
-            <input type="button" value="성실" class="btn btn-primary" />
-            <input type="button" value="끈기" class="btn btn-success" />
+          <ul class="d-flex" style="color:transparent;">
+            <li><input type="button" value="열정" class="btn btn-danger" /></li>
+            <li><input type="button" value="성실" class="btn btn-primary" /></li>
+            <li><input type="button" value="끈기" class="btn btn-success" /></li>
           </ul>
         </div>
         <div class="col-sm-4"><!--3-->
@@ -184,39 +184,47 @@
               alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing</a></p>
       </div><!--fix해서 더 깔끔한 버전으로-->
       <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
-
       </div>
+      </div>
+    </div>
+      <section class="contact mt-2">
+        <div class="container bg-success" style="display:flex; flex-direction:column; ">
+          <h4 style="text-align:center;">Contact Me</h4>
+          <br /><br />
+          <p style="text-align:center;">dev sjy에게 문의주세요!</p>
 
-      <section class="contact">
-        <h4 style="text-align:center;">Contact Me</h4>
-        <br /><br />
-        <p style="text-align:center;">dev sjy에게 문의주세요!</p>
+          <div class="row">
+            <p>제목</p>
+            <div class="form-floating mb-5 mt-1">
+              <input type="text" class="form-control" id="email" placeholder="Enter email" name="email"> <label
+                for="email">Email</label>
+            </div>
+          </div>
 
-        <p>제목</p>
-        <div class="form-floating mb-1 mt-1">
-          <input type="text" class="form-control" id="email" placeholder="Enter email" name="email"> <label
-            for="email">Email</label>
+          <div class="row">
+            <p>내용</p>
+            <div class="form-floating mb-5 mt-1">
+              <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+              <label for="comment">Comments</label>
+            </div>
+          </div>
+        
+
+        <input type="button" 
+        style="color:#ffffff;" 
+        class="bg-primary m-auto mb-2" value="메일 보내기">
+
         </div>
 
-        <p>내용</p>
-        <div class="form-floating">
-          <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
-          <label for="comment">Comments</label>
-        </div>
-
-        <input type="button" style="margin-top:10px;
-                                    margin-left:860px;width:100px; 
-                                    color:#ffffff;" 
-                                    class="bg-success"
-          value="메일 보내기">
 
       </section><!-- cntact end -->
 
       <section class="footer">
-        <footer style="width:100%; margin:auto; height:100px; padding: 10px 20px; display:flex;
-        justify-content:center; background-color:#b7988a31;">@2025 sjy</footer>
+        <div class="container mt-5">
+          <p style="background-color:#333; border-radius:10px;; text-align: center; padding:1%;">@2025
+            sjy</p>
 
-
+        </div>
       </section><!-- footer end -->
 
 

@@ -1,0 +1,91 @@
+Fork는 개인 작업 > PR로 기여
+팀원 초대는 공동 작업 > 권한에 따라 직접 push 가능
+
+
+
+<style>
+/* 전체선택자 - 전체여백빼기 */
+ * {}
+
+
+공백단위로 class 두개 적용가능 
+
+ex)
+class="card mina" card(1) mina(2)
+
+공백을 단위로 태그도 지정가능
+
+.card img 
+
+background:linear-gradient(135deg, #dbeafe, #f0f9ff);
+
+
+
+
+Error: CSS: transform: taranslateY(-5px) is not a transform value.
+
+At line 23, column 45
+
+translateY(-5px); box-shadow: 
+
+
+java
+
+
+package com.company.java002_ex;
+
+import java.util.Scanner;
+
+public class InputEx2002 {
+
+	public static void main(String[] args) {
+		//변수
+		//
+		double avg;
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		//입력
+		System.out.print("당신의 국어점수를 입력하세요>");
+		int korean = scanner.nextInt();
+		System.out.print("당신의 영어점수를 입력하세요>");
+		int english = scanner.nextInt();
+		System.out.print("당신의 수학점수를 입력하세요>");
+		int math = scanner.nextInt();
+		
+		// 처리
+		int result = (korean + english + math);
+		avg = result / 3.0; 	//정수 = 정수/정수 → 실수 = 정수/실수
+		// 출력
+		System.out.print("총점 : " +result+ "\n평균 :" +avg );
+		
+	}
+
+}
+
+
+실수값을 내고싶다면
+계산값중 하나를 실수로 바꿔주면된다
+
+char는 저장할 떄는 숫자로, 출력할떈 숫자
+
+
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
+	Type mismatch: cannot convert from float to long
+	Type mismatch: cannot convert from boolean to int
+
+	at com.company.java003.Casting001.main(Casting001.java:18)
+
+
+트러블슈팅
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+    Syntax error, insert ";" to complete Statement
+
+    at com.company.java004_ex.IfEx008_2.main(IfEx008_2.java:35)
+
+문제점    : 자바 코드에서 세미콜론(;)이 누락되어 문장이 제대로 종료되지 않았습니다. 
+
+해결방안 : 35번째 줄의 코드를 확인하고, 누락된 세미콜론을 적절한 위치에 추가하여 문장을 완성합니다. 
+자바에서는 대부분의 명령문(statement)이 세미콜론으로 끝나야 하므로, 조건문이나 반복문 내부의 실행문에 세미콜론이 빠지지 않았는지 꼼꼼히 확인해야 합니다.
