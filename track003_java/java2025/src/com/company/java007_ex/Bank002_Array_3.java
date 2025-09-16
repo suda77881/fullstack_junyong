@@ -1,4 +1,6 @@
-public class Array2Ex008_3 {
+package com.company.java007_ex;
+
+public class Bank002_Array_3 {
     public static void main(String[] args) {
         int[][] datas = {
             {10, 10, 10, 10},
@@ -8,20 +10,13 @@ public class Array2Ex008_3 {
 
         int[][] result = new int[datas.length + 1][datas[0].length + 1];
 
-        
-        
-        // 00 01 02 03  
-        // 10 11 12 13
-        // 20 21 22 23
-        // 30 31 32 33
-       
         for (int ch = 0; ch < datas.length; ch++) {
-            for (int kan = 0; kan < datas[ch].length+1; kan++) {
-                result[ch][kan] = datas[ch][kan]; 
-          
-                result[ch][result[ch].length - 1] += datas[ch][kan];              
-                result[result.length - 1][kan] += datas[ch][kan];
-                result[result.length - 1][result[ch].length - 1] += datas[ch][kan];
+            for (int kan = 0; kan < datas[ch].length; kan++) {
+                result[ch][kan] = datas[ch][kan];
+
+                result[ch][result[ch].length - 1] += datas[ch][kan];               // Row sum
+                result[result.length - 1][kan] += datas[ch][kan];                 // Column sum
+                result[result.length - 1][result[ch].length - 1] += datas[ch][kan]; // Grand total
             }
         }
 

@@ -106,7 +106,8 @@ public class Ex {
 				double chance = (Math.random());
 				if (chance < per) {
 					System.out.print("🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟\n");
-					System.out.print("🐟🐟🐟낚시에 성공했습니다🐟🐟🐟 + \n" + ft[1] + " " + (balance / 1000) + "mm\n"); fish += 1;
+					System.out.print("🐟🐟🐟낚시에 성공했습니다🐟🐟🐟 + \n" + (int)(Math.random() * ft.length)  
+									+ " " + (balance / 1000) + "mm\n"); fish += 1;
 					System.out.print("\n🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟\n");break;
 					//balance += (balance / 1000);
 				}

@@ -6,13 +6,12 @@ public class Bank001_Control {
       //변수
       int num = -1; String id = "", pass="";  double balance=0;
       Scanner scanner = new Scanner(System.in);
-      
+      int sct = 0;
       //입력+처리+ 출력
-       for(;;){  
+       while(sct != 9){	//	메뉴에서 종료가 눌릴때 까지;  
           //■기능 1. 메뉴판
           System.out.print("\n\n== BANK ==" + 
-             "\n1. 추가" + "\n2. 조회" + "\n3. 입금" + "\n4. 출금" + "\n5. 삭제 > "     
-          );  
+             "\n1. 추가\n2. 조회\n3. 입금\n4. 출금\n5. 삭제 > \n9. 종료 ");  
           num = scanner.nextInt();
           //■기능 2. 
                if(num==9){ System.out.println("종료합니다.");  break;   }
@@ -56,6 +55,7 @@ public class Bank001_Control {
          } // end else if
            
       }// end for 
+       System.out.println("9번 기능 종료");
    }// end main
 }//end class
 

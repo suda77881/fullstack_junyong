@@ -15,14 +15,17 @@
     div#demo {       height: 300px;    overflow: hidden; }
 
     /* about me */
-    .info{ background-color: aliceblue; }
+    .info{ background-color: azure; }
+    .portfolio{ background-color: turquoise;  }
+    .portfolio  .container{ background-color: white;  
+            border-radius:20px; padding:20px; box-shadow:0 0 5px rgba(0,0,0,0.5);}
 
     /* Q1. about me   각부분들 여백주기  */
-    .info h4{ margin: 5% 0; }
+    .info h3 , .portfolio h4, .contact h4{ margin: 5% 0; }
     /* Q2. KeyWord 나와있는 ul태그에 class="keyWord"  */
     .keyWord li{  list-style-type:none;  margin-right:10px; }
     /* Q3. h3태그에 중앙배치 , 밑줄  */
-    .info h3{  text-decoration: underline; font-size: 2.2em;} 
+    .info h3 , .portfolio h3, .contact h3{  text-decoration: underline; font-size: 2.2em;} 
   </style>
 </head>
 <body>
@@ -141,16 +144,16 @@
   </section>
 
   <!-- portfolio -->
-  <section  class="portfolio">
-        <h3 class="text-center">Portfolio</h3>
+  <section  class="portfolio p-5">
+        <h3 class="text-center m-5">Portfolio</h3>
 
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
                     <!-- <img src="./img/portfolio1.jpg"  alt=""/> -->
-                    <iframe class="w-100" 
-                        src="https://www.youtube.com/embed/vPgugGnh1l8?si=9jDg1JHEieLzkK_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-                    <p class="text-center m-3"><a href="#" class="btn btn-danger"> 포트폴리오 더보기 </a></p>
+                    <iframe class="w-100  no-border" 
+                        src="https://www.youtube.com/embed/vPgugGnh1l8?si=9jDg1JHEieLzkK_k" title="YouTube video player"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+                    <p class="text-center m-3"><a href="#" class="btn btn-success"> 포트폴리오 더보기 </a></p>
                 </div><!--end col-sm-4-->
                 <div class="col-sm-4">
                     <h4> spring boot + jpa + react  portfolio</h4>
@@ -206,13 +209,9 @@
   </section>
 
   <!-- footer -->
-  <footer class="footer text-center bg-secondary p-5">
-
-     &copy; copyrights 2025 all.right reserved
-     
+  <footer  class="footer  text-center  bg-secondary  text-white p-5">
+    &copy;  copyrights  company  2025 all. rights reserved 
   </footer>
-  
 
 </body>
-
 </html>

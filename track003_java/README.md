@@ -687,6 +687,134 @@ datas[ch].length+1 일때 kan==4 가 되므로 datas에서 인덱스값 0~3까�
 > 인덱스 범위 지정에 대한 어려움에 대해 많이 느끼고 다시 한번 공부하게되었다.
 
 
+
+
+<!-- 25.09.16 -->
+
+
+<br/>
+<br/>
+<br/>
+
+## case.10   //  메서드 return ; 사용시 데드코드 발생
+
+```
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Unreachable code
+
+	at com.company.java008.Method003.sign(Method003.java:8)
+	at com.company.java008.Method003.main(Method003.java:14)
+```
+
+<br/>
+
+### 원인
+
+```
+       public static String sign() {
+		return "🎭 「전설의_마법의_도끼를_든_초코우유_중독자_용감한_불꽃전사」 🎭";
+	System.out.println(".........나짤려요~~............");  //   Unreachable code
+	}
+    ...
+    System.out.println("1. 당신의 이름은? " + sign());
+```
+
+return은 메서드를 즉시 종료시키기 때문에, 그 뒤에 있는 코드는 실행되지 않으며 컴파일 오류(Unreachable code)가 발생한다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+       public static String sign() {
+		return "🎭 「전설의_마법의_도끼를_든_초코우유_중독자_용감한_불꽃전사」 🎭";
+	    // Unreachable code 제거
+	}
+    ...
+    System.out.println("1. 당신의 이름은? " + sign());
+```
+Unreachable code로 된 부분의 코드를 제거하거나, 세미콜론 앞 쪽으로 출력문의 내용을 포함시킨다(이때 호출한 부분이 `System.out.println`의 내용 입력 부분이므로 System.out,print 종류의 출력문을 중복으로 포함 시킬 수 없다.). 
+
+<br/>
+
+### 배운점
+> 메서드는 return; 부분에서 종료되므로. 뒷부분을 반환할 수 없다는 점을 알게되었다.
+
+
+
+
+에러메시지 2
+
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	This method must return a result of type int
+
+	at com.company.java008_ex.MethodEx004.return_num(MethodEx004.java:6)
+	at com.company.java008_ex.MethodEx004.main(MethodEx004.java:39)
+
+
+
+원인 
+
+```
+
+public static int return_num() {return ; } // 리턴으로 돌려줄 값이 비어있음
+...
+System.out.println("1. 내가 좋아하는 숫자    :" + return_num()); 
+
+```
+
+
+해결방법 :
+
+```
+public static int return_num() {return 1 ; } // return으로 돌려줄 값을 입력한다.
+```
+
+
+
+## case.11   //  메서드 return ; 반환값 누락
+
+```
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+   This method must return a result of type int
+
+   at com.company.java008_ex.MethodEx004.return_num(MethodEx004.java:6)
+   at com.company.java008_ex.MethodEx004.main(MethodEx004.java:39)
+
+```
+
+<br/>
+
+### 원인
+
+```
+        public static int return_num() {return ; } // 리턴의 반환 값이 비어있음
+    ...
+    System.out.println("1. 내가 좋아하는 숫자    :" + return_num()); 
+```
+
+
+
+
+
+<br/>
+
+### 해결방법
+
+```
+       public static int return_num() {return 1 ; } //  반환값 데이터를 입력하여  오류를 해결하였다.
+    ...
+    System.out.println("1. 내가 좋아하는 숫자    :" + return_num()); 
+```
+
+### 배운점
+> return 사용시에 반환값을 공백으로 두고 사용할 수 없다는 것을 알았다.
+
+
+
+
 ---
 <br/> 
 <br/>
