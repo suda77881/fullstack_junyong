@@ -68,7 +68,7 @@ public class Ex2_array {
 //							"낚시꾼으로 등록되었습니다." + (age <= 13 ? "어린이 낚시꾼" : 
 //								age <= 20 ? "어린이 낚시꾼" : age <= 50 ? "어린이 낚시꾼" : "어린이 낚시꾼"));
 //				}
-				System.out.print("낚시꾼으로 등록되었습니다. : " + bnkbook + "입니다.");
+				System.out.print("낚시꾼으로 등록되었습니다. : 당신은 " + bnkbook + "번째 회원 입니다.");
 
 				break;
 
@@ -196,8 +196,9 @@ public class Ex2_array {
 				char ch = ' ';
 				System.out.println("현재 물고기는 : " + fish + "마리입니다.");
 				System.out.println("모두 판매 하시겠습니까?");ch = sc.next().charAt(0);
-				if(ch == 'y' || ch == 'Y') {System.out.println("모두 판매되었습니다.판매한 금액 :" + fish * 500 + "원");}
-				balance += fish * 500;
+				if(ch == 'y' || ch == 'Y') 
+				{System.out.println("모두 판매되었습니다.판매한 금액 :" + fish * 500 + "원");}
+				balance[find] += (fish * 500);
 				fish = 0;
 				break;
 				
@@ -214,10 +215,12 @@ public class Ex2_array {
 				if (scc == checkscc) {
 
 					if (delete.equals("Y") || delete.equals("y")) {
-						id = "";
-						pass = "";
-						pass = "";
-						balance = 0.0;
+						for (int i = 0; i < id.length; i++) {
+						id[i] = "" ;
+						pass[i] =  "";
+						balance[i] = 0.0;
+						
+						}
 						tempid = "";
 						temppass = "";
 						age = 0;

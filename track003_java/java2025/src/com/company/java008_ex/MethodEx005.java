@@ -3,33 +3,45 @@ import java.util.Scanner;
 public class MethodEx005 {
 	
 	
+	public static String inputString (String title)
+    {Scanner sc = new Scanner(System.in);
+    System.out.print(title + "입력 > "); return sc.next();}	// 입력받기 메서드
 	
 	public static int process_total (int kor,int eng,int math) {return kor + eng + math;}
 	public static float process_avg (int total) {return total / 3.0f;}
 	public static String process_pass (float avg, int kor, int eng, int math) 
-	{ if (avg >= 60 && kor >= 40 && eng >= 40 && math >= 40) {return "합격";} else {return "불합격" ;} }
+	{return avg < 60 ? "불합격" : kor < 40 || eng < 40 || math<40 ? "재시험" : "합격";}
+//	{ if (avg >= 60 && kor >= 40 && eng >= 40 && math >= 40) 
+//	{return "합격";} else {return "불합격" ;} 
+//	}
+	
 	public static String process_scholar (float avg) 
 	{if (avg >= 95){return"장학생";}else{return"---";}}
 	public static String process_star (float avg) 
-	
-	{if (avg >= 70 && avg < 80)       {return "*******";}
-	else if (avg >= 10 && avg < 20)  {return "*";}
-	else if (avg >= 20 && avg < 30)  {return "**";}
-	else if (avg >= 30 && avg < 40)  {return "***";}
-	else if (avg >= 40 && avg < 50)  {return "****";}
-	else if (avg >= 50 && avg < 60)  {return "*****";}
-	else if (avg >= 60 && avg < 70)  {return "******";}
-	else if (avg >= 80 && avg < 90)   {return "********";}
-	else if (avg >= 90 && avg < 100)  {return "*********";}
-	else if (avg == 100)              {return "**********";}
-	else {return "---";}
+	{
+		String result="";
+	    // 93 -> 9 95 -> 98 -> 9 [99.67 / 10] -> (int)9.967 -> 9]
+		for(int i=0; i<(int)(avg/10); i++) {result += "★"; }
+		return result;
+		// 평균 점수대로 별표 붙이기, 예) 70점대이면 별7개, 80점대이면 별8개, 
+		// 90점대이면 별9개 (93,95,98) , 100점이면 별10개
 	}
 	
-//	public static String process_star (float avg) 
-//	{String result = ""; 
-//	for (int i = 1; i < avg / 10.0; i++ ) { result += "*";} return result;}
-//	
+//	{if (avg >= 70 && avg < 80)       {return "*******";}
+//	else if (avg >= 10 && avg < 20)  {return "*";}
+//	else if (avg >= 20 && avg < 30)  {return "**";}
+//	else if (avg >= 30 && avg < 40)  {return "***";}
+//	else if (avg >= 40 && avg < 50)  {return "****";}
+//	else if (avg >= 50 && avg < 60)  {return "*****";}
+//	else if (avg >= 60 && avg < 70)  {return "******";}
+//	else if (avg >= 80 && avg < 90)   {return "********";}
+//	else if (avg >= 90 && avg < 100)  {return "*********";}
+//	else if (avg == 100)              {return "**********";}
+//	else {return "---";}
+//	}
 	
+//	{String result = ""; 
+// for (int i = 0; i < (avg / 10); i ++) {result += "*"; return result;}}
 	
 	public static void main(String [] args) {
 		
@@ -44,6 +56,9 @@ public class MethodEx005 {
 	      
 	      /////////////////////(2) 입력 : 이름, 국어, 영어, 수학점수를 입력받으시오.
 	      System.out.print("이름 입력 >"); name = sc.next();
+	      // public static int inputNum ()
+	      // {System.out.print("국어입력 > "); return sc.nextInt();}
+	      // System.out.print(); kor = sc.nextInt(); // 다른점 "국어" , "영어" , "수학"
 	      System.out.print("국어 입력 >"); kor = sc.nextInt();
 	      System.out.print("영어 입력 >"); eng = sc.nextInt();
 	      System.out.print("수학 입력 >"); math = sc.nextInt();
