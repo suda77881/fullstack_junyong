@@ -473,14 +473,17 @@ switch (num) {
 
 <br/>
 
- 반복문으로 인한 Unreachable code 경고 발생
+
+## case.7	//	반복문에서 Unreachable code 경고 발생
+
+ 
 
 ```
 Java
 
 Unreachable code
 ```
-해당 에러 메세지는 for문 아래에 위치한 구문에 생성되며, 해당 줄에 붉은색 밑줄이 표시됨.
+해당 에러 메세지는 for문 아래에 위치한 구문에 생성되었고, 해당 줄에 붉은색 밑줄이 표시됨.
 
 <br/>
 
@@ -584,7 +587,7 @@ Java
 
 <!-- 이후 용어적 수정필요 좀더 이해필요 -->
 
-## case.8   //    Scanner 입력 스트림 누락 
+## case.9   //    Scanner 입력 스트림 누락 
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
@@ -637,7 +640,7 @@ new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **Syste
 
 <br/>
 
-## case.9   //  for문 사용시 인덱스 초과 문제
+## case.10   //  for문 사용시 인덱스 초과 문제
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
@@ -696,7 +699,7 @@ datas[ch].length+1 일때 kan==4 가 되므로 datas에서 인덱스값 0~3까�
 <br/>
 <br/>
 
-## case.10   //  메서드 return ; 사용시 데드코드 발생
+## case.11   //  메서드 return ; 사용시 데드코드 발생
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
@@ -776,7 +779,7 @@ public static int return_num() {return 1 ; } // return으로 돌려줄 값을 �
 
 <!-- 25_09_17 -->
 
-## case.11   //  메서드에서 return ; 사용시 경우의 수 문제
+## case.12   //  메서드에서 return ; 제어문 사용시 문제
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
@@ -799,7 +802,6 @@ Java
 	}
 ...
 System.out.println("당신의 평균은?" + stdAvg(88)); // B 출력
-
 ```
 
 `retrun` 타입이 있는 메서드의 경우 `모든 실행경로에서 값을 반환`해야한다.
@@ -831,7 +833,7 @@ System.out.println("당신의 평균은?" + stdAvg(88)); // B 출력
 <br/>
 <br/>
 
-## case.12   //  메서드 return ; 반환값 누락
+## case.13   //  메서드 return ; 반환값 누락
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
@@ -862,6 +864,7 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problem:
     ...
     System.out.println("1. 내가 좋아하는 숫자    :" + return_num()); 
 ```
+return;이 존재하는 경우 반드시 값을 돌려줘야하기 때문에(제어문은 모든 경우의 수를 포함해서) 원하는 값을 입력해준다. 
 
 ### 배운점
 > return 사용시에 반환값을 공백으로 두고 사용할 수 없다는 것을 알았다.

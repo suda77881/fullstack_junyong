@@ -76,8 +76,7 @@ public class Ex2_array {
 			case 3:
 			case 4:
 			case 5:
-				if (login == 1) {
-				} else {
+				if (login == 0) {
 					System.out.println("사용자 인증이 필요한 기능입니다.");
 					System.out.print("사용자 이름을 입력해주세요 >");
 					tempid = sc.next();
