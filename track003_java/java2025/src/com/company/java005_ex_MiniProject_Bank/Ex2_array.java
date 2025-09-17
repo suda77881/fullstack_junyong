@@ -170,28 +170,6 @@ public class Ex2_array {
 				break;
 
 			case 4:
-//				for (;;) {
-//					System.out.print("현재 잔액은 : " + "" + balance + "원 입니다." 
-//				+ "\n출금하실 금액을 입력해주세요 : ");
-//					money = sc.nextInt();
-//					if (money > balance) {
-//						System.out.println("잔액이 부족합니다.");
-//						continue;
-//					}
-//					balance -= money;
-//					System.out.println("┌────────────┐");
-//					System.out.println("│ ₩ 출금 완료! │");
-//					System.out.println("└────────────┘");
-//					System.out.printf("현재 통장 금액은 : %.2f 원 입니다.", balance);
-//					try {
-//						Thread.sleep(2000); // 2초 동안 멈춤
-//					} catch (InterruptedException e) {
-//						e.printStackTrace();
-//					}
-//					money = 0;
-//					break;
-//				}
-//				break;
 				char ch = ' ';
 				System.out.println("현재 물고기는 : " + fish + "마리입니다.");
 				System.out.println("모두 판매 하시겠습니까?");ch = sc.next().charAt(0);
