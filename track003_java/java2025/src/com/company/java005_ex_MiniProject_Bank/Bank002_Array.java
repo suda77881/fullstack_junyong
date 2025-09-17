@@ -1,6 +1,6 @@
 package com.company.java005_ex_MiniProject_Bank;
 
-import java.util.Scanner;
+import java.util.Scanner; // 수업에서한거
 
 public class Bank002_Array {
 	public static void menu() {System.out.print("\n\n== BANK ==\n1. 추가"
@@ -100,7 +100,7 @@ public class Bank002_Array {
           	}// switch end
     	  
       }
-      else {System.out.println("비밀번호가 일치하지 않습니다.");}break;
+      else {System.out.println("비밀번호가 일치하지 않습니다.");} continue; // 다시 메뉴로 
       
       
       

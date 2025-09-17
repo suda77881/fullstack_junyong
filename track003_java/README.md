@@ -774,7 +774,64 @@ public static int return_num() {return 1 ; } // return으로 돌려줄 값을 �
 
 
 
-## case.11   //  메서드 return ; 반환값 누락
+<!-- 25_09_17 -->
+
+## case.11   //  메서드에서 return ; 사용시 경우의 수 문제
+
+```
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	This method must return a result of type String
+
+	at com.company.test.Repeat_0917.stdAvg(Repeat_0917.java:30)
+	at com.company.test.Repeat_0917.main(Repeat_0917.java:44)
+
+```
+
+<br/>
+
+### 원인
+
+```
+Java
+
+        public static String stdAvg(int score) {
+		if (score >= 90) {return "A";}else if (score >= 80) {return "B";}else if (score >= 70) {return "C";}; // 70미만일 때 ?
+	}
+...
+System.out.println("당신의 평균은?" + stdAvg(88)); // B 출력
+
+```
+
+`retrun` 타입이 있는 메서드의 경우 `모든 실행경로에서 값을 반환`해야한다.
+이 코드의 경우 score가 70미만일 경우, return 이 실행되지 못하여 발생하는 문제 
+
+
+
+
+
+<br/>
+
+### 해결방법
+
+```
+       public static String stdAvg(int score) {
+		if (score >= 90) {return "A";}else if (score >= 80) {return "B";}else if (score >= 70) {return "C";} else return "D"; // 70미만일 때 ?
+	}
+...
+System.out.println("당신의 평균은?" + stdAvg(88)); // B 출력
+```
+
+나머지 70미만일 경우의 반환 값을 만들어준다.
+
+### 배운점
+> retrun 사용시 반드시 모든 값에 대한 반환이 필요하다는 것을 배웠다.
+
+
+<br/>
+<br/>
+<br/>
+
+## case.12   //  메서드 return ; 반환값 누락
 
 ```
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
@@ -796,9 +853,6 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problem:
 ```
 
 
-
-
-
 <br/>
 
 ### 해결방법
@@ -812,7 +866,9 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problem:
 ### 배운점
 > return 사용시에 반환값을 공백으로 두고 사용할 수 없다는 것을 알았다.
 
-
+<br/>
+<br/>
+<br/>
 
 
 ---
