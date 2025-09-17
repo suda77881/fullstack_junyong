@@ -97,9 +97,9 @@ public class Ex2_array {
 							e.printStackTrace();
 						}
 					} else {
-						System.out.println("사용자 정보를 확인해주세요.");
+						System.out.println("사용자 정보를 확인해주세요.");continue;
 					}
-					continue;
+					
 				}
 				login = 1; // 로그인 성공
 			}
