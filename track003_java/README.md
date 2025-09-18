@@ -523,6 +523,11 @@ for문에 `반복 종료 조건`을 명시하거나 루프문 내부에 `break`�
 <br/>
 
 
+#### 배운점 
+> for을 사용하는 경우 탈출 조건을 만들거나 break; 사용해서 나와야 한다는것을 배웠다.
+
+<br/>
+<br/>
 <br/>
 
 ## case.8       // 주석 문법 오류  
@@ -577,11 +582,13 @@ Java
 
 
 
-### 배운점
+#### 배운점
+
 > 이번 코딩에서 시작과 끝 맺음이 상당히 중요하다고 배웠다.
 코드가 전체가 문제가 생기는 일도 있어서 심각한 오류다.
 
-
+<br/>
+<br/>
 <br/>
 
 
@@ -637,8 +644,10 @@ new Scanner이후에 ()안에 입력스트림을 작성해준다. 이때 **Syste
 | new Scanner이후에 ()안에 입력스트림을 작성해준다. | new Scanner() 호출 시 괄호 안에 입력 스트림을 명시해야 한다. | 
 | System.in 키보드 입력을 의미하는 표준입력 스트림이다. | System.in은 키보드 입력을 의미하는 자바의 표준 입력 스트림이다. |  -->
 
-
 <br/>
+<br/>
+<br/>
+
 
 ## case.10   //  for문 사용시 인덱스 초과 문제
 
@@ -686,10 +695,13 @@ datas[ch].length+1 일때 kan==4 가 되므로 datas에서 인덱스값 0~3까�
 
 <br/>
 
-### 배운점
+#### 배운점
+
 > 인덱스 범위 지정에 대한 어려움에 대해 많이 느끼고 다시 한번 공부하게되었다.
 
-
+<br/>
+<br/>
+<br/>
 
 
 <!-- 25.09.16 -->
@@ -743,12 +755,13 @@ Unreachable code로 된 부분의 코드를 제거하거나, 세미콜론 앞 �
 <br/>
 
 ### 배운점
+
 > 메서드는 return; 부분에서 종료되므로. 뒷부분을 반환할 수 없다는 점을 알게되었다.
 
 
 
 
-에러메시지 2
+<!-- 에러메시지 2
 
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
 	This method must return a result of type int
@@ -775,7 +788,18 @@ System.out.println("1. 내가 좋아하는 숫자    :" + return_num());
 public static int return_num() {return 1 ; } // return으로 돌려줄 값을 입력한다.
 ```
 
+배운점 :
 
+>reuturn; 세미콜론 위치에서 리턴이 종료되기 때문에 반환하려면 세미콜론과 return 사이에 담아야한다는 것을 알았다.
+
+
+<br/>
+<br/>
+<br/> -->
+
+<br/>
+<br/>
+<br/>
 
 <!-- 25_09_17 -->
 
@@ -866,7 +890,8 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problem:
 ```
 return;이 존재하는 경우 반드시 값을 돌려줘야하기 때문에(제어문은 모든 경우의 수를 포함해서) 원하는 값을 입력해준다. 
 
-### 배운점
+#### 배운점
+
 > return 사용시에 반환값을 공백으로 두고 사용할 수 없다는 것을 알았다.
 
 <br/>

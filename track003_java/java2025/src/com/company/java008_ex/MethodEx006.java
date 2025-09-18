@@ -37,19 +37,7 @@ public class MethodEx006 {
 		int []ranks = {3,3,3};
 		int []rankt = {3,3,3};
 		
-//		String name = "";  
-//		int []atk = {0,0,0}; int[]dfs = {0,0,0}; int[]spd = {0,0,0};  
-//		int total = 0 ;  
-//		float avg = 0.0f;   
-//		String grade = "", star = "", quest = "", type = "" ;  
-//		Scanner sc = new Scanner(System.in);
-		
-		
-//		System.out.print("이름_"); name = sc.next();
-//		System.out.print("공격력_"); atk = sc.nextInt();
-//		System.out.print("방어력_"); dfs = sc.nextInt();
-//		System.out.print("민첩성_"); spd = sc.nextInt();
-		
+
 		for (int i = 0; i < name.length; i++ )
 		{
 			System.out.print("이름_"); name[i] = sc.next();
@@ -73,65 +61,10 @@ public class MethodEx006 {
 		type[i] = process_type(atk[i], dfs[i], spd[i]);
 	
 		process_show(name[i],atk[i],dfs[i],spd[i],total[i],avg[i],grade[i],star[i],quest[i],type[i]);
-//		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-//		System.out.println("캐릭터   공격력   방어력   민첩성   총합   평균   등급   랭킹   추천퀘스트   캐릭터타입");
-//		System.out.println("-------------------------------------------------------------------------------------------------");
-//		System.out.printf("%s %d %d %d %d %.1f %s %s %s %s", name, atk,dfs, spd, total, avg, grade, star, quest, type);	;
-		
-//		ranka[i] = atk[i]; 
-//		rankb[i] = dfs[i]; 
-//		rankc[i] = spd[i]; 
-//		rankt[i] = total[i]; 
-//		
-		
+
 		}
-//		
-//		if(ranka[0] > ranka[0+1]) {ranka[0+2] += 1;} else if (ranka[i] > ranka[0]) {ranka[0] += 1;}
-//		if(rankb[i] > rankb[i]) {rankb[i] += 1;} else if (rankb[i] > rankb[0]) {rankb[0] += 1;}
-//		if(rankc[i] > rankc[i]) {rankc[i] += 1;} else if (rankc[i] > rankc[0]) {rankc[0] += 1;}
-//		if(rankt[i] > rankt[i]) {rankt[i] += 1;} else if (rankt[i] > rankt[0]) {rankt[0] += 1;}
-//		
-//		
-//		System.out.print("이름 :");
-//		for (int i = 1; i < name.length+1; i++)
-//		{ 
-//		else if(ranka[i] > ranka[0]) {ranka[0] += 1;}}  
-//		for (int i = 1; i < name.length+1; i++)
-//		{ if(rankb[0] > rankb[i]) {rankb[i] += 1;} 
-//		else if(rankb[i] > rankb[0]) {rankb[0] += 1;}} 
-//		for (int i = 1; i < name.length+1; i++)
-//		{ if(rankc[0] > rankc[i]) {rankc[i] += 1;} 
-//		else if(rankc[i] > rankc[0]) {rankc[0] += 1;}} 
-//		for (int i = 1; i < name.length+1; i++)
-//		{ if(rankt[0] > rankt[i]) {rankt[i] += 1;} } 
 		
-		
-//		for (int i = 0 ; i < name.length ; i++)
-//		{
-//			for (int j = 0 ; j < name.length; j++) {
-//				
-//				if (ranka[i] > ranka[j]) {ranka[i] -= 1;}
-//				if (rankd[i] > rankd[j]) {rankd[i] -= 1;} 
-//				if (ranks[i] > ranks[j]) {ranks[i] -= 1;} 
-//				if (rankt[i] > rankt[j]) {rankt[i] -= 1;} 
-//			}
-//			
-//		}
-//		
-//		
-//		for (int i = 0 ; i < name.length ; i++)
-//		{
-//			System.out.print("이 름 : " + name[i] + "\t");
-//			System.out.print("공격력 : " + atk[i] +"("+ ranka[i] +"위) \t" );
-//			System.out.print("방어력 : " + dfs[i] +"("+rankd[i] +"위) \t" );
-//			System.out.print("민첩성 : " + spd[i] +"("+ranks[i] +"위) \t" );
-//			System.out.print("총 합 : " + total[i] +"("+rankt[i] +"위) \t" );
-//			
-//		}
-		
-		
-		
-		
+		vs(name,atk,dfs,spd,total);
 		
 		
 	}
@@ -149,5 +82,49 @@ public class MethodEx006 {
 		System.out.println("-------------------------------------------------------------------------------------------------");
 		}
 	
+	
+	public static void vs(String[] name, int[] atk, int[] dfs, int[] spd, int[] total  ) 
+	{
+		int atk1 = 3, atk2 = 3, atk3 = 3;
+		int dfs1 = 3, dfs2 = 3, dfs3 = 3;
+		int spd1 = 3, spd2 = 3, spd3 = 3;
+		int to1 = 3, to2 = 3, to3 = 3;
+		for (int i = 0;  i < name.length; i++)
+		{
+			if (atk[0] > atk[i]) {atk1-- ;}
+			if (dfs[0] > dfs[i]) {dfs1-- ;}
+			if (spd[0] > spd[i]) {spd1-- ;}
+			if (total[0] > total[i]) {to1-- ;}
+			if (atk[1] > atk[i]) {atk2-- ;}
+			if (dfs[1] > dfs[i]) {dfs2-- ;}
+			if (spd[1] > spd[i]) {spd2-- ;}
+			if (total[1] > total[i]) {to2-- ;}
+			if (atk[2] > atk[i]) {atk3-- ;}
+			if (dfs[2] > dfs[i]) {dfs3-- ;}
+			if (spd[2] > spd[i]) {spd3-- ;}
+			if (total[2] > total[i]) {to3-- ;}
+					
+		}
+		System.out.printf("이 름 : %s %s %s \n", name[0],name[1],name[2]);
+		System.out.printf("공격력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", atk1,atk[0],atk2,atk[1],atk3,atk[2]);
+		System.out.printf("방어력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", dfs1,dfs[0],dfs2,dfs[1],dfs3,dfs[2]);
+		System.out.printf("민첩성 : %s위 (%d) %s위 (%d) %s위 (%d)\n", spd1,spd[0],spd2,spd[1],spd3,spd[2]);
+		System.out.printf("총 합 : %s위 (%d) %s위 (%d) %s위 (%d)\n", to1,total[0],to2,total[1],to3,total[2]);
+		
+	}
+	
+	
+//	String []name = {"","",""};  
+//	int []atk = {0,0,0}; int[]dfs = {0,0,0}; int[]spd = {0,0,0};  
+//	int []total = {0,0,0} ;  
+//	float []avg = {0.0f,0.0f,0.0f};   
+//	String []grade = {"","",""}; String []star = {"","",""}; 
+//	String []quest = {"","",""}; String []type = {"","",""};  
+//	Scanner sc = new Scanner(System.in);
+//	
+//	int []ranka = {3,3,3};
+//	int []rankd = {3,3,3};
+//	int []ranks = {3,3,3};
+//	int []rankt = {3,3,3};
 
 }
