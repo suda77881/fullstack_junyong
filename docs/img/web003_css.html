@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+</head>
+<body>
+    <div>
+        <h3>1. 여백 - margin / padding </h3>
+        <p style="color:darkblue; margin:50px; background:lightcoral;">
+            margin : 바깥쪽 여백</p>
+        <p style="color:darkred;  padding:50px; background:limegreen;">
+            padding : 안쪽 여백</p>
+    </div>
+
+    <div>
+        <h3>글자스타일</h3>
+        <dl>
+            <dt>1.글자 색상</dt>
+            <dd style="color:steelblue">steelblue</dd>
+            <dt>2.글자 크기</dt>
+            <dd style="font-size:20px">font-size:20px</dd>
+            <dt>3.정렬</dt>
+            <dd style="text-align:center; border:3px solid #ccc;">
+                text-align:center /left /right /justify 문단의 정렬을 체크해주는 부분인데 
+                left(왼쪽정렬), right(오른쪽정렬), center(중앙) , justify(수평정렬)
+            </dd>
+            <dt>4.밑줄</dt>
+            <dd>text-decoration:none;
+                <a href="#" style="text-decoration:none;">깃허브</a></dd>
+            <dt>5.글꼴</dt>
+            <dd style="font-family:impact, haettenschweiler;">font-family:sans-serif;</dd>
+            <dt>6.굵기</dt>
+            <dd style="font-weight: bold;">font-weight:bold;</dd>
+        </dl>
+    </div>
+    <!-- 첫번쨰 div 배경색 좋아하는색, 글자색 #123456 , -->
+    <div>
+        <h3>배경꾸미기</h3>
+        <p style="background-color:gold;"> background-color: gold;</p>
+        <p style="background-color:black; color:white;"> background:black;</p>
+        <p style="background:linear-gradient(to right, pink, orange); width:300px; height:20px">
+             background:linear-gradient(to right, pink, orange)</p>
+        <p style="background: red url(./five.png) repeat center / 20px 20px">
+             background:red url(./img/five.png) repeat center /   20px    20px 
+                        색상 경로                반복여부 중앙배치 가로사이즈 세로사이즈
+        <p style="background: red url(./friends/jack.png) center / 10px 10px">
+             붉은색 사진 가운데정렬 가로10px 세로10px</p>
+        </p>
+    </div>
+    <div style="width:300px; border:3px solid red;
+    border-radius:20px; box-shadow: 0 4px 12px rgba(0,0,0.5); 
+    padding:20px; margin:auto; text-align:center;">
+        <h3>박스디자인</h3>
+        <p>가로 : width:300px</p>
+        <p>선   : 3px solid red</p>
+        <p>둥근모서리   : border-radius : 20px</p>
+        <p>그림자효과   : box-shadow : 0 4px rgba(0,0,0.5)</p>
+        <!-- Q1. 안에 여백 20px 주기 -->
+        <!-- Q2. 페이지의 정가운데 -->
+    </div> 
+    </body>
+</html>
+
+<!-- deg bottom top -->
