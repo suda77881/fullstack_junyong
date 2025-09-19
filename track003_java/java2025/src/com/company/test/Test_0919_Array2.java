@@ -17,7 +17,7 @@ public class Test_0919_Array2 {
 				ch[i][j] += ch2++;				
 				 System.out.print(j== 2 ? ch[i][j] + "\n" : ch[i][j] + "\t" );	 
 			}
-			ch2 += 29;
+			ch2 += 29; // ch2 = 'a';
 			 
 		}
 	}
