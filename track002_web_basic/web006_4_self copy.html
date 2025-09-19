@@ -25,39 +25,65 @@
       text-decoration: none;
       background: linear-gradient(135deg, #0f85c4, #a26d31, #ffaf7b);
     }
- 
+
     body ul {
       margin-left: -30px;
     }
 
     .info {
       background-color: #000000;
-      border-radius: 15px;
+      border-radius: 5%;
       margin: 50px;
       ;
     }
 
     .profile img {
       background-color: #ffffff;
-      border-radius: 50px;
+      border-radius: 20%;
     }
 
     .portfolio {
       background-color: #333;
     }
 
-    .info h4 {margin: 5% 0;}
+    .info h4 {
+      margin: 5% 0; text-align:center;;
+    }
 
-    h3 {text-decoration:underline; font-size:2.2em;}
+    h3 {
+      text-decoration: underline rgba(255,255,255, 0.6);
+      font-size: 2.2em;
+    }
 
-    .keyWord li {list-style-type:none; margin-right:10px; }
-    .hidden { position:absolute; left:-9999px; 
-              width:1px; height:1px; overflow: hidden;
-            clip:rect(0,0,0,0); /* 요소를 잘라서 시각적으로 완전히 숨김 - 구형브라우저 호환 */
-            border:0;
-            white-space : nowrap; /* 줄 바꿈 방지 - 텍스트가 한줄로 */  
-          } 
-            /* display : none; 쓰지마라 */
+    li {
+      list-style-type: none;
+      margin-right: 10px;
+    }
+
+    .hidden {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      /* 요소를 잘라서 시각적으로 완전히 숨김 - 구형브라우저 호환 */
+      border: 0;
+      white-space: nowrap;
+      /* 줄 바꿈 방지 - 텍스트가 한줄로 */
+    }
+
+    .project {
+      background-color:#333; border-radius:5%; margin:50px;
+    }
+
+
+    .container
+    {
+      border-radius: 3%;
+    }
+
+    /* display : none; 쓰지마라 */
 
     /* .col-sm-4 {border:2px solid white; border-radius:5px; margin:-4px} */
   </style>
@@ -136,24 +162,23 @@
 
 
   <section class="info">
-    <div class="container">
-      <h3 class="text-center mb-2">about me</h3>
-      <div class="row">
-        <div class="col-sm-4" style="margin-top:20px;margin-right:-20px;"><!-- 1 w-25 w-50 w-75 w-100 -->
-          <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p>
+    <div class="container-fluid py-2 px-5 m-2">
+      
+      <div class="row bg-secondary p-5 m-2" style="border-radius:5%" >
+        <h3 class="text-center m-4">about me</h3>
+        <div class="col-sm-4"><!-- 1 w-25 w-50 w-75 w-100 -->
+          <p class="profile image ms-3"><img src="./img/me.png" class="w-50" alt="" /></p>
           <!--img-fluid(부모사이즈에 맞춤) w-사이즈(50%-부모사이즈절반정도)-->
-          <h4>Shin jun yong</h4>
+          <h5>Shin jun yong</h5>
           <ul>
             <li>abre2e2@gmail.com</li>
             <li><a href="https://github.com/suda77881/fullstack_junyong">
                 <img src="./img/free-icon-github-2111432.png" alt="깃허브링크" style="background-color:#ffff;
-                 width:25px; border-radius:3px;">
+                 width:25px;">
               </a></li>
           </ul>
         </div>
-        <div class="col-sm-4"><!--2-->
-
-
+        <div class="col-sm-4">
           <h4>Education</h4>
           <br />
           <ul>
@@ -171,11 +196,15 @@
             <li><input type="button" value="끈기" class="btn btn-success" /></li>
           </ul>
         </div>
-        <div class="col-sm-4"><!--3-->
-          <h4 style="text-align:center;">SKILLS</h4>
+        <div class="col-sm-4 text-center mb-5" style="background-color:#333; border-radius:3%"><!--3-->
+          <h4 class="ms-4">SKILLS</h4>
           <br />
           <div class="progress-bar bg-danger progress-bar-striped" style="width:80%; margin-left:43px;">JAVA 45%</div>
-          <div class="progress-bar bg-success progress-bar-striped" style="width:80%; margin-left:43px;">HTML/CSS 55%
+          <div class="progress-bar bg-success progress-bar-striped" style="width:80%; margin-left:43px;">HTML 60%
+          </div>
+          <div class="progress-bar bg-secondary progress-bar-striped" style="width:80%; margin-left:43px;">CSS 50%
+          </div>
+          <div class="progress-bar bg-warning progress-bar-striped" style="width:80%; margin-left:43px;">JavaScript 1%
           </div>
 
         </div>
@@ -188,89 +217,105 @@
 
   <!-- header end -->
 
-  <div class="portfolio" style="background-color:#000000">
-    <div class="row">
-      <h3 class ="my-5" style="text-align:center; margin-top:30px; ">Portfolio</h3>
-      <div class="col-sm-10"><!--1-->
-        <iframe class="100% no-border" src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB" title="YouTube video player" 
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
-              alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing -->
-      </div><!--fix해서 더 깔끔한 버전으로-->
-      <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
-      </div>
-      </div>
-
-
-    <div class="row my-5">
+  <div class="portfolio m-5" style="border-radius:3%; background-color:#000000">
+    <div class="row m-2 ">
+      <h3 class="my-5" style="text-align:center; margin-top:30px; ">Portfolio</h3>
+      <div class="col-sm-4">
+          <ul>
+            <li><strong>Java</strong></li>
+            <li><strong>HTML</strong></li>
+            <li><strong>CSS</strong></li>
+            <li><strong>JavaScript</strong></li>
+          </ul>
+        </div><!--fix해서 더 깔끔한 버전으로-->
       
-      <div class="col-sm-10"><!--1-->
-       <iframe class="100% no-border" src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj" 
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
+      <div class="col-sm-4">
+        <ul>
+          <li><strong>Java<br/></strong><br/>제어문과 배열, 메서드를 활용하여 미니프로젝트를 제작<br /><br/></li>
+          <li><strong>HTML<br/></strong><br/>웹 페이지의 구조 작성 학습<br/><br/></li>
+          <li><strong>CSS<br/></strong><br/>내부 / 인라인 / 외부(부트스트랩)을 활용한 페이지 스타일 변경<br/><br/></li>
+          <li><strong>JavaScript<br/></strong><br/>prompt, onclick, alert를 이용한 기초 구조 작성<br/><br/></li>
+        </ul>
+      </div>
+      <div class="col-sm-4"></div>
+
+        
+      
+    </div>
+
+    <div class="project py-1">
+    <div class="container">
+      <div class="row m-5 ">
+        <div class="col-sm-4"><!--1-->
+          <iframe class="100% no-border" src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
+            title="project2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
+              alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing -->
+        </div><!--fix해서 더 깔끔한 버전으로-->
+        <!-- <div class="col-sm-4"><br />작업환경<br><br>Java 11<br>ECLIPSE</div> -->
+         <div class="col-sm-4"><!--1-->
+        <iframe class="100% no-border" src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB"
+          title="project1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
               alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing -->
       </div><!--fix해서 더 깔끔한 버전으로-->
-      <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
-      </div>
-      </div>
-    
-
-     <div class="row m-3">
-      <div class="col-sm-4">
-        <ul>
-          <li><strong>HTML</strong></li>
-          <li><strong>CSS</strong></li>
-          <li><strong>JavaScript</strong></li>
-        </ul>
-      </div><!--fix해서 더 깔끔한 버전으로-->
-      <div class="col-sm-4">
-        <ul>
-          <li><strong>Java</strong> <br/>제어문과 배열을 활용하여 미니프로젝트를 제작가능</li>
-          <li><strong><!--2-->
-
-          </strong></li>
-          <li><strong><!--3-->
-
-          </strong></li>
-        </ul>
-
-      </div>
+      <div class="col-sm-4 text-center">
+        <br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
       </div>
 
-    </div>
-      <section class="contact mt-2">
-        <div class="container bg-success" 
-             style="display:flex; flex-direction:column; ">
-          <h3 style="text-align:center;">Contact Me</h3>
-          <br /><br />
-          <p style="text-align:center;">dev sjy에게 문의주세요!</p>
-
-          <form action="/action_page.php">
-      <div class="mb-3 mt-3">
-        <label for="title" class="form-label">제목:</label>
-        <input type="text" class="form-control" id="title" placeholder="제목을 적어주세요!" name="tilte">
       </div>
-      <div class="mb-3">
-        <label for="comment">Comments:</label>
-        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
-      </div>
-      <div class="mb-3 text-end"> </div>
-      <button type="submit" class="btn btn-primary mb-2">메일보내기</button>
-    </form>
-    </div>
         
-      </section><!-- contact end -->
+        
+      </div>
+    </div>
 
-      <footer class="footer text-center bg-secondary p-5">
+
+      <div class="row m-3">
+        
+        <div class="col-sm-4">
+          
+
+        </div>
+      </div>
+
+    </div>
 
 
 
-     &copy; copyrights 2025 all.right reserved
 
-      </footer><!-- footer end -->
+  <section class="contact my-3">
+    <div class="container bg-black" style="display:flex; flex-direction:column; ">
+      <h3 class="text-center my-5">Contact Me</h3>
+      <br /><br />
+      <p style="text-align:center;">dev sjy에게 문의주세요!</p>
+
+      <form action="/action_page.php">
+        <div class="mb-3 mt-3">
+          <label for="title" class="form-label">제목:</label>
+          <input type="text" class="form-control" id="title" placeholder="제목을 적어주세요!" name="tilte">
+        </div>
+        <div class="mb-3">
+          <label for="comment">Comments:</label>
+          <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+        </div>
+        <div class="mb-3 text-end"> </div>
+        <button type="submit" class="btn btn-primary mb-2">메일보내기</button>
+      </form>
+    </div>
+
+  </section><!-- contact end -->
+
+  <footer class="footer text-center bg-secondary p-5">
+
+
+
+    &copy; copyrights 2025 all.right reserved
+
+  </footer><!-- footer end -->
 
 
 
