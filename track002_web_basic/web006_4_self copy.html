@@ -33,9 +33,12 @@
     .info {
       background-color: #000000;
       border-radius: 15px;
-      margin: 50px;
       ;
     }
+
+    .portfolio {background-color: #000000;
+      border-radius: 15px;
+      margin: 50px;}
 
     .profile img {
       background-color: #ffffff;
@@ -47,8 +50,11 @@
     }
 
     .info h4 {margin: 5% 0;}
+    
+    .container {border-radius:5%}
 
-    h3 {text-decoration:underline; font-size:2.2em;}
+    h3 {text-align:center; margin-top:30px; 
+        text-decoration:underline rgba(255,255,255,0.5); font-size:2.2em;}
 
     .keyWord li {list-style-type:none; margin-right:10px; }
     .hidden { position:absolute; left:-9999px; 
@@ -72,7 +78,7 @@
   <header class="header">
     <h1 class="hidden">홍길동포트폴리오</h1>
     <h2 class="hidden">홍길동포트폴리오</h2>
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:rgba(0,0,0, 0.7)">
+    <nav class="navbar navbar-expand-sm navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="javascript:void(0)">devsjy</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -135,9 +141,9 @@
   </section><!--visual end-->
 
 
-  <section class="info">
+  <section class="info mx-5">
     <div class="container">
-      <h3 class="text-center mb-2">about me</h3>
+      <h3 class="my-5">about me</h3>
       <div class="row">
         <div class="col-sm-4" style="margin-top:20px;margin-right:-20px;"><!-- 1 w-25 w-50 w-75 w-100 -->
           <p class="profile image"><img src="./img/me.png" class="w-50" alt="" /></p>
@@ -147,7 +153,7 @@
             <li>abre2e2@gmail.com</li>
             <li><a href="https://github.com/suda77881/fullstack_junyong">
                 <img src="./img/free-icon-github-2111432.png" alt="깃허브링크" style="background-color:#ffff;
-                 width:25px; border-radius:3px;">
+                 width:25px;">
               </a></li>
           </ul>
         </div>
@@ -171,13 +177,13 @@
             <li><input type="button" value="끈기" class="btn btn-success" /></li>
           </ul>
         </div>
-        <div class="col-sm-4"><!--3-->
-          <h4 style="text-align:center;">SKILLS</h4>
+        <div class="col-sm-4 my-4" style="background-color:#333; 
+            border-radius:5%"><!--3-->
+          <h4 style="text-align:center; ">SKILLS</h4>
           <br />
           <div class="progress-bar bg-danger progress-bar-striped" style="width:80%; margin-left:43px;">JAVA 45%</div>
-          <div class="progress-bar bg-success progress-bar-striped" style="width:80%; margin-left:43px;">HTML/CSS 55%
-          </div>
-
+          <div class="progress-bar bg-success progress-bar-striped" style="width:80%; margin-left:43px;">HTML/CSS 55%</div>
+          <div class="progress-bar bg-warning progress-bar-striped" style="width:80%; margin-left:43px;">javascript 1%</div>
         </div>
       </div>
 
@@ -188,60 +194,58 @@
 
   <!-- header end -->
 
-  <div class="portfolio" style="background-color:#000000">
+  <div class="portfolio mx-5" style="background-color:#000000">
     <div class="row">
-      <h3 class ="my-5" style="text-align:center; margin-top:30px; ">Portfolio</h3>
-      <div class="col-sm-10"><!--1-->
-        <iframe class="100% no-border" src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB" title="YouTube video player" 
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
-              alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing -->
+      <h3 class ="my-5">Portfolio</h3>
+      <div class="col-sm-4"><!--1-->
       </div><!--fix해서 더 깔끔한 버전으로-->
-      <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
+      <div class="col-sm-4"><ul>
+          <li><strong>HTML</strong></li>
+          <li><strong>CSS</strong></li>
+          <li><strong>JavaScript</strong></li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <ul>
+          <li><strong>Java<br/></strong><br/>제어문과 배열을 활용하여 미니프로젝트를 제작가능<br/><br/></li>
+          <li><strong>HTML<br/></strong><br/>웹페이지를 작성하고 용도에 따라 클래스를 나눌수잇음<br/><br/></li>
+          <li><strong>CSS<br/></strong><br/>내부 / 인라인 / 외부 스타일을 사용하여 웹페이지에 시각효과 적용가능<br/><br/></li>
+        </ul>
       </div>
       </div>
 
 
     <div class="row my-5">
       
-      <div class="col-sm-10"><!--1-->
-       <iframe class="100% no-border" src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj" 
+      <div class="col-sm-4"><!--1-->
+       <iframe class="100% no-border ms-5" src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
               alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing -->
       </div><!--fix해서 더 깔끔한 버전으로-->
-      <div class="col-sm-2"><br />작업환경<br><br>Java 11<br>ECLIPSE<!--2-->
-      </div>
+      <div class="col-sm-4"><iframe class="100% no-border ms-5" src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB" title="YouTube video player" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- <img src="./img/miniproject_fishing(bank).png" style="border:3px solid #ce6d39; margin:40px;width:240px;"
+              alt="미니프로젝트뱅크_신준용" />Java 미니 프로젝트 fishing --></div>
+      <div class="col-sm-4">3</div>
       </div>
     
 
      <div class="row m-3">
       <div class="col-sm-4">
-        <ul>
-          <li><strong>HTML</strong></li>
-          <li><strong>CSS</strong></li>
-          <li><strong>JavaScript</strong></li>
-        </ul>
+        
       </div><!--fix해서 더 깔끔한 버전으로-->
       <div class="col-sm-4">
-        <ul>
-          <li><strong>Java</strong> <br/>제어문과 배열을 활용하여 미니프로젝트를 제작가능</li>
-          <li><strong><!--2-->
-
-          </strong></li>
-          <li><strong><!--3-->
-
-          </strong></li>
-        </ul>
+        
 
       </div>
       </div>
 
     </div>
-      <section class="contact mt-2">
+      <section class="contact">
         <div class="container bg-success" 
              style="display:flex; flex-direction:column; ">
           <h3 style="text-align:center;">Contact Me</h3>
