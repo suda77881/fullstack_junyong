@@ -85,31 +85,28 @@ public class MethodEx006 {
 	
 	public static void vs(String[] name, int[] atk, int[] dfs, int[] spd, int[] total  ) 
 	{
-		int atk1 = 3, atk2 = 3, atk3 = 3;
-		int dfs1 = 3, dfs2 = 3, dfs3 = 3;
-		int spd1 = 3, spd2 = 3, spd3 = 3;
-		int to1 = 3, to2 = 3, to3 = 3;
+		int[] atkr = {3,3,3};
+		int[] dfsr = {3,3,3};
+		int[] spdr = {3,3,3};
+		int[] tor = {3,3,3};
 		for (int i = 0;  i < name.length; i++)
 		{
-			if (atk[0] > atk[i]) {atk1-- ;}
-			if (dfs[0] > dfs[i]) {dfs1-- ;}
-			if (spd[0] > spd[i]) {spd1-- ;}
-			if (total[0] > total[i]) {to1-- ;}
-			if (atk[1] > atk[i]) {atk2-- ;}
-			if (dfs[1] > dfs[i]) {dfs2-- ;}
-			if (spd[1] > spd[i]) {spd2-- ;}
-			if (total[1] > total[i]) {to2-- ;}
-			if (atk[2] > atk[i]) {atk3-- ;}
-			if (dfs[2] > dfs[i]) {dfs3-- ;}
-			if (spd[2] > spd[i]) {spd3-- ;}
-			if (total[2] > total[i]) {to3-- ;}
+			for (int j = 0; j <name.length; j++) 
+			{
+				
+				if (atk[i] > atk[j]) {atkr[i] -=1 ;}
+				if (dfs[i] > dfs[j]) {dfsr[i] -=1 ;}
+				if (spd[i] > spd[j]) {spdr[i] -=1 ;}
+				if (total[i] > total[j]) {tor[i] -=1 ;}
+
+			}
 					
 		}
 		System.out.printf("이 름 : %s %s %s \n", name[0],name[1],name[2]);
-		System.out.printf("공격력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", atk1,atk[0],atk2,atk[1],atk3,atk[2]);
-		System.out.printf("방어력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", dfs1,dfs[0],dfs2,dfs[1],dfs3,dfs[2]);
-		System.out.printf("민첩성 : %s위 (%d) %s위 (%d) %s위 (%d)\n", spd1,spd[0],spd2,spd[1],spd3,spd[2]);
-		System.out.printf("총 합 : %s위 (%d) %s위 (%d) %s위 (%d)\n", to1,total[0],to2,total[1],to3,total[2]);
+		System.out.printf("공격력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", atkr[0],atk[0],atkr[1],atk[1],atkr[2],atk[2]);
+		System.out.printf("방어력 : %s위 (%d) %s위 (%d) %s위 (%d)\n", dfsr[0],dfs[0],dfsr[1],dfs[1],dfsr[2],dfs[2]);
+		System.out.printf("민첩성 : %s위 (%d) %s위 (%d) %s위 (%d)\n", spdr[0],spd[0],spdr[1],spd[1],spdr[2],spd[2]);
+		System.out.printf("총 합 : %s위 (%d) %s위 (%d) %s위 (%d)\n", tor[0],total[0],tor[1],total[1],tor[2],total[2]);
 		
 	}
 	
