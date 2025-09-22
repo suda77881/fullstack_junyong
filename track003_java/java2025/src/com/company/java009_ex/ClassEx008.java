@@ -26,10 +26,10 @@ class AnimalCharacter {
     void input() {
     	Scanner sc = new Scanner(System.in);
     	System.out.println();
-    	System.out.print("동물 이름 > "); name = sc.next();
-    	System.out.print("동물 타입(육식/초식) > "); type = sc.next();
-    	System.out.print("기본 속도 > "); baseSpeed = sc.nextInt();
-    	System.out.print("특수 능력치 > "); specialBoost = sc.nextInt();
+    	System.out.print("동물 이름 > "); this.name = sc.next();
+    	System.out.print("동물 타입(육식/초식) > "); this.type = sc.next();
+    	System.out.print("기본 속도 > "); this.baseSpeed = sc.nextInt();
+    	System.out.print("특수 능력치 > "); this.specialBoost = sc.nextInt();
     	
     	
     	//사용자 입력 받기  
@@ -37,9 +37,9 @@ class AnimalCharacter {
     void calculateSpeed()
     {
     	
-    	if (type.equals("육식")) {finalSpeed = baseSpeed + (specialBoost * 0.2);
+    	if (this.type.equals("육식")) {this.finalSpeed = this.baseSpeed + (this.specialBoost * 0.2);
     }else {
-    	finalSpeed = baseSpeed + (specialBoost * 0.1);
+    	this.finalSpeed = this.baseSpeed + (this.specialBoost * 0.1);
     	}// 타입에 따라 속도 계산 
     	
     	
