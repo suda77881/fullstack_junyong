@@ -40,7 +40,7 @@ public class Ex2_array3 {
 	}// logino end
 	
 	public static void add_user(String[] id, String[] pass, double[] balance, int []find, int []bnkbook, int[] find2) {
-		int select1 = -1;
+		char select1 = ' ';
 		for (int i = 0; i < id.length; i++) {if (id[i] == null) {find[0] = i;break;}} // 빈배열을 찾기 = 아이디를 넣을 자리
 		Scanner sc = new Scanner(System.in);
 		System.out.println("낚시꾼 등록");
@@ -65,7 +65,7 @@ public class Ex2_array3 {
 			}
 		} // 빈배열을 찾기 = 아이디를 넣을 자리
 		System.out.print("낚시꾼으로 등록되었습니다.\n당신은 " + bnkbook[find[0]] + "번째 회원 입니다.");
-		select1 = 0;
+		select1 = ' ';
 		try {
 			Thread.sleep(2000); // 2초 동안 멈춤
 		} catch (InterruptedException e) {
@@ -73,13 +73,13 @@ public class Ex2_array3 {
 		}
 	}	//	adduser end
 	
-	public static void fishing(int[] find, int[] login, double per, double[] balance, int select, int select1,
+	public static void fishing(int[] find, int[] login, double per, double[] balance, char select, char select1,
 			int[] blowfish, int[] carp, int[] shrimp, int[] shark, int[] whale) {
 		Scanner sc = new Scanner(System.in);
 		if (login[find[0]] == 0) {System.out.println("로그인 실패 메뉴로");}	//	로그인 실패시 메뉴로
 		else {
-		int retry = 0;
-		while (retry != 2) {
+		char retry = '0';
+		while (retry != '2') {
 			System.out.println("미끼를 던졌습니다.");
 			try {
 				Thread.sleep(1000); // 2초 동안 멈춤
@@ -133,9 +133,9 @@ public class Ex2_array3 {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.println("1. 계속");System.out.println("2. 메뉴로");System.out.print("선택해주세요>");retry = sc.nextInt();
-				if (retry == 1) {select = 1;continue;} else if (retry == 2)
-					select = 0;
+				System.out.println("1. 계속");System.out.println("2. 메뉴로");System.out.print("선택해주세요>");retry = sc.next().charAt(0);
+				if (retry == '1') {select = '1';continue;} else if (retry == '2')
+					select = ' ';
 				break;
 			} else {
 				System.out.println("╭────────────────────╮");
@@ -147,9 +147,9 @@ public class Ex2_array3 {
 					e.printStackTrace();
 				}
 				System.out.println("1. 계속");System.out.println("2. 메뉴로");System.out.print("선택해주세요>");
-				retry = sc.nextInt();
-				if (retry == 1) {select = 1;continue;} else if (retry == 2)
-					select = 0;select1 = 0;break;
+				retry = sc.next().charAt(0);
+				if (retry == '1') {continue;} else if (retry == '2')
+					select = '0'; select1 = '0'; break;
 			} // else end
 			} // while end
 		}// else end
@@ -159,7 +159,7 @@ public class Ex2_array3 {
 		Scanner sc = new Scanner(System.in);
 		if (login[find[0]] == 0) {System.out.println("로그인 실패 메뉴로");}
 		else {
-		int slt = 0;
+		char slt = ' ';
 		double price = 0;
 		for (;;) {
 			System.out.println("1. 낡은 낚시대 (확률 50 %) 5,000원");
@@ -167,7 +167,7 @@ public class Ex2_array3 {
 			System.out.println("3. 비싼 낚시대 (확률 95 %) 1,000,000원");
 			System.out.println("4. 나가기");
 			System.out.print("\n구입할 낚시대를 선택해주세요");
-			slt = sc.nextInt();
+			slt = sc.next().charAt(0);
 
 			switch (slt) {
 			case 1:
@@ -314,7 +314,6 @@ public class Ex2_array3 {
 	public static void main(String[] args) {
 		// 변수
 		int []login = new int[3];
-		double per = 0.5;
 		int[] j = new int[3]; 
 		int[] j1 = new int[3]; 
 		int[] j2 = new int[3]; 
@@ -335,9 +334,10 @@ public class Ex2_array3 {
 		String[] id = new String[3];
 		String[] pass = new String[3];
 		double[] balance = new double[3];
-		
-		int select1 = 0;
-		int select = 0, age = 0, input = 0, money = 0;
+		char select = ' ';
+	    char select1 = ' ';
+		char c = ' ';
+		int age = 0, input = 0, money = 0;
 
 		String menu = "\n======낚시======\n* 1.사용자등록\n* 2.낚시\n* 3.낚시대 구입\n* "
 				+ "4.물고기판매\n* 5.사용자삭제\n* 6.낚시대 변경\n* 9.종료\n😎😎무엇을 도와드릴까요? >>> ";
@@ -354,27 +354,38 @@ public class Ex2_array3 {
 
 		System.out.println("WELCOME! (주)낚시연맹");
 
-		while (select1 != 9) {	//	menu repeat, input 9 = exit
+		while (select1 != '9') {	//	menu repeat, input 9 = exit
 			System.out.print("" + (age <= 13 && age >= 6 ? menu1 : age >= 18 ? menu2 : age >= 30 ? menu3 : menu));
-			select1 = sc.nextInt();
+			select1 = sc.next().charAt(0);
+			if ( select1 >= '0' && select1 <= '9') {
 			
 			switch (select1) {  // menu select
 			
-			case 1:{add_user(id,pass,balance,find,bnkbook,find2);}break;
-			case 2:{login_o(find, id, pass, login, bnkbook);
-				   fishing(find, login, per, balance, select, select1, blowfish, carp, shrimp, shark, whale);}break;
-			case 3:{login_o(find, id, pass, login, bnkbook);
+			case '1':{add_user(id,pass,balance,find,bnkbook,find2);}break;
+			case '2':{login_o(find, id, pass, login, bnkbook);  
+				   fishing(find, login, balance, select, select1, blowfish, carp, shrimp, shark, whale);}break;
+			case '3':{login_o(find, id, pass, login, bnkbook);
 				   buy_item(login, find, balance,j, j1, j2, j3);}break;
-			case 4:login_o(find, id, pass, login, bnkbook);
+			case '4':login_o(find, id, pass, login, bnkbook);
 				   selling(login,find, blowfish, carp,	shrimp, shark, whale, balance);break;
-			case 5:login_o(find, id, pass, login, bnkbook);
+			case '5':login_o(find, id, pass, login, bnkbook);
 				   del_user(login, find, id, pass, balance );break;
-			case 6:login_o(find, id, pass, login, bnkbook);
+			case '6':login_o(find, id, pass, login, bnkbook);
 				   change(login, find, j, j1, j2, j3 );break;
-			case 9: {login[find[0]] = 0;break;}
+			case '7':System.out.println("계좌추가 기능 .예정");break;
+			case '9': {login[find[0]] = 0;break;}
+			case '0':System.out.printf("사용자 이름 : %s %s %s\n", id[0], id[1], id[2]);
+				   System.out.printf("사용자 번호 : %s %s %s\n", pass[0], pass[1], pass[2]);
+				   System.out.printf("사용자 잔액 : %.2f %.2f %.2f\n", balance[0], balance[1], balance[2]);
+				   
+				   System.out.println("로그인값 : " + login[find[0]]);
+				   
+				   break;
 			default:
 				continue;
 			}
+			}// input limit 0~9
+			else {System.out.println("잘못된 입력입니다"); continue;}
 		}
 		System.out.println("종료되었습니다."); // exit? // end while 종료
 	} // end main
