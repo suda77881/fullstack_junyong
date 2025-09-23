@@ -1,18 +1,19 @@
 package com.company.java010_ex;
 
+// public > protected(extends) > default > private
 class ToyBox{
 
 		public String sharedToy = "블록";
 		private String secretToy = "로봇";
-		String familyToy = "퍼즐";
+		String familyToy = "퍼즐";	//같은 집 (package, 폴더) 에 살고 있어서 형이 퍼즐을 볼 수 있게 하려면
 }
 
 public class Modifier001_Friend {
     public static void main(String[] args) {
         ToyBox box = new ToyBox();
-        System.out.println(box.sharedToy);
-//        System.out.println(box.secretToy);
-        System.out.println(box.familyToy);
+        System.out.println(box.sharedToy);		//O
+//        System.out.println(box.secretToy);	//X
+        System.out.println(box.familyToy);		//O    퍼즐
     }
 }
 
