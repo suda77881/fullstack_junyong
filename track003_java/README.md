@@ -899,6 +899,66 @@ return;이 존재하는 경우 반드시 값을 돌려줘야하기 때문에(제
 <br/>
 
 
+
+## case.14   //  public class의 중복
+
+```
+Java 
+
+The public type Coffee must be defined in its own fil
+```
+Java의 파일-클래스 규칙 때문에 발생하는 컴파일 오류
+실행은 IDE에서 자동으로 분리하거나 무시해서 될 수 있지만, 정상적인 구조는 아님.
+
+<br/>
+
+### 원인
+
+```
+public class Coffee{
+	...
+	}
+	
+	
+	}	// class Coffee end 
+
+public class ClassEx003_2 {
+	   public static void main(String[] args) {
+	   ...
+	  }
+}
+```
+하나의 .java 파일에는 public class는 단 하나만 존재해야 하며, 그 클래스의 이름은 파일명과 반드시 일치해야 한다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+class Coffee {   // public 제거
+	...
+	}
+	}	// class Coffee end 
+
+public class ClassEx003_2 {
+	   public static void main(String[] args) {
+	   ...
+	  }
+}
+```
+이렇게 하면 public class Coffee가 자기 파일에 정의되므로 오류 없음
+
+#### 배운점
+
+> Class 문서 규칙에 따라 최상위 클래스는 하나의 문서에 public 사용은 한개만 된다는 것을 배웠다. (하위 클래스 예외)
+<br/>
+<br/>
+<br/>
+
+
+
 ---
 <br/> 
 <br/>

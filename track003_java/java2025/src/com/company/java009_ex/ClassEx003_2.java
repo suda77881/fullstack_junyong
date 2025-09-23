@@ -1,6 +1,6 @@
 package com.company.java009_ex;
 
-class Coffee{
+public class Coffee{
 	
 	//1. 클래스는 부품객체
 	//2. 클래스는 상태(멤버변수)와 행위(멤버함수)
