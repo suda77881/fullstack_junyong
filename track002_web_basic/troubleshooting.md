@@ -474,6 +474,74 @@ document.getElementById("card-border").style.border = "15px " + prompt("테두�
 <br/>
 
 
+<!-- 2025.09.24 -->
+
+## 📖 case 6 / JavaScript 스타일 지정 문제
+
+
+<br/>
+
+```
+VSCode // JavaScript
+
+<script>  
+
+window.addEventListener("load", function(){
+        let color = document.getElementById("color");
+        let lis   = document.getElementsByTagName("li");
+        lis[0].style.fontWeight="bold";
+      });
+
+</script>
+
+```
+id = "color" 요소 안에 <li> 태그에 스타일을 지정하기 위해 스크립트를 작성했으나. 원하는 태그에 지정되지 않는 현상 발생
+
+
+<br/>
+
+ 
+### ⚠️ 원인
+
+```
+        let color = document.getElementById("color");
+        let lis   = document.getElementsByTagName("li");  // 이 부분의 범위설정이 잘못됨.
+        lis[0].style.fontWeight="bold";
+```
+
+document.getElementsByTagName("li")는 페이지 전체의 <li> 요소를 가져온다. 하지만 원하는 대상은 id="color" 내부의 <li>이므로, 범위를 color 요소로 범위를 제한해야 한다.
+
+<!-- JavaScript의 요소로 태그를 변경할 때 단수 > 복수 지정 그리고, 'document.getElementById("color").getElementsByTagName("li")' 형태로 지정해줘야 하기 때문에
+문법상 맞지 않고 복수는 바로지정해서 사용할 수 없다. -->
+
+
+
+
+<br/>
+
+### 🛠 해결방법
+
+
+
+```
+        let color = document.getElementById("color");
+        let lis   = color.getElementsByTagName("li");  // color로 범위수정
+        lis[0].style.fontWeight="bold";
+```
+color 변수로 앞에 범위값을 조정해주고 실행하면 의도한대로의 실행이 이루어졌다.
+
+<br/>
+
+#### 💭 배운점 
+
+> 자바스크립의 지정방식에 대해 하나더 배웠다.
+
+
+<br/>
+<br/>
+<br/>
+
+
 
 
 <!-- **■ Java**
