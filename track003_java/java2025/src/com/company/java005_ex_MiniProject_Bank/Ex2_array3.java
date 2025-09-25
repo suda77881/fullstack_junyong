@@ -41,7 +41,8 @@ public class Ex2_array3 {
 	
 	public static void add_user(String[] id, String[] pass, double[] balance, int []find, int []bnkbook, int[] find2) {
 		char select1 = ' ';
-		for (int i = 0; i < id.length; i++) {if (id[i] == null) {find[0] = i;break;}} // 빈배열을 찾기 = 아이디를 넣을 자리
+		int idcount = 0;
+		for (int i = 0; i < id.length; i++) {if (id[i] == null) {find[0] = i;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("낚시꾼 등록");
 		System.out.print("사용자 이름 입력: >");
@@ -58,9 +59,9 @@ public class Ex2_array3 {
 		System.out.println("║ 🎉🎉🎉🎉🎉🎉🎉🎉 ║");
 		System.out.println("╚═══════════════════╝");
 		 
-		for (int i = 0; i < bnkbook.length; i++) {
-			if (bnkbook[i] == 0) {
-				find2[0] = i;
+		for (int j = 0; j < bnkbook.length; j++) {
+			if (bnkbook[j] == 0) {
+				find2[0] = j;
 				break;
 			}
 		} // 빈배열을 찾기 = 아이디를 넣을 자리
@@ -71,6 +72,11 @@ public class Ex2_array3 {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		break;}
+		else if (!(id[i] == null)) {idcount++;}
+		else if (idcount==3) {System.out.println("더 이상 사용자 등록이 불가능합니다.");break;}} // 빈배열을 찾기 = 아이디를 넣을 자리 빈배열이 아니라면 카운트 1 
+		
 	}	//	adduser end
 	
 	public static void fishing(int[] find, int[] login, double per, double[] balance, char select, char select1,

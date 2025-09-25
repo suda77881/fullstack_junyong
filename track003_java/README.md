@@ -963,6 +963,115 @@ public class ClassEx003_2 {
 <br/> 
 <br/>
 
+
+## case.14   //  public class의 중복
+
+```
+Java 
+
+public class Score{
+	
+    ...
+
+   // 5. iron.show(); hulk.show(); [각각, this] 인스턴스메서드
+
+   public void show() {   
+	   
+	   process_total(); process_avg (); process_p (); process_s (); process_rank ();
+	   
+	   System.out.printf("%-5s\t%-5d\t%-5d\t%-5d\t%-5d\t%.2f\t%-5s\t%-5s\t%-5s\n",name,kor,eng,math,total,aver,p,s,rank);
+   }
+   
+   public void process_total () {this.total = this.kor + this.eng + this.math;}
+   public void process_avg () {this.aver = this.total/3.0;}
+   public void process_p () {this.p = this.aver >= 60 && this.kor > 40 && this.eng > 40 && this.math > 40 ? "합격" : "불합격";}
+   public void process_s () {this.s = this.aver >= 80 ? "장학생" : "---";}
+   public void process_rank () {this.rank = "";for(int i = 1; i <= (this.aver/10); i++) {this.rank += "*";}}
+
+   ...
+  
+   
+} 
+```
+show라는 메서드를 호출 했을때, 연산이 완료된 변수들을 출력해야하지만.
+생각한 값과 다르게 초기값이 표시됨.
+
+<br/>
+
+### 원인
+
+```
+public class Score{
+	
+    ...
+
+   // 5. iron.show(); hulk.show(); [각각, this] 인스턴스메서드
+
+   public void show() {   
+	   
+	   System.out.printf("%-5s\t%-5d\t%-5d\t%-5d\t%-5d\t%.2f\t%-5s\t%-5s\t%-5s\n",name,kor,eng,math,total,aver,p,s,rank);
+   }
+   
+   
+   public void process_total () {this.total = this.kor + this.eng + this.math;}
+   public void process_avg () {this.aver = this.total/3.0;}
+   public void process_p () {this.p = this.aver >= 60 && this.kor > 40 && this.eng > 40 && this.math > 40 ? "합격" : "불합격";}
+   public void process_s () {this.s = this.aver >= 80 ? "장학생" : "---";}
+   public void process_rank () {this.rank = "";for(int i = 1; i <= (this.aver/10); i++) {this.rank += "*";}}
+
+   ...
+  
+   
+} 
+```
+연산을 담당하는 process 메서드가 따로 존재하므로 호출없이는 연산된 결과값을 사용할 수 없다.
+
+
+<br/>
+
+### 해결방법
+
+```
+public class Score{
+	
+    ...
+
+   // 5. iron.show(); hulk.show(); [각각, this] 인스턴스메서드
+
+   public void show() {   
+	   
+	   process_total(); process_avg (); process_p (); process_s (); process_rank ();    // 메서드 호출
+	   
+	   System.out.printf("%-5s\t%-5d\t%-5d\t%-5d\t%-5d\t%.2f\t%-5s\t%-5s\t%-5s\n",name,kor,eng,math,total,aver,p,s,rank);
+   }
+   
+   
+   public void process_total () {this.total = this.kor + this.eng + this.math;}
+   public void process_avg () {this.aver = this.total/3.0;}
+   public void process_p () {this.p = this.aver >= 60 && this.kor > 40 && this.eng > 40 && this.math > 40 ? "합격" : "불합격";}
+   public void process_s () {this.s = this.aver >= 80 ? "장학생" : "---";}
+   public void process_rank () {this.rank = "";for(int i = 1; i <= (this.aver/10); i++) {this.rank += "*";}}
+
+   ...
+  
+   
+} 
+```
+show 메서드에서 process 메서드들을 호출하여 정상적으로 처리를 받았다. 그리고 호출 순서에 따라 결과값이 바뀔 수 있으므로 유의해야한다.
+
+#### 배운점
+
+> 역할에 따라 메서드를 분리하는 경우 서로가 담당하는 역할을 공유하기 위해서는 메서드 호출이 필요하다는 점을 배웠다. 
+<br/>
+<br/>
+<br/>
+
+
+
+---
+<br/> 
+<br/>
+
 ## 🔧 참고문헌
 
 - [Git 공식 문서](https://git-scm.com/doc)  
