@@ -74,7 +74,17 @@
       </pre>
       <input type="button"  value="버튼2"  title="버튼2"    id="fn2"  class="btn btn-success" />
       <script> 
- 
+
+        window.addEventListener("load", function(){
+          let fn2btn = document.getElementById("fn2");    
+          fn2btn.addEventListener("click", function(){
+            fn2();
+          }); 
+        });
+
+        function fn2(){
+          alert(1); alert(2); alert(3); alert(4); alert(5);
+        }
       </script>
   </div>
 </div>
@@ -86,10 +96,17 @@
   <h3  class="card-header">006. FUNCTION - STEP2. a 태그에서 event</h3>
   <div class="card-body">
     <h4>STEP2. a 태그에서 event </h4>
-		<a href="https://www.naver.com/"   class="btn btn-outline-primary target_a" >EVENT</a>
+		<a href="#"   class="btn btn-outline-primary target_a" >EVENT</a>
     <script>
       //이벤트대상                    이벤트   이벤트핸들러
       //브라우저  로딩  이벤트핸들러 
+      window.addEventListener("load", function(){
+        let link = document.querySelector(".target_a"); //css 표현방법
+        link.addEventListener("click", function(e){ // 아무거나가능 이후일어날일
+          e.preventDefault(); // 이벤트의 기본동작 막기 - a, type="submit" // 너원래 하려던거 하지마. 같은기능
+          alert("A link!");
+        });
+      });
   </script>
   </div>
   <!--     -->
@@ -105,8 +122,46 @@
       <a href="#" class="btnMinus  btn btn-outline-primary">minus</a>
     </div>
     <script>
- 
+      
+      //Q1. .bntPlus를 클릭하면 .target_num 안의 숫자가 올라간다.
+      // 힌트1) .btnPlus    찾아오기
+      // 힌트2) .btnMinus   찾아오기
+      // 힌트3) .target_num 찾아오기    -   일반태그이므로 innerHTML 접근
+      // 힌트4) 1을 클릭하면 - 일반태그이므로 innerHTML 접근
+      // window.addEventListener("load", function(){
 
+        // let num = 0;
+        // let plus = document.querySelector(".btnPlus")
+        // plus.addEventListener("click", function(a){
+        //   let target = document.querySelector(".target_a");
+        //   a.preventDefault();
+        //   let targetx = document.querySelector(".target_num");
+        //   targetx.innerText = num;
+        //   num ++;
+        // });
+        // let minus = document.querySelector(".btnMinus")
+        // Minus.addEventListener("click", function(a){
+        //   let target = document.querySelector(".target_a");
+        //   a.preventDefault();
+        //   let targetx = document.querySelector(".target_num");
+        //   targetx.innerText = num;
+        //   num --;
+        // });
+
+        window.addEventListener("load", function(){
+        let num=0;
+        let btnPlus = document.querySelector(".btnPlus");
+        let btnMinus = document.querySelector(".btnMinus");
+        let target = document.querySelector(".target_num");
+        btnPlus.addEventListener("click", function(e){
+          e.preventDefault();   target.innerHTML = ++num;
+
+        btnMinus.addEventListener("click", function(e){
+          e.preventDefault();   target.innerHTML = --num;
+        });  
+        });
+      });
+      //Q2. .btnMinus 클릭하면 .target_num 안의 숫자가 내려간다.
     </script>
   </div>
   <!--     -->
@@ -122,8 +177,24 @@
       <a href="#" class="btnRight  btn btn-outline-success">RIGHT ROTATE</a>
     </div>
     <script>
-    
-
+      window.addEventListener("load", function(){
+        let bl = document.querySelector(".btnLeft");
+        let br = document.querySelector(".btnRight");
+        let card = document.querySelector(".target_box");
+        // let btn = card.querySelector("h1");
+        let num = 0;
+        bl.addEventListener("click", function(e){
+          // alert("1");
+          e.preventDefault();
+          card.style.transform = "rotate(" + ++num + "deg)";
+        });
+        br.addEventListener("click", function(e){
+          // alert("2");
+          
+          e.preventDefault();
+          card.style.transform = "rotate(" + --num + "deg)";
+        });
+      });
     </script>
   </div>
 </div>
