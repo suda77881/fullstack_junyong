@@ -9,7 +9,8 @@ public class Show {
 
 	
 	public Show() { super();}
-	public Show(UserInfo userinfo) { super(); this.userinfo = userinfo; }
+	
+	public Show(UserInfo userinfo) { super(); this.userinfo = userinfo; }// 집약
 	
 	// 행위 : 멤버함수
 	public void exec() {
