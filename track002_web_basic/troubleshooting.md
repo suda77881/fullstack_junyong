@@ -495,7 +495,7 @@ window.addEventListener("load", function(){
 </script>
 
 ```
-id = "color" 요소 안에 <li> 태그에 스타일을 지정하기 위해 스크립트를 작성했으나. 원하는 태그에 지정되지 않는 현상 발생
+id = "color" 요소 안에 `<li>` 태그에 스타일을 지정하기 위해 스크립트를 작성했으나. 원하는 태그에 지정되지 않는 현상 발생
 
 
 <br/>
@@ -509,7 +509,11 @@ id = "color" 요소 안에 <li> 태그에 스타일을 지정하기 위해 스�
         lis[0].style.fontWeight="bold";
 ```
 
-document.getElementsByTagName("li")는 페이지 전체의 <li> 요소를 가져온다. 하지만 원하는 대상은 id="color" 내부의 <li>이므로, 범위를 color 요소로 범위를 제한해야 한다.
+document.getElementsByTagName("li")는 페이지 전체의 `<li>` 요소를 가져옴.
+
+하지만 원하는 대상은 id="color" 내부의 `<li>`이므로, 범위를 color 요소로 제한해야 함.
+
+즉, color 요소의 하위 요소를 대상으로 해야 하므로 color.getElementsByTagName("li")를 사용해야 함.
 
 <!-- JavaScript의 요소로 태그를 변경할 때 단수 > 복수 지정 그리고, 'document.getElementById("color").getElementsByTagName("li")' 형태로 지정해줘야 하기 때문에
 문법상 맞지 않고 복수는 바로지정해서 사용할 수 없다. -->
@@ -528,13 +532,19 @@ document.getElementsByTagName("li")는 페이지 전체의 <li> 요소를 가져
         let lis   = color.getElementsByTagName("li");  // color로 범위수정
         lis[0].style.fontWeight="bold";
 ```
-color 변수로 앞에 범위값을 조정해주고 실행하면 의도한대로의 실행이 이루어졌다.
+color 변수로 범위를 지정하면, 해당 요소 내부의 `<li>`만 선택됨.
+
+따라서 의도한 스타일 지정이 정상적으로 적용됨.
+
+그외의 방식은 `querySelectorAll("#color li")`를 사용하면 CSS 선택자 방식으로도 동일한 지정이 가능하다,
+
+for 또는 forEach 문을 활용하면 여러 `<li>`에 스타일을 일괄 적용도 할 수 있다.
 
 <br/>
 
 #### 💭 배운점 
 
-> 자바스크립의 지정방식에 대해 하나더 배웠다.
+> 자바스크립트에서 DOM 요소를 선택할 때, 범위 지정이 매우 중요하다는 것을 배웠다.
 
 
 <br/>
