@@ -505,7 +505,7 @@ id = "color" 요소 안에 `<li>` 태그에 스타일을 지정하기 위해 스
 
 ```
         let color = document.getElementById("color");
-        let lis   = document.getElementsByTagName("li");  // 이 부분의 범위설정이 잘못됨.
+        let lis   = document.getElementsByTagName("li");  // 이 부분의 범위설정이 문서전체(document)로 되어있음
         lis[0].style.fontWeight="bold";
 ```
 
@@ -552,577 +552,74 @@ for 또는 forEach 문을 활용하면 여러 `<li>`에 스타일을 일괄 적�
 <br/>
 
 
+<!-- 2025.09.28 -->
+
+## 📖 case 7 / JavaScript 스타일 지정 문제
 
 
-
-```
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOOTSTRAP</title>
-  <!-- Latest compiled and minified CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-  <!-- 여기에 콘텐츠를 추가하세요 -->
-   <div class="container card">
-        <h3 class="card-header">001. repeat </h3>
-         <div class="card-body">
-            <h4>EX</h4>
-            <input type="button"  value="click"         id="test1"    class="btn btn-success"   />
-            <input type="button"  value="value"         id="test2"    class="btn btn-success"   />
-            <input type="button"  value="innerHtml"     id="test3"    class="btn btn-success"   /> 
-            <div class="result_target  my-5">JAVASCRIPT</div>
-            <pre>
-            브라우저가 로딩이 되면
-            Q1) #test1를 클릭하면 본인이름 입력받고 입력받은 값 알림창 띄우기
-            Q2) #test2를 클릭하면 #test2의 value값을 INPUT으로 수정
-            Q3) #test3를 클릭하면
-            1.  .result_target영역안의 문자열을 알림창으로 띄우고
-            2.  .result_target영역안을 본인이름으로 수정
-
-            </pre>
-            <script>
-              window.addEventListener("load", function(){
-
-                let test1 = document.getElementById("test1");
-                test1.onclick = function(){
-                  let name  = prompt("이름을 입력해주세요"); 
-                alert(name);};
-                 
-                let test2 = document.getElementById("test2");
-                test2.onclick = function(){
-                  // let value1 = test2.querySelector("#value");
-                // alert("ddd");
-                test2.value = "INPUT";};
-
-                let test3 = document.getElementById("test3");
-                test3.onclick = function(){
-                let target = document.querySelector(".result_target");
-                // alert("홍길동");
-                target.innerText="홍길동"
-                };
-
-
-              });
-            
-            </script>
-        </div>
-   </div>
-</body>
-</html>
+<br/>
 
 ```
-
-
-
-```
-
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <title>DBDBIG</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<div class="p-3 bg-primary text-white ">
-  <h1>006. function </h1>
-  <ol>
-    <li>function- 명시적</li>
-    <li>a태그에서의 이벤트</li>
-  </ol>
-</div>
-<div class="container card  my-3">
-  <h3  class="card-header">006. FUNCTION - STEP1. function</h3>
-  <div class="card-body">
-    <h4>STEP1. function </h4>
-    <pre>
-    1.  function 선언   - function 함수이름(){}
-    2.  function 사용   - 함수이름();
-    </pre>
-		<input type="button"  value="FUNCTION1"  title="FUNCTION"  id="fn1"   class="btn btn-outline-primary" />
     <script>
-      //이벤트대상                    이벤트   이벤트핸들러
-      //브라우저  로딩  이벤트핸들러 
       window.addEventListener("load", function(){
-        document.querySelector("#fn1").addEventListener("click", function(){
-                                                                //1. fuction(){}  익명적함수 - 콜백, 이벤트핸들러
-          alert("hello~! js!");
-            fn1();
-        });
-      });
-      //2.  마법상자 이름 명시적함수
-      // 호이스팅 : 코드실행전에 메모리가 올라감, 선언전 호출 가능 어느위치나(무거움)
-      // fn1();
-      function      fn1(){   alert("hello~! js!");   }
-      // fn1();
-
-      //3. 함수 표현식  -  변수에 할당하는 방식
-      //fn11(); 선언전 호출하면 에러
-      // fn11();
-      const fn11 = function(){alert("Hello2"); };
-      // fn11();
-
-      //4. 화살표함수 - react
-      const fn12 = ()=> alert("Hello3"); 
-      // fn12();
-
-      //5. 즉시실행함수 - 정의하자마자 실행되는 함수, 주로 초기화 용도 
-      // (function(){alert("Hello4"); })(); 
-  </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>EX</h4>
-    <pre>
-      1. fn2를 누르면 - window.onload / getElementById 이용
-      2. fn2()  만들기 - 1,2,3,4,5 alert 창 5번 띄우기
-      3. #fn2에서 클릭할때 fn2() 호출
-      </pre>
-      <input type="button"  value="버튼2"  title="버튼2"    id="fn2"  class="btn btn-success" />
-      <script> 
-
-        window.addEventListener("load", function(){
-          let fn2btn = document.getElementById("fn2");    
-          fn2btn.addEventListener("click", function(){
-            fn2();
-          }); 
-        });
-
-        function fn2(){
-          alert(1); alert(2); alert(3); alert(4); alert(5);
-        }
-      </script>
-  </div>
-</div>
-
-
-
-
-<div class="container card  my-3">
-  <h3  class="card-header">006. FUNCTION - STEP2. a 태그에서 event</h3>
-  <div class="card-body">
-    <h4>STEP2. a 태그에서 event </h4>
-		<a href="#"   class="btn btn-outline-primary target_a" >EVENT</a>
-    <script>
-      //이벤트대상                    이벤트   이벤트핸들러
-      //브라우저  로딩  이벤트핸들러 
-      window.addEventListener("load", function(){
-        let link = document.querySelector(".target_a"); //css 표현방법
-        link.addEventListener("click", function(e){ // 아무거나가능 이후일어날일
-          e.preventDefault(); // 이벤트의 기본동작 막기 - a, type="submit" // 너원래 하려던거 하지마. 같은기능
-          alert("A link!");
-        });
-      });
-  </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>STEP3. a 태그에서 event 사용예</h4>
-    <div class=" w-25  bg-primary    rounded  p-2 text-white  text-center ">
-      <h1>Score   <span class="target_num">0</span></h1>
-    </div>
-    <div class="w-25 text-center m-2">
-      <a href="#" class="btnPlus   btn btn-outline-primary">plus</a>
-      <a href="#" class="btnMinus  btn btn-outline-primary">minus</a>
-    </div>
-    <script>
-      
-      //Q1. .bntPlus를 클릭하면 .target_num 안의 숫자가 올라간다.
-      // 힌트1) .btnPlus    찾아오기
-      // 힌트2) .btnMinus   찾아오기
-      // 힌트3) .target_num 찾아오기    -   일반태그이므로 innerHTML 접근
-      // 힌트4) 1을 클릭하면 - 일반태그이므로 innerHTML 접근
-      // window.addEventListener("load", function(){
-
-        // let num = 0;
-        // let plus = document.querySelector(".btnPlus")
-        // plus.addEventListener("click", function(a){
-        //   let target = document.querySelector(".target_a");
-        //   a.preventDefault();
-        //   let targetx = document.querySelector(".target_num");
-        //   targetx.innerText = num;
-        //   num ++;
-        // });
-        // let minus = document.querySelector(".btnMinus")
-        // Minus.addEventListener("click", function(a){
-        //   let target = document.querySelector(".target_a");
-        //   a.preventDefault();
-        //   let targetx = document.querySelector(".target_num");
-        //   targetx.innerText = num;
-        //   num --;
-        // });
-
-        window.addEventListener("load", function(){
-        let num=0;
-        let btnPlus = document.querySelector(".btnPlus");
-        let btnMinus = document.querySelector(".btnMinus");
-        let target = document.querySelector(".target_num");
-        btnPlus.addEventListener("click", function(e){
-          e.preventDefault();   target.innerHTML = ++num;
-
-        btnMinus.addEventListener("click", function(e){
-          e.preventDefault();   target.innerHTML = --num;
-        });  
-        });
-      });
-      //Q2. .btnMinus 클릭하면 .target_num 안의 숫자가 내려간다.
-    </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>EX</h4>
-    <div class="w-25  bg-success  rounded  p-2  mx-auto text-white  text-center target_box">
-      <h1>ROTATE</h1>
-    </div>
-    <div class="w-25 text-center m-2">
-      <a href="#" class="btnLeft   btn btn-outline-success">LEFT ROTATE</a>
-      <a href="#" class="btnRight  btn btn-outline-success">RIGHT ROTATE</a>
-    </div>
-    <script>
-
-      
-      window.addEventListener("load", function(){
-
-        let bl = document.querySelector(".btnLeft");
-        let br = document.querySelector(".btnRight");
-        let card = document.querySelector(".target_box");
-        // let btn = card.querySelector("h1");
-        let num = 0;
-        bl.addEventListener("click", function(e){
-          // alert("1");
-          e.preventDefault();
-          card.style.transform = "rotate(" + ++num + "deg)";
-        });
-        br.addEventListener("click", function(e){
-          // alert("2");
-          
-          e.preventDefault();
-          card.style.transform = "rotate(" + --num + "deg)";
-        });
-
-      }); 
-    
-
-    </script>
-  </div>
-</div>
-
-
-
-</body>
-</html>
-
-
-
-
-```
-
-
-```
-
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <title>DBDBIG</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<!--                                    -->
-<div class="p-3 bg-primary text-white ">
-  <h1>007. CONTROL</h1>
-  <ol>
-    <li>IF</li>
-    <li>SWITCH</li>
-    <li>FOR/WHILE/DO WHILE</li>
-  </ol>
-</div>
-<!--                                    -->
-<!--                                    -->
-<div class="container card  my-3">
-  <h3  class="card-header">007. CONTROL - Step1. IF</h3>
-  <div class="card-body">
-    <h4>Step1. IF</h4>
-      <script>
-       // if(조건){조건이 true }
-       // else    {조건이 false}
-        let data = 1; 
-        if (data==1 ) { console.log("1이다");}
-        else{ console.log("1이 아니다.");}
-      </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>EX</h4>
-    <pre>
-      평균을 입력하세요 __입력받기
-      만약 평균이 60점 이상(60점포함)이라면 합격, 아니면 불합격 출력
-    </pre>
-    <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-success"      />
-    <script>
-
-      window.addEventListener("load", function(){
-        let ex1 = document.querySelector("#ex1");
+        int ex1 = document.querySelector("#ex1");
         ex1.addEventListener("click", function(){
-
-        let avg  = prompt("평균입력");
+        int avg  = prompt("평균입력");
         if(avg >= 60){alert("합격");}
         else {alert("불합격")}; 
-
         });
-
       });
- 
     </script>
-  </div>
-</div>
+```
+ID="ex1" 인 버튼을 클릭하고 평균 점수를 입력받아야 하는 상황에서 다음과 같은 코드를 작성했을때, 버튼 클릭 후 prompt 호출과 변수 입력에 문제가 발생.
 
 
+<br/>
 
-
-<!--                                    -->
-<!--                                    -->
-<div class="container card  my-3">
-  <h3  class="card-header">007. CONTROL - Step2. SWITCH</h3>
-  <div class="card-body">
-    <h4>Step2. SWITCH</h4>
-      <script>
-      /*
-      swtich(  처리하고 싶은 대상    ){
-          case 대상의상태:    처리;  break;
-          case 대상의상태:    처리;  break;
-          case 대상의상태:    처리;  break;
-          default : 기본처리
-      } */
-        let data2=2;
-        switch(data2){
-          case 1 : console.log("1이다."); break;
-          case 2 : console.log("2이다."); break;
-          case 3 : console.log("3이다."); break;
-          default : console.log("1,2,3이 아니다")
-        }
-      </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>EX</h4>
-    <pre>
-      4,5,6 중에 입력하세요
-      4번 월드콘  ,  5번 구구콘 , 6번 설레임 알림창을 띄우시오.
-    </pre>
-    <input type="button" value="switch1"  id="switch1"  title="버튼을 클릭하세요" class="btn btn-success"      />
-    <script>
-
-      window.addEventListener("load", function(){
-        let swc = document.querySelector("#switch1");
-        swc.addEventListener("click", function(){
-        let chs = prompt("4,5,6 중에 입력하세요");
-        switch (chs){
-          case "4" : {alert("월드콘")}; break;
-          case "5" : {alert("구구콘")}; break;
-          case "6" : {alert("설레임")}; break;
-          default: {alert("아무값도 아님")}; break;
-        };
-
-        });
-
-      });
-      
-    </script>
-  </div>
-</div>
-
-
-
-
-<!--                                    -->
-<!--                                    -->
-<div class="container card  my-3">
-  <h3  class="card-header">007. CONTROL - Step3. FOR/WHILE/DO WHILE</h3>
-  <div class="card-body">
-    <h4>Step3. FOR/WHILE/DO WHILE</h4>
-      <script>
-      /*
-        STEP1 for  - 반복횟수 알때
-        for(  초기문; 조건문; 증감문 ){  }
-
-        STEP2 while- 반복횟수 모를때
-        초기문;
-        while(  조건문 ){     증감문;  }
-
-        STEP3 do while- 한번은 실행을 해야할때
-        초기문;
-        do{     증감문;  } while(  조건문 );
-
-        STEP4 향상된 for
-        for( index  in 객체 ){     }*/
-        console.log("step1-for");
-        for(let i=1; i<4; i++){console.log(i);}
-
-        console.log("step2-while");
-        let i=1;
-        while( i<4){console.log(i); i++}
-
-        console.log("step3-do-while");
-        i=1;
-        do{console.log(i); i++;}while( i<4);
  
-        console.log("step4-향상된 for");
-        const list = ['a','b','c'];
-        for(let i in list ) {console.log( i + "/" + list[i]); }
+### ⚠️ 원인
 
-        console.log("step4-향상된 for 2");
-        list.forEach( (ele , index, list)=> { // e-i-l
-          console.log( ele + "/" + index + "/" + list);
-        } );
-      </script>
-  </div>
-  <!--     -->
-  <!--     -->
-  <hr/>
-  <div class="card-body">
-    <h4>EX</h4>
-    <pre>
-    for, while, do while
-    Q1)		1	2	3	4	5
-    Q2)		5	4	3	2	1
-    Q3)		2	4	6
-    Q4)		hello1		hello2		hello3
-    Q5)		const list1 = [1	2	3	4	5];
-    </pre>
-    <script>
-      // for, while, do while
-      //A1)		1	2	3	4	5
-      window.addEventListener("load", function(){
-
-
-        console.log("1for 1 2 3 4 5")
-
-        for (let i = 1; i<6; i++){
-          console.log(i)
-        };
-        console.log("1while 1 2 3 4 5")
-        let i = 1;
-        while ( i<6){
-          console.log(i)
-        i++};
-
-        console.log("1do-while 1 2 3 4 5")
-        i = 1;
-        do{
-          console.log(i)
-        i++}while ( i<6);
+```
+int ex1 = document.querySelector("#ex1"); // 변수 선언 방식이 잘못됨
+        ex1.addEventListener("click", function(){
+        int avg  = prompt("평균입력");
+```
+JavaScript는 동적 타입 언어이므로, 변수 선언 시 자료형을 명시하지 않고, const(상수), let(블록스코프), var(함수스코프) 특징을 가진 변수를 사용하여 선언한다.
 
 
 
-      //A2)		5	4	3	2	1
 
-      console.log("2for 5 4 3 2 1")
+<br/>
 
-      for (let i = 5; i>=1; i--){
-          console.log(i)
-        };
+### 🛠 해결방법
 
-      console.log("2while 5 4 3 2 1")
+```
+let ex1 = document.querySelector("#ex1"); // 변수 선언 방식이 잘못됨
+        ex1.addEventListener("click", function(){
+        let avg  = prompt("평균입력");
+```
+JavaScript에서 사용할 수 있는 let 키워드로 선언한 변수로 변경해서 진행하면 정상적으로 작동한다.
 
-      i = 5;
-      while ( i>=1){
-          console.log(i)
-         i--};
+<br/>
 
-      console.log("2do-while 5 4 3 2 1")
-      i = 5;
-      do{
-          console.log(i)
-        i--}while (i>=1);
-        
+#### 💭 배운점 
 
-      //A3)		2	4	6
+> Java와 JavaScript는 이름은 비슷하지만, 문법과 동작 방식이 매우 다르다는 점을 배웠다. 특히 변수 선언 방식에서 큰 차이가 있으며, JavaScript에서는 let, const, var를 사용한다는 점을 배웠다.
 
-      console.log("3for 2 4 6")
-        let num = 0;
-      for (let i = 1; i<4; i++){
-          num += 2;
-          console.log(num)
-        };
+<br/>
+<br/>
+<br/>
 
-      console.log("3while 2 4 6")
-        num = 0;
-        i = 1;
-      while (i<4){
-          num += 2;
-          console.log(num)
-        i++};
 
-      console.log("3do-while 2 4 6")
-        num = 0;
-        i = 1;
-      do{
-          num += 2;
-          console.log(num)
-        i++}while (i<4);
-        
 
-      //A4)		hello1		hello2		hello3
-        
-        console.log("4for		hello1		hello2		hello3")
-        let word = "hello";
-      for (let i = 1; i<4; i++){
-          console.log(word + i)
-        };
+<!-- 2025.09.28 -->
 
-        console.log("4while		hello1		hello2		hello3")
-        i = 1; 
-      while (i<4){
-          console.log(word + i)
-         i++};
+## 📖 case 7 / JavaScript 스타일 지정 문제
 
-         console.log("4do-while		hello1		hello2		hello3")
-        i = 1; 
-      do{
-          console.log(word + i)
-         i++}while (i<4);
-        
 
+<br/>
+
+```
       // 향상된 for , forEach
       //A5)		const list1 = [1	2	3	4	5];
 
@@ -1131,34 +628,54 @@ for 또는 forEach 문을 활용하면 여러 `<li>`에 스타일을 일괄 적�
       const list = [1,2,3,4,5];
       console.log("[");
 
-      
+      let i=1;
       for (i in list){
         
         console.log(list[i]);
 
       }
       console.log("]");
+```
+향상된 for문을 사용하여 [ 1 2 3 4 5 ] 형태로 console에 출력을 시도하였으나, 최종적으로 나온 출력문은 [ 2 3 4 5 ] 가되었다.
 
 
-       console.log("향상된 for 2 = [1	2	3	4	5]");
-       console.log("[");
-        list.forEach( (ele , index, list)=> { 
-          console.log( ele );
-        } );
-        console.log("]");
-      
-         });
-    </script>
-  </div>
-</div>
+<br/>
 
-
-</body>
-</html>
+ 
+### ⚠️ 원인
 
 ```
+let i=1;
+for (i in list) {
+  console.log(list[i]);
+}
+```
+for...in은 배열의 인덱스를 순회하는 문법이다.
+그런데 let i = 1로 시작하면, 첫 번째 인덱스 0은 건너뛰게 된다.
 
-for문 while문 do-while문 향상된 for문 forEach문 
+
+
+
+<br/>
+
+### 🛠 해결방법
+
+```
+let i=0;
+```
+제일 첫번째 인덱스부터 출력되도록 수치를 조정하여 원하는 값을 출력할 수 있도록 변경하였다.
+
+<br/>
+
+#### 💭 배운점 
+
+> Java에서 배열의 인덱스가 0부터 시작하는 것처럼, JavaScript에서도 배열 순회 시 인덱스 초기값 설정에 주의해야 한다. 또한 for...in 문은 객체의 속성을 순회하기 위해 설계된 문법이므로, 배열에 사용할 경우 의도하지 않은 결과가 나올수 있으므로 다른 문법을 사용하는 것이 적절하다는 점을 배웠다.
+
+<br/>
+<br/>
+<br/>
+
+
 
 
 <!-- **■ Java**
