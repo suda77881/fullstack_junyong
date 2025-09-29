@@ -46,24 +46,39 @@
             const  arr3 = new Array(3);
           </pre>
           <script>
-            console.log("사용법(1) 리터럴 ");
-            const  arr1 = [1,2,3];
-            for(let i in arr1){  console.log(arr1[i]); };
+            console.log("사용법(1) 리터럴")
+            const arr1 = [1,2,3];
+            for(let i in arr1){console.log(arr1[i]);};
 
-            console.log("사용법(2) 배열생성자 ");
+            console.log("사용법(2) 배열생성자");
             const arr2 = new Array(1,2,3);
-            for(let i in arr2){  console.log(  arr2[i]);}
+            for(let i in arr2){console.log(arr2[i]);};
 
-
-            console.log("사용법(3) 배열생성자-2 ");
+            console.log("사용법(3) 배열생성자-2")
             const arr3 = new Array(3);
             arr3[0] = 1; arr3[1] = 2; arr3[2] = 3;
-            for(let i in arr3 ){console.log(arr3[i]); }
+            for(let i in arr3){console.log(arr3[i]);};
 
+            console.log("사용법(4) 원하는 콘텐츠 다")
+            let arr4 = ["sally", "cat", 3, 7.8]
+            for(let i in arr4){console.log(arr4[i]);};
+            
+            // console.log("사용법(1) 리터럴 ");
+            // const  arr1 = [1,2,3];
+            // for(let i in arr1){  console.log(arr1[i]); };
 
-            console.log("사용법(4) 원하는 콘텐츠 다 ")
-            let arr4 = ["sally", "cat", 3, 7.8];
-            for(let i in arr4) {console.log(arr4[i]); }
+            // console.log("사용법(2) 배열생성자 ");
+            // const arr2 = new Array(1,2,3);
+            // for(let i in arr2){  console.log(  arr2[i]);}
+
+            // console.log("사용법(3) 배열생성자-2 ");
+            // const arr3 = new Array(3);
+            // arr3[0] = 1; arr3[1] = 2; arr3[2] = 3;
+            // for(let i in arr3 ){console.log(arr3[i]); }
+
+            // console.log("사용법(4) 원하는 콘텐츠 다 ")
+            // let arr4 = ["sally", "cat", 3, 7.8];
+            // for(let i in arr4) {console.log(arr4[i]); }
 
           </script>
         </div>
@@ -78,8 +93,6 @@
             for문으로 출력해주기
 
            
-
-
             2) 배열이름 myCat
             cat, alpha, 3, 경기도시흥
             for+length문으로 출력해주기
@@ -89,18 +102,44 @@
 
             console.log("ex1. animal");
             let animal = new Array(4);
-            animal[0] = "dog"
-            animal[1] = "cat"
-            animal[2] = "duck"
-            animal[3] = "monkey"
+            animal[0] = "cat";
+            animal[1] = "alpha";
+            animal[2] = 3;
+            animal[3] = "경기도시흥";
+
+            for (let i in animal){console.log(animal[i]);};
 
 
-            for (let i in animal){console.log(animal[i]); }
-            for (let i=0; i<animal.length; i++){console.log(animal[i]);}
+            console.log('2배열이름 myCat')
 
-            console.log("ex2. myCat");
-            let myCat = ['cat', 'alpha', 3, '경기도시흥'];
-            for(let i=0; i<myCat.length; i++){console.log(myCat[i]);}
+            let myCat = new Array("cat","alpha",3,"경기도시흥");
+
+            for(let i = 0; i<myCat.length; i++){
+              console.log(myCat[i]);
+            }
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // for (let i in animal){console.log(animal[i]); }
+            // for (let i=0; i<animal.length; i++){console.log(animal[i]);}
+
+            // console.log("ex2. myCat");
+            // let myCat = ['cat', 'alpha', 3, '경기도시흥'];
+            // for(let i=0; i<myCat.length; i++){console.log(myCat[i]);}
             //  const  animal = ["dog","cat","duck"];
             // for(let i in animal){ console.log(animal[i]); };
 
@@ -134,6 +173,9 @@
             let obj = {1:'one', 2:'two',3:'three' };
            </pre>
            <script>
+            // let arr = [1,2,3];
+            // let obj = {1:'one', 2:'two', 3:'three'};
+
             let arr = ['Number' , 1,2,3];
             console.log(arr);
             console.log(typeof(arr)); // object
@@ -176,20 +218,46 @@
             </pre>
             <script>
 
-              console.log("ex1");
-              let car = {name:'BMW', color:'RED' , year:2026};
+            console.log("ex1");
+              let car1 = {name:'BMW', color:'RED' , year:2026};
               console.log(car1);
-              
-              let car2 = {};  // 
-              car2.name='BMW'; car2.color='WHITE'; car2.year=2027;
-              console.log(car2);
 
-              console.log("ex2");
-              let score={kor:100, eng:100, math:99};
-              let total=scroe.kor + score.eng + score.math;
-              let   avg = total/3;
-              console.log('총점: ' + total);
-              console.log('평균: ' + avg);
+              let car2 = {};
+              car2.name='BMW'; car2.color='RED'; car2.year='2026';
+              console.log(car2.name); 
+              console.log(car2.color); 
+              console.log(car2.year);
+
+              let score = {kor:100, eng:100, math:99};
+              let total = console.log(score.kor + score.eng + score.math);
+              let avg = console.log((score.kor + score.eng + score.math) / 3);
+              
+
+
+
+
+              
+
+
+
+
+
+
+
+              // console.log("ex1");
+              // let car = {name:'BMW', color:'RED' , year:2026};
+              // console.log(car1);
+              
+              // let car2 = {};  // 
+              // car2.name='BMW'; car2.color='WHITE'; car2.year=2027;
+              // console.log(car2);
+
+              // console.log("ex2");
+              // let score={kor:100, eng:100, math:99};
+              // let total=scroe.kor + score.eng + score.math;
+              // let   avg = total/3;
+              // console.log('총점: ' + total);
+              // console.log('평균: ' + avg);
               // 차이름(name), 차색상(color), 년식(year)
             
             </script>
