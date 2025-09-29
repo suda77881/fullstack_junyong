@@ -1158,6 +1158,94 @@ public Withdraw() { super(); }
 <br/> 
 <br/>
 
+
+<!-- 25.09.29 -->
+
+<br/>
+
+## case.15	//	bank 시스템 구축시 마이너스 계좌 발생
+
+```
+출금할 금액입력 > 
+50000
+출금하실 금액은 :50000.0원 입니다.
+잔액은 : -19999.0원 입니다.
+```
+bank 시스템을 코드로 구축했으나, 의도치 않게 출금 금액이 보유 잔고보다 낮은 경우에도 수치에 제한없이 출금이 되어서 마이너스 계좌가 가능해지는 현상이 발생했다.
+
+<br/>
+
+### 원인
+
+```
+
+public Withdraw() { super(); }
+		public Withdraw(UserInfo userinfo) { super(); this.userinfo = userinfo;}
+
+		public void exec() {
+
+            // 출금 금액에 대한 유효성 검사가 누락됨
+			
+			double money = 0;
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("출금할 금액입력 > "); money = sc.nextDouble();
+			System.out.println("출금하실 금액은 :" + money + "원 입니다.");
+			this.userinfo.setBalance(this.userinfo.getBalance() - money);
+			System.out.println("잔액은 : " + this.userinfo.getBalance() + "원 입니다.");
+			
+			
+		}
+```
+
+별도의 금액제한사항을 제어문을 통해 구현해 놓지 않는 것이 원인이다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+
+public Withdraw() { super(); }
+		public Withdraw(UserInfo userinfo) { super(); this.userinfo = userinfo;}
+
+		public void exec() {
+
+            // 별도의 금액 상한/하한선 제한없음
+			
+			double money = 0;
+			Scanner sc = new Scanner(System.in);
+			System.out.println("출금할 금액입력 > "); money = sc.nextDouble();
+
+            if (money > 0 && money <= this.userinfo.getBalance()) {
+			System.out.println("출금하실 금액은 :" + money + "원 입니다.");
+			this.userinfo.setBalance(this.userinfo.getBalance() - money);
+			System.out.println("잔액은 : " + this.userinfo.getBalance() + "원 입니다.");
+			}
+            else {System.out.println("잔액이 부족합니다!");
+            }
+			
+		}
+
+```
+조건문을 추가하여 금액에 대한 조건분기를 작성하여 마이너스 계좌가 가능하지않도록 제한하였다.
+
+
+
+<br/>
+
+#### 배운점
+
+> 출금 로직을 구현할 때, 입력값에 대한 유효성 검사를 반드시 선행해야 한다는 점을 배웠다. 수치 조건을 정밀하게 제어하지 않으면, 시스템이 의도치 않은 방향으로 동작할 수 있으며, 특히 금융 시스템에서는 마이너스 잔액과 같은 오류를 방지하는 로직이 필수적이다.
+
+
+
+---
+<br/> 
+<br/>
+
 ## 🔧 참고문헌
 
 - [Git 공식 문서](https://git-scm.com/doc)  
