@@ -1,4 +1,5 @@
 package com.company.java012;
+
 /*
 1. 클래스는 부품객체 		2. 상태와 행위 		3. 상속은 재활용
  	 Object 			

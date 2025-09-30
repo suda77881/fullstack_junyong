@@ -1,4 +1,4 @@
-package com.company.java012;
+package com.company.java012_ex;
 
 //Q1. 상속도를 그리시오.
 
@@ -42,7 +42,7 @@ public class PolyEx001 {
 		 @Override public String toString() { return "TestB3 [b=" + b + "]"; }
 		} 
 		/////////////////////////////////////////////////
-		public class PolyEx002 {
+		public class PolyEx001 {
 		 public static void main(String[] args) {
 		    TestB3  tb =  (TestB3) new TestA3();
 		    //Q2. 15번째줄에서   TestB3  tb는 클래스의 무엇을 사용할수 있을까요? 

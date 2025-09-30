@@ -1,4 +1,4 @@
-package com.company.java012;
+package com.company.java012_ex;
 
 //Q1. 상속도를 그리시오. 
 /*    Object
