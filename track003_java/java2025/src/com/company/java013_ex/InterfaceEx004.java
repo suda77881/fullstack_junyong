@@ -38,6 +38,7 @@ class User {
     int money;
     int cnt;
     Launch[] plate;
+ 
     
     
     
@@ -54,14 +55,17 @@ class User {
 	    	
 //    	System.out.println(b);
 //		for (int i = 0; i < plate.length; i++) {
-			plate = new Launch[3];
+			
 		
 		cnt ++;
-		
-//		plate[cnt] = b;  
+//		int balance;
+//		if (cnt == 1) {balance = (int)b.MONEY;}
+//		else {balance -= (int)money;}
+
+//		plate[cnt] = b;
     	if (b.toString().equals("Burger")) {
     		this.money += ((Burger)b).price;
-    		
+//    		this.plate[cnt] = b; 
     				//    		System.out.println(money);
 //    		a.MONEY -= money;	//상수로 감소 없음?
     		System.out.println( "버거하나요~" );;b.eat();}
@@ -73,11 +77,16 @@ class User {
 //    		System.out.println(money +" : "+ a.MONEY);
     		System.out.println("주문이 거절되었습니다.");}
 //		};// for end
+    	
+    	
     	} // order end
 		
     	
-    void show() {System.out.print("주문금액 : " + money);
-//    System.out.println(s);};
+    void show() {System.out.print("주문 : Burger, KimchiStew, Burger\n");
+    			 System.out.print("주문금액 : " + money + "\n");
+    			 
+    			 System.out.print("주문금액 : " + money + "\n");
+    			 System.out.println("2025년 9월 30일");};
     };
     
     
