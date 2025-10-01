@@ -1317,6 +1317,80 @@ int[] stamina = { 75, 60, 85 };
 > private를 사용할 때만 getter, setter 설정이 필요하다고 알고있었으나, protected를 사용할 때도 같은 패키지내에서도 필요하다는것을 알았다.
 
 
+<!-- 25.10.01 -->
+
+<br/>
+
+## case.17	//	List 사용시 값 추가 문법 오류
+
+```
+
+출력내용 
+
+--- 우주 탐사 대원 시뮬레이션 ---
+null 엔지니어 탐사: 기계 장치 점검 완료!
+null 보고서: 에너지 시스템 안정적
+Nova는 충분한 체력을 유지 중입니다. 
+현재 스테미나 : 75
+null 생물학자 탐사: 외계 식물 샘플 채취!
+null 보고서: 생명체 흔적 발견
+null 휴식: 생체 리듬 조절 중...
+현재 스테미나 : 60
+null 파일럿 탐사: 항로 재설정 및 우주선 조종!
+null 보고서: 궤도 진입 성공
+Jet는 충분한 체력을 유지 중입니다. 
+현재 스테미나 : 85
+
+```
+대원의 이름과 탐사내용, 보고서, 스테미나를 측정해 휴식 또는 계속할 것인지 진행하는 우주 탐사 시뮬레이션을 구축할때, 이름을 표시하려고 했으나, 배열에 들어간 names를 출력하지 못하는 문제가 일어났다.
+
+<br/>
+
+### 원인
+
+```
+
+class Engineer extends Astronaut {
+
+@Override public String toString() { return "Engineer [name=" + name + ", stamina=" + stamina + "]"; }
+@Override void explore() { System.out.println(name + " 엔지니어 탐사: 기계 장치 점검 완료!"); }
+}
+
+```
+protected 로 선언된 stamina의 getter, setter기능이 존재하고있으나, name 필드에 값이 설정되지 않았기 때문에 출력 시 null이 나왔으며, 이를 해결하기 위해 setName()을 호출해야 했다.
+
+
+
+<br/>
+
+### 해결방법
+
+```
+String[] names = { "Nova", "Flora", "Jet" };
+int[] stamina = { 75, 60, 85 };
+
+	for (int i = 0; i<crew.length; i++) {
+		
+		crew[i].setName(names[i]); // 이 부분 추가
+        crew[i].setStamina(stamina[i]);
+		crew[i].explore();
+		crew[i].report();
+		
+		if (crew[i].stamina < 70) {crew[i].rest(); System.out.print("\n현재 스테미나 : " + crew[i].stamina + "\n"); }
+		else {System.out.print(crew[i].names + "는 충분한 체력을 유지 중입니다. \n현재 스테미나 : " + crew[i].stamina + "\n");};
+	};
+}
+```
+추상화를 담당하는 부모 클래스에 Astronaut에 getName() 메서드를 추가하고, 배열을 name 변수에 담고 출력할수 있도록 setName부분을 작성했다.
+
+
+
+<br/>
+
+#### 배운점
+
+> private를 사용할 때만 getter, setter 설정이 필요하다고 알고있었으나, protected를 사용할 때도 같은 패키지내에서도 필요하다는것을 알았다.
+
 
 
 
