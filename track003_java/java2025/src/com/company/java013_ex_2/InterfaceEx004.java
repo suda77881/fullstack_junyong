@@ -1,6 +1,6 @@
-package com.company.java013_ex;
+package com.company.java013_ex_2;
 
-import java.util.Arrays;
+
 
 //1. 인터페이스를 활용한 점심 주문 시뮬레이션
 //다음은 점심 메뉴 주문을 인터페이스로 추상화한 프로그램이다. 
@@ -37,71 +37,39 @@ class KimchiStew  implements Launch{
 class User {  
     int money;
     int cnt;
-    Launch[] plate;    
+    Launch[] plate;
+ 
+    
+    
+    
+    
+    
 
 	void order(Launch b) {
-		
-		
-		if(cnt==0) {	//	한번만 실행
-		
+
+		cnt ++;
 		plate = new Launch[3];
-		}
-		
-//		for (int i = 0; i<plate.length; i++ ) {
-//	    	
-//	    	plate[i] = a;
-		
-		
-	    	
-//    	System.out.println(b);
-//		for (int i = 0; i < plate.length; i++) {
-			
-		
-		
-//		int balance;
-//		if (cnt == 1) {balance = (int)b.MONEY;}
-//		else {balance -= (int)money;}
-
-
+		plate[cnt] = b;
     	if (b.toString().equals("Burger")) {
     		this.money += ((Burger)b).price;
-    		if (!(b.equals( "null"))) {plate[cnt++] = b;}
-//    		this.plate[cnt] = b; 
-    				//    		System.out.println(money);
-//    		a.MONEY -= money;	//상수로 감소 없음?
     		System.out.println( "버거하나요~" );;b.eat();}
     	else if (b.toString().equals("KimchiStew")) {
     		this.money += ((KimchiStew)b).price;
-//    		plate[cnt+=1] = b;
-    		if (!(b.equals( "null"))) {plate[cnt++] = b;}
-//    		a.MONEY -= money;	//상수로 감소 없음?
     		System.out.println( "김치찌개하나요~" );;b.eat();}
     	else {
-//    		System.out.println(money +" : "+ a.MONEY);
     		System.out.println("주문이 거절되었습니다.");}
-//		};// for end
+
     	
     	
     	} // order end
 		
     	
-    @Override
-	public String toString() {
-		return "[plate=" + Arrays.toString(plate) + "]";
-	}
-
-
-	void show() {
-//		System.out.println(toString());
-		
-					for (int i = 0; i < plate.length; i++) {
-						
-    				System.out.print(i == 2 ? plate[i] + "\n" : plate[i] + ",");
-					}
-//					System.out.print("주문 : " + plate[0] + "," + plate[1] + "," + plate[2]+ "\n");
-	    			 System.out.print("주문금액 : " + money + "\n");
-	    			 System.out.print("잔액 : " + (-(money - Launch.MONEY)) + "\n");
-	    			 System.out.println("2025년 9월 30일");};
+    void show() {System.out.print("주문 : " + plate[0] + "," + plate[1] + "," + plate[2] +"\n");
+    			 System.out.print("주문금액 : " + (money - Launch.MONEY) + "\n");
+    			 
+    			 int balance=0;
+//				 System.out.print("잔액 : " + (balance = c.MONEY) - money + "\n");
+    			 System.out.println("2025년 9월 30일");};
     };
     
     
