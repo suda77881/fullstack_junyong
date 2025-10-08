@@ -10,8 +10,7 @@ public class Shopping implements BankController {
 	double balance;
 	int cs = -1;
 
-	@Override
-	public int exec(List<UserInfo> users, int find) {
+	@Override public int exec(List<UserInfo> users, int find) {
 		
 		Scanner sc = new Scanner(System.in);
 		while(!(cs == 4)){
@@ -32,10 +31,9 @@ public class Shopping implements BankController {
 			case 4: {break;}
 			}
 			
-			
 		}
 		
-		return 1;
+		return find;
 	}
 
 }

@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Deposit implements BankController {
 
-	
-
-
-
 
 	@Override
 	public int exec(List<UserInfo> users, int find) {
@@ -19,11 +15,12 @@ public class Deposit implements BankController {
 //		if (users.get(i).getBalance() >= 1) {
 			UserInfo u = users.get(find);
 		    u.setBalance(u.getBalance() + money) ;
-		    System.out.println("입금이 완료되었습니다." + u);
+//		    System.out.println("입금이 완료되었습니다.\n" + u);
+		    System.out.println("현재 잔액 : " + u.getBalance() + " 원");
 //			};
 //			}
 		
-		return 1;
+		return find;
 		
 	}
 }

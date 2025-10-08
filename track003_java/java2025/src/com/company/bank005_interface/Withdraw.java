@@ -14,12 +14,13 @@ public class Withdraw implements BankController {
 		// 입력 - 사용자한테 입금할 금액입력받기
 		System.out.println("출금할 금액을 입력해주세요 >"); double balance = sc.nextDouble();
 
-		
 		// 처리
 		UserInfo u = users.get(find);
 		u.setBalance(u.getBalance() - balance);
+		
 		// 출력
-		return 1;
+		System.out.println("현재 잔액 : " + u.getBalance() + " 원");
+		return find;
 		
 //		Scanner sc = new Scanner(System.in);
 //		System.out.println("출금하실 금액 입력"); double money = sc.nextDouble();
@@ -31,9 +32,4 @@ public class Withdraw implements BankController {
 //		return 1;
 //		
 	}
-
-
-
-	
-	
 }

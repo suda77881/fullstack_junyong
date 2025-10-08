@@ -8,17 +8,18 @@ public class Bank_Main {
 	// 멤버변수
 	private List <UserInfo> users;	// add, get, size, remove, contains
 	private BankController [] controller;
-	
+	public int find;
+	public static int login = -1; 
 	
 	public List<UserInfo> getUsers() { return users; } public void setUsers(List<UserInfo> users) { this.users = users; } public BankController[] getController() { return controller; } 
 	public void setController(BankController[] controller) { this.controller = controller; }
 	public Bank_Main() { 
 		users		= new ArrayList<>();	
 		controller  = new BankController[]{
-				new Login() , new Add(), new Show(),
-			//        0           1          2     
-				new Deposit(), new Withdraw(), new Delete(), new Shopping()
-				//    3               4               5				6
+				new Login() , new Add(), new Show(), new Deposit(),
+			//        0           1          2     			3
+				 new Withdraw(), new Delete(), new Shopping(), // new Change()
+				//    4               5				6				7
 		};
 	}
 	// 멤버함수	(메뉴판)
@@ -39,10 +40,10 @@ public class Bank_Main {
 		Scanner sc = new Scanner(System.in);
 		while ((!(num == 9))) {
 			num = -1;
-			System.out.println(
-					"메뉴를 선택해주세요 > \n[1] 계좌 추가 \n[2] 계좌 조회 \n[3] 입금하기 \n[4] 출금하기 \n[5] 계좌 삭제\n[6] 쇼핑");
+			System.out.print(
+					"[1] 계좌 추가 \n[2] 계좌 조회 \n[3] 입금하기 \n[4] 출금하기 \n[5] 계좌 삭제\n[6] 쇼핑\n메뉴를 선택해주세요 > ");
 			num = sc.nextInt();
-			int find=1; // 찾은 유저번호 or 0 로그인 1 계좌추가
+			// 찾은 유저번호 or 0 로그인 1 계좌추가
 			
 			//add, get(번호), size, remove(번호), contatins()
 			//추가         :
@@ -73,7 +74,11 @@ public class Bank_Main {
 				
 				controller[0].exec(users, 0);
 				
+				if (login != 1) {break;}
+				
 				switch(num) {
+				
+				
 				
 				case 2: {controller[num].exec(users, find);}break;
 				case 3: {controller[num].exec(users, find);}break;
