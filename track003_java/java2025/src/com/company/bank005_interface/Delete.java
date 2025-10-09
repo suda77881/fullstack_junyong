@@ -19,10 +19,6 @@ public class Delete implements BankController {
 			System.out.println("취소되었습니다."); 
 			return find;	// cancel
 		}	// else end
-
-//		UserInfo u = users.remove(find);
-//		System.out.println("정보를 삭제했습니다. > " + u);
-		
 		
 	}
 

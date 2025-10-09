@@ -10,6 +10,7 @@ public class Bank_Main {
 	private BankController [] controller;
 	public int find;
 	public static int login = -1; 
+	public static String veh = "";
 	
 	public List<UserInfo> getUsers() { return users; } public void setUsers(List<UserInfo> users) { this.users = users; } public BankController[] getController() { return controller; } 
 	public void setController(BankController[] controller) { this.controller = controller; }
@@ -18,7 +19,7 @@ public class Bank_Main {
 		controller  = new BankController[]{
 				new Login() , new Add(), new Show(), new Deposit(),
 			//        0           1          2     			3
-				 new Withdraw(), new Delete(), new Shopping(), // new Change()
+				 new Withdraw(), new Delete(), new Shopping(), new Chatting()
 				//    4               5				6				7
 		};
 	}
@@ -41,8 +42,9 @@ public class Bank_Main {
 		while ((!(num == 9))) {
 			num = -1;
 			System.out.print(
-					"[1] 계좌 추가 \n[2] 계좌 조회 \n[3] 입금하기 \n[4] 출금하기 \n[5] 계좌 삭제\n[6] 쇼핑\n메뉴를 선택해주세요 > ");
+					veh + "\n[1] 계좌 추가\n[2] 계좌 조회\n[3] 입금하기\n[4] 출금하기\n[5] 계좌 삭제\n[6] 쇼핑\n[7] 채팅상담\n[9] 종료\n메뉴를 선택해주세요 > ");
 			num = sc.nextInt();
+			
 			// 찾은 유저번호 or 0 로그인 1 계좌추가
 			
 			//add, get(번호), size, remove(번호), contatins()
@@ -59,7 +61,7 @@ public class Bank_Main {
 			case 1: {
 //				System.out.println("계좌 추가 기능입니다.");
 				controller[num].exec(users, 0);}break;
-			case 2 : case 3: case 4 : case 5: case 6: {
+			case 2 : case 3: case 4 : case 5: case 6: case 7: {
 				
 				// add, get(번호), size, remove(번호), contatins()
 				// Add		: users.add(	new UserInfo("id", "pw", 1) );
@@ -85,18 +87,20 @@ public class Bank_Main {
 				case 4: {controller[num].exec(users, find);}break;
 				case 5: {controller[num].exec(users, find);}break;
 				case 6: {controller[num].exec(users, find);}break;
-				
+				case 7: {controller[num].exec(users, find);}break;
+				case 9: {System.out.println("");}break;
+				default : {System.out.println("잘못된 입력입니다.");}continue;
 				}
 				
 			}break;	// login or menu
 			
-			default : {System.out.println("잘못된 입력입니다.");}continue;
+			
 					
 			
 			}// 1 or another 
 			
 		}// while end
-		System.out.println("EXIT");
+		System.out.println("종료되었습니다.");
 		
 //		if (num == 1) {
 //			System.out.println("계좌 추가 기능입니다.");

@@ -12,7 +12,7 @@ public class Withdraw implements BankController {
 		// 변수
 		Scanner sc = new Scanner(System.in);
 		// 입력 - 사용자한테 입금할 금액입력받기
-		System.out.println("출금할 금액을 입력해주세요 >"); double balance = sc.nextDouble();
+		System.out.print("출금할 금액을 입력해주세요 > "); double balance = sc.nextDouble();
 
 		// 처리
 		UserInfo u = users.get(find);

@@ -9,7 +9,7 @@ public class Deposit implements BankController {
 	@Override
 	public int exec(List<UserInfo> users, int find) {
 		Scanner sc = new Scanner(System.in); 
-		System.out.println("입금하실 금액 입력"); double money = sc.nextDouble();
+		System.out.print("입금하실 금액 입력 > "); double money = sc.nextDouble();
 		
 //		for (int i = 0; i<users.size(); i++) {
 //		if (users.get(i).getBalance() >= 1) {
