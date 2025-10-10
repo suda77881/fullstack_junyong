@@ -26,10 +26,10 @@ public class Chatting implements BankController {
 		case 2:System.out.print("환전서비스 입니다 1달러(1,418.97원)입니다 환전 하시겠습니까? :-D \n이용하시려면 1번을 취소하시려면 2번 > ");menu2 = sc.nextInt();
 		if (menu2 == 1) {u.setDbalance(u.getBalance() / 1418.97);
 		u.setBalance(0);
-		System.out.println("현재 잔액 : " + u.getDbalance() + " 달러");
+		System.out.printf("현재 잔액 : %.2f 달러\n", u.getDbalance());
 		break;}else {System.out.println("취소");break;}
 		case 3:System.out.print("카드를 발급 받으시겠습니까? (쇼핑 적립금 5% 교통카드 5% 환급) \n이용하시려면 1번을 취소하시려면 2번 > ")
-		;menu2 = sc.nextInt();  if (menu2 == 1) {Bank_Main.veh = "🎴🎴🎴🎴";break;}else {System.out.println("취소");break;}
+		;menu2 = sc.nextInt();  if (menu2 == 1) {Bank_Main.veh = "🎴🎴🎴🎴";System.out.println("카드발급이 완료되었습니다.");break;}else {System.out.println("취소");break;}
 		case 4:System.out.println("통장 관련 문의는 상담원 연결 서비스를 이용해주세요.");break;
 //		case 5:System.out.println();
 //		case 6:System.out.println();

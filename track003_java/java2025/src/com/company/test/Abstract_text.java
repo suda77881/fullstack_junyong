@@ -13,7 +13,7 @@ abstract class Count {
 
 class Son extends Count{
 	
-	public void talk();
+	@Override public void talk() {};
 }
 
 

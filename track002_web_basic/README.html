@@ -1,179 +1,467 @@
-<!-- 시작 -->
- 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>성실한 개발자 신준용 포트폴리오</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-    * {color:#fff;}
-    h1 {text-align:center; font-size:40px; font-weight:bold;}
-    body {background-image:url(./img/pexels-ollivves-1078981.jpg); 
-          text-align:left; font-size:20px; font-family:'segoe UI', sans-serif;}
-    body::before {filter:blur(100px);}
-    .profile.card {padding:20px; width:255px; }
-    .profile.img {width:250px; background-color:#fff; border-radius:50%; 
-                  border:4px solid #333}
-    .introduce {padding:40px 20px; margin:0 auto; width:600px;}
-    .golds.card {padding:20px; width:220px }
-    .golds.card ul {transform:translate(-20px,-20px); font-weight:bold; font-size:16px;}
-    .portfolio {margin:-53px auto;}
-    .card {border-radius:15px; margin:29px; border:3px solid transparent; 
-            background:linear-gradient(0deg, #8a855aff, #1f957fff);}
-    .card:hover {transition:all 0.8s ease; background:linear-gradient(135deg, #5a744fff, #1d7baeff); 
-                  transform:scale(1.1);}
-    .stack {float:left; padding:20px;}
-    .clear {clear:both;}
-    .troubleshooting {background-color:#000; padding:60px 20px; margin:0 auto; 
-                    border:3px solid transparent; border-radius:15px; box-sizing:border-box;}
+    /*--------------------------- STYLE -------------------------------------*/
+    /* visual */
+    div#demo {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+img:hover{
+  transform:scale(1.1);
+  cursor:pointer;
+}
+
+.navbar.visible {
+  top: 0;
+}
+
+.carousel-inner img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+.info-wrapper {
+  position: relative;
+}
+
+.info-cover {
+  position: absolute;
+  top: 0; left: 23%;
+  width: 54%;
+  height: 99%;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 7%;
+  /* background: linear-gradient(135deg, #2e2e2e, #434343); */
+  z-index: 10;
+  transition: all 0.8s ease;
+}
+
+.info-wrapper:hover .info-cover {
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.portfolio-wrapper {
+  position: relative;
+}
+
+
+.portfolio-cover {
+  position: absolute;
+  top: 0; left: 23%;
+  width: 54%;
+  height: 98%;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 7%;
+  /* background: linear-gradient(135deg, #2e2e2e, #434343); */
+  z-index: 10;
+  transition: all 0.8s ease;
+}
+
+.portfolio-wrapper:hover .portfolio-cover {
+  opacity: 0;
+  z-index: -1;
+  pointer-events:stroke;
+}
+
+
+
+
+    /*높이 300 지정및 남는영역 자르기*/
+    body {
+      color: #ffffff;
+      font-family: 'segoe UI', sans-serif;
+      text-decoration: none;
+      /* background: linear-gradient(135deg, #0f85c4, #a26d31, #ffaf7b); */
+      background: linear-gradient(135deg, #1c1c1c, #2e2e2e, #434343);
+
+      font-size: 20px;
+      
+    }
+
+    body ul {
+      margin-left: -30px;
+    }
+
+    .info {
+      background-color: #000000;
+      border-radius: 5%;
+      margin: 5% auto;
+      width: 55%;
+    }
+
+    .info:hover{
+      transform:scale(1.05);
+      transition:all,2ms,ease;
+    }
+
+    .portfolio:hover{
+      transform:scale(1.05);
+      transition:all,2ms,ease;
+    }
+
+    /* @keyframes identifier {
+
+      0% {transform:rotateY('90');}
+      25% {transform:rotateY('90');}
+      50% {transform:rotateY('90');}
+      100% {transform:rotateY('90');}
+      
+    } */
+
+    .info:hover{
+      transform:scale(1.05);
+      transition:all,0.7ms,ease;
+    }
+
+    .portfolio {
+      background-color: #000000;
+      border-radius: 5%;
+      margin: 5% auto;
+      width: 55%;
+    }
+
+    .profile img {
+      background-color: #ffffff;
+      border-radius: 20%;
+    }
+
+    .portfolio {
+      background-color: #333;
+    }
+
+    .info h4 {
+      margin: 5% 0; text-align:center;;
+    }
+
+    h3 {
+      text-decoration: underline rgba(255,255,255, 0.6);
+      font-size: 3.2em;
+    }
+
+    li {
+      list-style-type: none;
+      margin-right: 10px;
+    }
+
+    .hidden {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      /* 요소를 잘라서 시각적으로 완전히 숨김 - 구형브라우저 호환 */
+      border: 0;
+      white-space: nowrap;
+      /* 줄 바꿈 방지 - 텍스트가 한줄로 */
+    }
+
+    .project {
+      background-color:#333; border-radius:5%; margin:50px;
+    }
+
+
+    .container
+    {
+      border-radius: 3%;
+    }
+
+    /* display : none; 쓰지마라 */
+
+    /* .col-sm-4 {border:2px solid white; border-radius:5px; margin:-4px} */
   </style>
+
+
 </head>
+
 <body>
-  <br/>
-<br/>
+  <!-- H1~H6 제목 태그붙이기 -->
+  <!--PORTFOLIO-->
+  <!-- header -->
+  <header class="header">
+    <h1 class="hidden">신준용포트폴리오</h1>
+    <h2 class="hidden">신준용포트폴리오</h2>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">dev_sjy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">포트폴리오</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header><!-- header end -->
+
+  <!--visual-->
+  <section class="visual">
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button> -->
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/bg/window.jpg" alt="Los Angeles" class="d-block w-100">
+        </div>
+        <!-- <div class="carousel-item">
+          <img src="./img/bg/ai-generated-8348887_1920.jpg" alt="Chicago" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/bg/architecture-1868272_1920.jpg" alt="New York" class="d-block w-100">
+        </div> -->
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section><!--visual end-->
+
+<section class="info-wrapper">
+  <div class="info-cover"></div>
+<section class="info">
+   
+  <div class="container-fluid py-4 rounded-4 mx-auto bg-black m-5">
+    <div class="bg-secondary text-white p-3 rounded-4 shadow mx-auto" style="max-width: 1200px;">
+      <h3 class="text-center mb-5">about me</h3>
+
+      <div class="row">
+        <!-- 프로필 -->
+        <div class="col-md-4 col-sm-12 mb-4 text-center">
+          <img src="./img/me.png" class="img-fluid rounded-circle mb-3 rounded-5 bg-white me-5" alt="프로필 이미지" style="max-width:150px;" />
+          <h5 class="me-5">Shin jun yong</h5>
+          <ul class="list-unstyled">
+            <li>abre2e2@gmail.com</li>
+            <li>
+              <a href="https://github.com/suda77881/fullstack_junyong">
+                <img src="./img/free-icon-github-2111432.png" alt="깃허브링크" style="width:25px;">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 교육 및 키워드 -->
+        <div class="col-md-4 col-sm-12 mb-4 bg-dark rounded-4">
+          <h4 class="">Education</h4>
+          <ul class="list-unstyled">
+            <li class="text-center ms-5">MSA기반 플러터(Dart)활용<br />
+              자바(JAVA)프론트엔드 백엔드<br />
+              풀스택 웹(앱)개발<br />
+              (25.08.25 ~ 26.02.27)
+            </li>
+          </ul>
+          <h4 class="mt-4">KeyWord</h4>
+          <div class="d-flex flex-wrap gap-2 my-3 m-5">
+            <input type="button" value="열정" class="btn btn-danger btn-sm" />
+            <input type="button" value="성실" class="btn btn-primary btn-sm" />
+            <input type="button" value="끈기" class="btn btn-success btn-sm" />
+          </div>
+        </div>
+
+        <!-- 스킬 -->
+        <div class="col-md-4 col-sm-12 mb-4">
+          <div class="bg-dark p-4 rounded-4">
+            <h4 class="text-white py-2">SKILLS</h4>
+            <div class="progress my-2">
+              <div class="progress-bar bg-danger" style="width: 55%;">JAVA 55%</div>
+            </div>
+            <div class="progress my-2">
+              <div class="progress-bar bg-success" style="width: 60%;">HTML 60%</div>
+            </div>
+            <div class="progress my-2">
+              <div class="progress-bar bg-secondary" style="width: 50%;">CSS 50%</div>
+            </div>
+            <div class="progress my-2">
+              <div class="progress-bar bg-warning text-dark" style="width: 15%;">JS 15%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</section>
 
 
-<div class="portfolio">
-<h1> Contact & Link </h1>
+  <!-- header end -->
+<section class="portfolio-wrapper position-relative">
+  <div class="portfolio-cover"></div>
+ <section class="portfolio">
+  <div class="container-fluid p-5 rounded-4 mx-auto bg-black m-5">
+    <div class="bg-secondary text-white p-5 rounded-4 shadow mx-auto" style="max-width: 1200px;">
+      <h3 class="text-center mb-5">Portfolio</h3>
 
-<br/>
+      <!-- 기술 설명 -->
+      <div class="row">
+        <div class="col-md-4 col-sm-12 mb-4 bg-white rounded-4">
+          <ul class="list-unstyled ms-5">
+            <li class="text-center me-5 py-5 text-black">기술스택</li>
+            <img src="./icon/html.png" width="50px" alt=""/>
+            <img src="./icon/css.png" width="50px" alt=""/>
+            <img src="./icon/javascript.png" width="50px" alt=""/>
+            <img src="./icon/jquery.png" width="50px" alt=""/>
+            <img src="./icon/java.png" width="50px" alt=""/>
+            <img src="./icon/github.png" width="50px" alt=""/>
+            
 
-<div class="profile card">
-<img src="./img/me.png" class="profile img" alt="프로필" />
+            <!-- <li><strong></strong></li>
+            <li><strong>HTML</strong></li>
+            <li><strong>CSS</strong></li>
+            <li><strong>JavaScript</strong></li> -->
+          </ul>
+        </div>
 
-<br/>
-<br/>
+        <div class="col-md-4 col-sm-12 mb-4 bg-dark rounded-4 p-3">
+          <ul class="list-unstyled ms-2">
+            <li><strong>Java</strong><br/>객체지향적 특징, 추상화를 활용한 미니프로젝트 제작</li><br/>
+            <li><strong>HTML</strong><br/>웹 페이지 구조 설계 및 배치 학습</li><br/>
+            <li><strong>CSS</strong><br/>내용 / 컨텐츠 / 레이아웃 스타일링 학습</li><br/>
+            <li><strong>JavaScript</strong><br/>기본 구문과 변수를 활용한 이벤트 발생 학습</li>
+          </ul>
+        </div>
 
-이름 : 신준용<br/>
+        <div class="col-md-4 col-sm-12 mb-4 text-center">
+          <p class="text-muted">추가 콘텐츠 예정</p>
+        </div>
+      </div>
 
-<p>e-mail : <a href="boody123@naver.com" title="이메일주소">📧</a></p>
-<p>Github : <a href="https://github.com/suda77881/fullstack_junyong" title="깃허브링크">
-  <img src="./img/free-icon-github-2111432.png" width="25px" alt="깃허브아이콘"/><a></p>
+      <!-- 프로젝트 영상 -->
+      <div class="row mt-4">
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
+            title="미니프로젝트_amug (2023.06.11)"
+            allowfullscreen></iframe>
+        </div>
 
-</div>
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB"
+            title="미니프로젝트_amug (2023.06.11)"
+            allowfullscreen></iframe>
+        </div>
 
-<br/>
-<br/>
-<br/>
-
-<div class="introduce card">
-
-<h3> 자기소개 </h3>
-<pre>
-
-🖐 안녕하세요 🖐
-
-프론트엔드 주니어 개발자 지망생 신준용 입니다
-전방위 기술 스택을 실무에 도입하여 개발자간의 원할한 협업과 
-사용자를 위한 웹페이지 디자인을 추구하고싶습니다.
-</pre>
-</div>
-
-
-
-<br/>
-<br/>
-<br/>
-
-<div class="golds card">
-
-<h2> 📌 Golds</h2>
-
-<br/>
-<ul>
-<li>Git & GitHub</li>
-<li>Markdown</li>
-<li>HTML5 & CSS3</li>
-<li>AI (Copilot, ChatGPT)</li>
-<li>Java</li>
-</ul>
-</div>
-
-<br/>
-<br/>
-
-
-<!-- # 🔧 기술스택 기반 CS 역량 
-<br/> -->
-
-
-<!-- | <p style="font-size:20px"><strong>기술 스택</strong></p>       | <strong><p style="font-size:20px">CS 역량 및 학습 / 실습 경험</strong></p>                                                                 |
-|----------------|------------------------------------------------------------------------------------------|
-| <strong>Git & GitHub</strong>   | 로컬 환경 설정, 원격 저장소 연결, CI/CD 흐름 이해, Merge Conflict 문제 해결 경험         |
-| <strong>VS Code</strong>        | 프로젝트 구조 관리, 확장 기능 설치/활용, HTML/CSS 문서 작성 지원 학습                    |
-| <strong>CSS3</strong>   | 인라인 CSS 스타일 적용, 내부 스타일 학습, 애니메이션 효과 학습,  웹 접근성 점검 및 개선 실습                 |
-| <strong>HTML5</strong>   | HTML 문서 구조 설계, 웹 접근성 점검 및 개선 실습                 |
-| <strong>Markdown</strong>       | 문서 구조화, 가독성 중심 작성법 학습, README 및 학습 기록 문서 작성 경험                |
-| <strong>AI 도구 활용</strong>   | Copilot, ChatGPT 등을 활용한 코드 트러블슈팅 해결 및 개선 피드백 점검 학습               |
-| <strong>Java (Eclipse)</strong> | Java 코딩 환경 구축, 패키지와 클래스의 계층 구조 이해, 변수·상수·입출력 문법 학습, Scanner 등 라이브러리 활용 경험 | -->
-
-<br/>
-<br/>
+        <div class="col-md-4 col-sm-12 mb-4 text-center bg-dark rounded-4 p-3 text-white">
+          <h5>작업환경</h5>
+          <p><br/>Java 11<br/><br/>ECLIPSE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</section>
 
 
+  <section class="contact my-3">
+    <div class="container bg-black" style="display:flex; flex-direction:column; ">
+      <h3 class="text-center my-5">Contact Me</h3>
+      <br /><br />
+      <p style="text-align:center;">dev sjy에게 문의주세요!</p>
 
-<div class="stack HTML&CSS card">
+      <form action="/action_page.php">
+        <div class="mb-3 mt-3">
+          <label for="title" class="form-label">제목:</label>
+          <input type="text" class="form-control" id="title" placeholder="제목을 적어주세요!" name="tilte">
+        </div>
+        <div class="mb-3">
+          <label for="comment">Comments:</label>
+          <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+        </div>
+        <div class="mb-3 text-end"> </div>
+        <button type="submit" class="btn btn-primary mb-2">메일보내기</button>
+      </form>
+    </div>
 
-<Strong> HTML & CSS </Strong><br/><br/>
-<p>웹 접근성 이해하고 지키려고 노력합니다.</p>
-<p>웹 페이지의 태그 작성과 속성을 학습</p>
-<p>인라인 스타일를 활용하여 스타일 속성 학습</p>
-<p>태그 작성시 가독성을 중시한 작성법을 학습</p>
-<p>내부 스타일을 활용하여 카드 프로필 제작 및 정렬 학습.</p>
-<p>폰트, 색상, 그림자, 경계, 그래디언트 효과 활용 학습.</p>
-<p>포지션과 여백 설정을 통한 콘텐츠의 배치 방법과 공간확보 방법 학습.</p>
-<p>이동, 회전, 지연속도, 투명도, 우선순위 설정 등 특수효과 활용 학습.</p>
-<p>display를 이용한 inline 크기 및 이동방법 학습</p>
-<p>flex속성을 이용한 콘텐츠 정렬 및 밀어내기 학습</p>
+  </section><!-- contact end -->
 
+  <script>
+    window.addEventListener("load", function(){
+      let tbox1 = document.querySelector("#title");
+      let tbox2 = document.querySelector("#comment");
+      let send  = document.querySelector(".btn.btn-primary.mb-2");
+      send.addEventListener("click", function(a){
+        if (!(tbox1.value)) {
+          alert("제목을 입력해주세요");
+          a.preventDefault();
+        }
+         if (!(tbox2.value)) {
+          alert("내용을 입력해주세요");
+          a.preventDefault();
+        }
+      });
+      // send.addEventListener("click", function(a){
+      //   if (!(tbox1.value))
 
-</div>
+    });
+  </script>
 
-<div class="stack Github card">
-
-<Strong> Github & Git </Strong><br/><br/>
-<p>markdown 문서 작성 학습</p>
-<p>브런치를 활용한 팀 프로젝트 구조 학습</p>
-<p>외부 기여 방식의 프로젝트 참여방법 학습</p>
-
-
-
-</div>
-
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
+  <footer class="footer text-center bg-secondary p-5">
 
 
 
+    &copy; copyrights 2025 all.right reserved
+
+  </footer><!-- footer end -->
 
 
 
----
-<br/>
-<br/>
-<div class="clear card">
-<h3> 🔧 참고문헌 <h3></h3>
-<pre>
-<a href="https://git-scm.com/doc" title="git 공식문서 링크">Git 공식 문서</a>
-<a href="https://www.markdownguide.org/basic-syntax/" title="마크다운 가이드">Markdown 가이드</a>
-<a href="https://code.visualstudio.com/" title="visualtudio code 공식사이트">VS Code 공식 사이트 </a>
-<a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/prompt-engineering" 
-   title="AI 프롬프트 작성팁">AI 프롬프트 작성 팁</a>
-</pre>
-</div>
 
-</div><!-- -->
-</div><!-- end portfolio -->
+
 </body>
+
 </html>
-
-
-
