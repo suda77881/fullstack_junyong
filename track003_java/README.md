@@ -1393,15 +1393,51 @@ int[] stamina = { 75, 60, 85 };
 
 
 
-<!-- 25.10.03 -->
+<!-- 25.10.10 -->
 
 <br/>
 
-## case.18	//	
+## case.18	//	상속 클래스에서 자식 클래스 인스턴스 변수 호출
 
 ```
+class Papa extends Object{
+	int money = 10000;
+
+	public Papa() { super();  }
+	public void sing() {
+			System.out.println("GOD - 거짓말");}
+	} // end class
+
+class Son extends Papa{
+	int money = 1500;
+
+	public Son() { super();  }
+
+	@Override public void sing() { super.sing(); System.out.println("빅뱅 - 거짓말"); }
+
+	public Son(int money) {
+		super();
+		money = this.money;
+	}
+	
+}
+
+public class Polymorphism7 {
+
+	public static void main(String[] args) {
+		
+		Papa mypapa = new Son();
+		System.out.println(mypapa.money);	// 1. 10000
+		mypapa.sing();
+		
+	}// end main
+
+}// end class
 
 ```
+위와 같은 구조로 된 자바 파일에서 son 클래스가 부모 클래스인 papa클래스와 동일한 구조일때 자식 클래스의 메서드는 오버라이드하여 사용하면 되지만
+인스턴스 변수는 오버라이드가 되지않고, papa.money를 호출했을때 자식의 것이 호출되지 않기 때문에 원하는 값을 출력할 수 가 없었다.
+
 <!-- 문제 설명 -->
 
 <br/>
@@ -1409,7 +1445,7 @@ int[] stamina = { 75, 60, 85 };
 ### 원인
 
 ```
-
+'Papa mypapa = new Son();' 이 부분에서 직접 호출할 수 있는 부분은 mypapa의 객체들이기 때문에 직접 호출할 수 없고 캐스팅(형변환)이 필요하다. 
 ```
 <!-- 원인 설명 -->
 
@@ -1419,7 +1455,7 @@ int[] stamina = { 75, 60, 85 };
 ### 해결방법
 
 ```
-
+'System.out.println(((Son)mypapa).money);' 형변환을 사용해서 출력하면 원하는 Son클래스의 인스턴스 변수를 사용할 수 있다.
 ```
 <!-- 해결방법 -->
 
@@ -1429,7 +1465,7 @@ int[] stamina = { 75, 60, 85 };
 
 #### 배운점
 
-> 
+> 대입 또는 연산이 필요할 때만 형변환을 사용하여 해결하는 것을 알았는데 업캐스팅 또는 다운캐스팅시에도 형변환이 필요하다는 것을 배웠다.
 <!-- 배운점 느낀점 연관되어서 설명 -->
 
 

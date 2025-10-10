@@ -27,8 +27,9 @@ public class Polymorphism7 {
 	public static void main(String[] args) {
 		
 		Papa mypapa = new Son();
-		System.out.println(((Son)mypapa).money);	// 1. 10000 , 2. 형변환
+		System.out.println(mypapa.money);	// 1. 10000
 		mypapa.sing();
+		System.out.println(((Son)mypapa).money);	// 2.1500
 		
 //		Son s = new Son(1500);
 //		System.out.println(s.money);
