@@ -78,9 +78,7 @@ public class Bank_Main {
 				
 				if (login != 1) {break;}
 				
-				switch(num) {
-				
-				
+				switch(num) {	
 				
 				case 2: {controller[num].exec(users, find);}break;
 				case 3: {controller[num].exec(users, find);}break;

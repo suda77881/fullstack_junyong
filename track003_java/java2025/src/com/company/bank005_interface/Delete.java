@@ -12,7 +12,8 @@ public class Delete implements BankController {
 //		char choise = Character.toUpperCase(ch);	//	toUpperCase 강제 대문자 변환 str.toUpperCase(); or Character.toUpperCase(ch)
 		if (ch == 'Y' || ch == 'y') {users.remove(find);
 		System.out.println("정보가 삭제되었습니다."); 
-		Bank_Main.login = 0;	//	login reset
+		Bank_Main.login = -1;	//	login reset
+		Bank_Main.veh = "";	//	login reset
 		return -1;	// index reset
 		}	// if Y delete
 		else {
