@@ -3,7 +3,6 @@ package com.company.bank005_interface;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Chatting implements BankController {
 
 	@Override public int exec(List<UserInfo> users, int find) {
@@ -17,7 +16,6 @@ public class Chatting implements BankController {
 		menu = sc.nextInt();
 		UserInfo u = users.get(find);
 
-	    
 		switch (menu) {
 		
 		case 1:System.out.print("반갑습니다 대출 상담 서비스입니다. ^_^ \n현재 고객님의 이용가능 상품은 `1천만원 대출, 금리 16%` 상품입니다. \n이용하시겠습니까? 이용하시려면 1번을 취소하시려면 2번 > ")
