@@ -13,11 +13,17 @@
   <style>
     /*--------------------------- STYLE -------------------------------------*/
 
+
+    html {
+    scroll-behavior: smooth;
+    }
+
+
     .bg{
       position : relative;
       transform:translateY(0px);
       opacity:1;
-      z-index : 4;
+      z-index : 3;
       transition:all 0.6s ease;
 
     }
@@ -83,7 +89,7 @@
       transform:translateX(300px);
       opacity:0;
       transition:all 0.6s ease;
-      z-index: -2;
+      z-index: 1;
       background-color: #000000;
       border-radius: 5%;
       margin: 5% auto;
@@ -95,7 +101,7 @@
       transform:translateX(500px);
       opacity:0;
       transition:all 0.6s ease;
-      z-index: -2;
+      z-index: 1;
       background-color: #333;
       /* background-color: #000000; */
       border-radius: 5%;
@@ -149,6 +155,10 @@
       background-color:#333; border-radius:5%; margin:50px;
     }
 
+    #gallery {
+    scroll-margin-top: 100px; /* 스크롤에 대한 여백 사라져버리지않게 조절 */
+    }
+
 
     .container
     {
@@ -157,30 +167,30 @@
 
     .water-stream {
       position: absolute;
-      top: -100px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0));
-      width: 3px;
-      height: 200px;
+      top: -50px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.445), rgba(41, 37, 37, 0.63));
+      width: 1px;
+      height: 100px;
 
 
       animation: flowDown 6s ease-in-out infinite;
       border-radius: 50%;
-      filter: blur(1px);
-      z-index: 6;
+      filter: blur(10px);
+      z-index: 10;
       }
 
 
     @keyframes flowDown {
     0% {
       transform: translateY(0);
-      opacity: 0.3;
+      opacity: 0.5;
     }
     30% {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     100% {
       transform: translateY(100vh);
-      opacity: 0;
+      opacity: 1;
     }
   }
 
@@ -192,7 +202,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 5;
+      z-index: 20;
       pointer-events: none;
     }
 
@@ -202,23 +212,48 @@
       position: absolute;
       z-index: 1;
       top: -50px;
-      width: 1px;
-      height: 25px;
-      background: rgba(255, 255, 255, 0.15);
+      width: 2px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.226);
       border-radius: 50%;
+      z-index: -4;
       animation: fall 3s linear infinite;
     }
 
     @keyframes fall {
     0% {
-      transform: translateY(0) scaleY(1);
-      opacity: 1;
+      transform: translateY(0) scaleY(2);
+      opacity: 0.8;
     }
     100% {
-      transform: translateY(100vh) scaleY(2);
+      transform: translateY(100vh) scaleY(1);
       opacity: 0;
     }
     }
+
+    .splash { /* 물방울 튀는 모션 적용 */
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    animation: splashEffect 0.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes splashEffect {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+
 
     /* display : none; 쓰지마라 */
 
@@ -279,21 +314,52 @@
   observer.observe(info); // info 영역을 관찰
 });
 
-//   window.addEventListener("load", function(){
 
-//     const container = document.querySelector('.rain-container');
 
-// for (let i = 0; i < 5; i++) {
-//   const drop = document.createElement('div');
-//   drop.classList.add('raindrop');
-//   drop.style.left = `${Math.random() * 100}vw`;
-//   drop.style.animationDuration = `${2 + Math.random() * 2}s`;
-//   drop.style.animationDelay = `${Math.random() * 3}s`;
-//   container.appendChild(drop);
-// }
 
-//   });
+   window.addEventListener("load", function(){
+
     
+
+     const container = document.querySelector('.rain-container');
+
+ for (let i = 0; i < 5; i++) {
+  const drop = document.createElement('div');
+  drop.classList.add('raindrop');
+   drop.style.left = `${Math.random() * 100}vw`;
+   drop.style.animationDuration = `${2 + Math.random() * 2}s`;
+   drop.style.animationDelay = `${Math.random() * 3}s`;
+   container.appendChild(drop);
+ }
+
+   });
+
+
+
+    
+function createSplash(x, y) {
+  const splash = document.createElement('div');
+  splash.classList.add('splash');
+  splash.style.left = `${x}px`;
+  splash.style.top = `${y}px`;
+  document.body.appendChild(splash);
+
+  setTimeout(() => splash.remove(), 500); // 애니메이션 후 제거
+}
+
+function checkCollision(drop) {
+  const container = document.querySelector('.container');
+  const containerRect = container.getBoundingClientRect();
+  const dropRect = drop.getBoundingClientRect();
+
+  if (
+    dropRect.bottom >= containerRect.top &&
+    dropRect.left >= containerRect.left &&
+    dropRect.right <= containerRect.right
+  ) {
+    createSplash(dropRect.left, containerRect.top);
+  }
+}
 
 
 
@@ -319,16 +385,16 @@
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">포트폴리오</a>
+              <a class="nav-link" href="#portfolio">포트폴리오</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">About Me</a>
+              <a class="nav-link" href="#info">About Me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Gallery</a>
+              <a class="nav-link" href="#Gallery">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -341,16 +407,16 @@
   </section>
 
 
-  <!-- <div class="rain-container">
+   <div class="rain-container">
   <div class="raindrop"></div>
   <div class="raindrop"></div>
   <div class="raindrop"></div>
   </div>
 
-  <div class="water-stream"></div> -->
+  <div class="water-stream"></div> 
 
 
-<section class="info">
+<section id="info" class="info">
    
   <div class="container-fluid p-5 rounded-4 mx-auto bg-black m-5">
     <div class="bg-secondary text-white p-3 rounded-4 shadow mx-auto" style="max-width: 1200px;">
@@ -405,6 +471,9 @@
             <div class="progress my-2">
               <div class="progress-bar bg-warning text-dark" style="width: 15%;">JS 15%</div>
             </div>
+            <div class="progress my-2">
+              <div class="progress-bar bg-primary text-dark" style="width: 15%;">jquery %</div>
+            </div>
           </div>
         </div>
       </div>
@@ -415,7 +484,7 @@
 
 
   <!-- header end -->
- <section class="portfolio">
+ <section id="portfolio" class="portfolio">
   <div class="container-fluid p-5 rounded-4 mx-auto bg-black m-5">
     <div class="bg-secondary text-white p-5 rounded-4 shadow mx-auto" style="max-width: 1200px;">
       <h3 class="text-center mb-5">Portfolio</h3>
@@ -450,32 +519,44 @@
       </div>
 
       <!-- 프로젝트 영상 -->
-      <div class="row mt-4">
-        <div class="col-md-4 col-sm-12 mb-4">
-          <iframe class="w-100 rounded-4 border border-primary" height="240"
-            src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
-            title="미니프로젝트_amug (2023.06.11)"
-            allowfullscreen></iframe>
-        </div>
+      <div   id ="Gallery" class="row mt-4">
 
         <div class="col-md-4 col-sm-12 mb-4">
           <iframe class="w-100 rounded-4 border border-primary" height="240"
             src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB"
-            title="미니프로젝트_amug (2023.06.11)"
+            title="미니프로젝트_Controll Ver (2025.09.12)"
             allowfullscreen></iframe>
         </div>
 
-        <div class="col-md-4 col-sm-12 mb-4 text-center bg-dark rounded-4 p-3 text-white">
-          <h5>작업환경</h5>
-          <p><br/>Java 11<br/><br/>ECLIPSE</p>
+
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
+            title="미니프로젝트_Array Ver (2025.09.18)"
+            allowfullscreen></iframe>
         </div>
+
+
+        <div class="col-md-4 col-sm-12 mb-4 text-center bg-dark rounded-4 text-white">
+          <h5></br>작업환경</h5>
+          <p><br/>Java (11)<br/><br/>ECLIPSE</p>
+        </div>
+      
+
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/8r3DmE7ZWtY?si=9-claxyORJTffqNd"
+            title="미니프로젝트_interface Ver (2025.10.13)"
+            allowfullscreen></iframe>
+        </div>
+        </div>
+        
       </div>
     </div>
-  </div>
 </section>
 
 
-  <section class="contact my-3">
+  <section id="contact" class="contact my-3">
     <div class="container bg-black" style="display:flex; flex-direction:column; ">
       <h3 class="text-center my-5">Contact Me</h3>
       <br /><br />

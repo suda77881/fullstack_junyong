@@ -1470,7 +1470,82 @@ public class Polymorphism7 {
 
 
 
+<!-- 25.10.13 -->
 
+<br/>
+
+## case.19	//	향상된 for문 사용시 remove 사용 문제
+
+```Java
+class IceCreamDTO{
+	private static int cnt = 0;
+	private final  int 		no;
+
+	public IceCreamDTO() { 	super(); this.no = cnt++;  }
+	public IceCreamDTO(String name, int price) { this.no = cnt++;	this.name = name; this.price = price; }
+}
+...
+
+for (IceCreamDTO i : ice) {
+	if (i.getName().equals(tempName)) 
+	{
+		ice.remove(no);
+		System.out.println("제거완료!");}
+		else {System.out.println("해당 아이스크림이 존재하지 않습니다.");
+		}break;
+	}
+```
+
+향상된 for문을 사용해서 조건문과 조합해 ArrayList의 .remove 메서드를 이용한 제거를 시도했으나. ConcurrentModificationException 오류가 발생함
+
+<!-- 문제 설명 -->
+
+<br/>
+
+### 원인
+
+```
+향상된 for문으로 리스트를 순회하는 도중 remove()를 호출하면, 리스트의 구조가 변경되어 순회가 정상적으로 이어지지 못하고 ConcurrentModificationException이 발생한다.
+```
+<!-- 원인 설명 -->
+
+
+<br/>
+
+### 해결방법
+
+```Java
+case 3 : {
+    System.out.print("제거할 아이스크림 이름: ");
+    String tempName = sc.next();
+    int no = -1;
+
+    for (IceCreamDTO i : ice) {
+        if (i.getName().equals(tempName)) {
+            no = i.getNo();
+        }
+    }
+
+    if (no != -1) {
+        ice.remove(no);
+        System.out.println("제거 완료!");
+    } else {
+        System.out.println("해당 아이스크림이 존재하지 않습니다.");
+    }
+    break;
+}
+
+```
+반복문 내에서 직접 제거하지 않고, 먼저 제거할 대상의 번호를 저장한 뒤 반복문이 끝난 후 remove()를 호출함으로써 문제를 해결하였다.
+
+<!-- 해결방법 -->
+
+<br/>
+
+#### 배운점
+
+> 반복문을 사용해 리스트를 순회할 때는, 요소 제거를 반복문 내부에서 직접 수행하지 말고, 반복이 끝난 후 처리하는 것이 안전하다는 점을 배웠다.
+<!-- 배운점 느낀점 연관되어서 설명 -->
 
 ---
 <br/> 
