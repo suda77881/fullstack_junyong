@@ -67,12 +67,14 @@
     /*높이 300 지정및 남는영역 자르기*/
     body {
       overflow-x: hidden;
-      color: #ffffff;
+      /* color: #ffffff; */
+      color: #222;
       font-family: 'segoe UI', sans-serif;
       text-decoration: none;
+        background: linear-gradient(135deg, #045496, #052c3d); /* 밝은 파란 계열 */
       /* background: linear-gradient(135deg, #0f85c4, #a26d31, #ffaf7b); */
       /* background: linear-gradient(135deg, #3d3c3c, #2e2e2e, #434343); */
-      background-color: #111111;
+      /*background-color: #111111;*/
       font-size: 20px;
     }
 
@@ -194,8 +196,6 @@
     }
   }
 
-
-
      .rain-container {
       position: fixed;
       top: 0;
@@ -231,6 +231,12 @@
     }
     }
 
+    .raindrop.stop {
+  animation: none !important;
+  opacity: 0.2;
+  }
+
+
     .splash { /* 물방울 튀는 모션 적용 */
 
     position: absolute;
@@ -243,16 +249,18 @@
     z-index: 10;
   }
 
-  @keyframes splashEffect {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(3);
-      opacity: 0;
-    }
+ @keyframes splashEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+
 
 
     /* display : none; 쓰지마라 */
@@ -260,6 +268,14 @@
     /* .col-sm-4 {border:2px solid white; border-radius:5px; margin:-4px} */
   </style>
   <script>
+
+
+window.addEventListener("load", () => { // 강제 위치 초기화(좌측고정)
+  window.scrollTo(0, 0); // x축과 y축 모두 좌측 상단으로 고정
+});
+
+
+
   document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -338,14 +354,33 @@
 
     
 function createSplash(x, y) {
-  const splash = document.createElement('div');
-  splash.classList.add('splash');
-  splash.style.left = `${x}px`;
-  splash.style.top = `${y}px`;
-  document.body.appendChild(splash);
+  const count = 6 + Math.floor(Math.random() * 3); // 6~8개 분열
 
-  setTimeout(() => splash.remove(), 500); // 애니메이션 후 제거
+  for (let i = 0; i < count; i++) {
+    const splash = document.createElement('div');
+    splash.classList.add('splash');
+
+    // 랜덤 방향으로 튀는 offset
+    const offsetX = (Math.random() - 0.5) * 5; // -30 ~ +30
+    const offsetY = (Math.random() - 0.5) * 5; // -30 ~ +30
+
+    splash.style.left = `${x + offsetX + window.scrollX}px`;
+    splash.style.top = `${y + offsetY + window.scrollY}px`;
+
+    // 아주 작은 크기
+    splash.style.width = splash.style.height = `${0.5 + Math.random() * 0.1}px`; // 2~5px
+    splash.style.background = `rgba(255,255,255,${0.2 + Math.random() * 0.3})`;
+
+    // 빠르게 사라짐
+    splash.style.animationDuration = `${0.2 + Math.random() * 0.2}s`;
+
+    document.body.appendChild(splash);
+
+    setTimeout(() => splash.remove(), 400);
+  }
 }
+
+
 
 function checkCollision(drop) {
   const container = document.querySelector('.container');
@@ -361,7 +396,42 @@ function checkCollision(drop) {
   }
 }
 
+function checkCollision(drop, targets) {
+  const dropRect = drop.getBoundingClientRect();
 
+  for (let target of targets) {
+    const rect = target.getBoundingClientRect();
+
+    const isColliding =
+      dropRect.bottom >= rect.top &&
+      dropRect.top <= rect.bottom &&
+      dropRect.left >= rect.left &&
+      dropRect.right <= rect.right;
+
+    if (isColliding) {
+      if (!drop.classList.contains('stop')) {
+        createSplash(dropRect.left, dropRect.bottom); // 튀는 위치
+        drop.classList.add('stop'); // 애니메이션 정지
+      }
+      return;
+    }
+  }
+
+  drop.classList.remove('stop'); // 충돌 안 하면 다시 애니메이션
+}
+
+
+function checkAllCollisions() {
+  const drops = document.querySelectorAll('.raindrop');
+  const targets = document.querySelectorAll('.info.active, .portfolio.active, .contact');
+
+  drops.forEach(drop => checkCollision(drop, targets));
+  requestAnimationFrame(checkAllCollisions);
+}
+
+window.addEventListener("load", () => {
+  requestAnimationFrame(checkAllCollisions);
+});
 
 
 </script>
@@ -403,7 +473,7 @@ function checkCollision(drop) {
   </header><!-- header end -->
 
   <section class ="bg">
-          <img src="./img/bg/window.jpg" alt="rain_window" class="d-block w-100">
+          <img src="./img/bg/Copilot_20251014_094317.png" alt="rain_window" class="d-block w-100">
   </section>
 
 

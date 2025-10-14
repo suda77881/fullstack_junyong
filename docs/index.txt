@@ -13,6 +13,12 @@
   <style>
     /*--------------------------- STYLE -------------------------------------*/
 
+
+    html {
+    scroll-behavior: smooth;
+    }
+
+
     .bg{
       position : relative;
       transform:translateY(0px);
@@ -149,6 +155,10 @@
       background-color:#333; border-radius:5%; margin:50px;
     }
 
+    #gallery {
+    scroll-margin-top: 100px; /* 스크롤에 대한 여백 사라져버리지않게 조절 */
+    }
+
 
     .container
     {
@@ -221,7 +231,29 @@
     }
     }
 
-    
+    .splash { /* 물방울 튀는 모션 적용 */
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    animation: splashEffect 0.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes splashEffect {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+
 
     /* display : none; 쓰지마라 */
 
@@ -282,7 +314,12 @@
   observer.observe(info); // info 영역을 관찰
 });
 
+
+
+
    window.addEventListener("load", function(){
+
+    
 
      const container = document.querySelector('.rain-container');
 
@@ -296,7 +333,33 @@
  }
 
    });
+
+
+
     
+function createSplash(x, y) {
+  const splash = document.createElement('div');
+  splash.classList.add('splash');
+  splash.style.left = `${x}px`;
+  splash.style.top = `${y}px`;
+  document.body.appendChild(splash);
+
+  setTimeout(() => splash.remove(), 500); // 애니메이션 후 제거
+}
+
+function checkCollision(drop) {
+  const container = document.querySelector('.container');
+  const containerRect = container.getBoundingClientRect();
+  const dropRect = drop.getBoundingClientRect();
+
+  if (
+    dropRect.bottom >= containerRect.top &&
+    dropRect.left >= containerRect.left &&
+    dropRect.right <= containerRect.right
+  ) {
+    createSplash(dropRect.left, containerRect.top);
+  }
+}
 
 
 
@@ -322,16 +385,16 @@
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">포트폴리오</a>
+              <a class="nav-link" href="#portfolio">포트폴리오</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">About Me</a>
+              <a class="nav-link" href="#info">About Me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Gallery</a>
+              <a class="nav-link" href="#Gallery">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -353,7 +416,7 @@
   <div class="water-stream"></div> 
 
 
-<section class="info">
+<section id="info" class="info">
    
   <div class="container-fluid p-5 rounded-4 mx-auto bg-black m-5">
     <div class="bg-secondary text-white p-3 rounded-4 shadow mx-auto" style="max-width: 1200px;">
@@ -421,7 +484,7 @@
 
 
   <!-- header end -->
- <section class="portfolio">
+ <section id="portfolio" class="portfolio">
   <div class="container-fluid p-5 rounded-4 mx-auto bg-black m-5">
     <div class="bg-secondary text-white p-5 rounded-4 shadow mx-auto" style="max-width: 1200px;">
       <h3 class="text-center mb-5">Portfolio</h3>
@@ -456,32 +519,44 @@
       </div>
 
       <!-- 프로젝트 영상 -->
-      <div class="row mt-4">
-        <div class="col-md-4 col-sm-12 mb-4">
-          <iframe class="w-100 rounded-4 border border-primary" height="240"
-            src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
-            title="미니프로젝트_amug (2023.06.11)"
-            allowfullscreen></iframe>
-        </div>
+      <div   id ="Gallery" class="row mt-4">
 
         <div class="col-md-4 col-sm-12 mb-4">
           <iframe class="w-100 rounded-4 border border-primary" height="240"
             src="https://www.youtube.com/embed/lDgME6b8qHY?si=z6RBewcg6o3RBUkB"
-            title="미니프로젝트_amug (2023.06.11)"
+            title="미니프로젝트_Controll Ver (2025.09.12)"
             allowfullscreen></iframe>
         </div>
 
-        <div class="col-md-4 col-sm-12 mb-4 text-center bg-dark rounded-4 p-3 text-white">
-          <h5>작업환경</h5>
-          <p><br/>Java 11<br/><br/>ECLIPSE</p>
+
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/Pyhh47yady8?si=caS3Qzl8xXv9qRjj"
+            title="미니프로젝트_Array Ver (2025.09.18)"
+            allowfullscreen></iframe>
         </div>
+
+
+        <div class="col-md-4 col-sm-12 mb-4 text-center bg-dark rounded-4 text-white">
+          <h5></br>작업환경</h5>
+          <p><br/>Java (11)<br/><br/>ECLIPSE</p>
+        </div>
+      
+
+        <div class="col-md-4 col-sm-12 mb-4">
+          <iframe class="w-100 rounded-4 border border-primary" height="240"
+            src="https://www.youtube.com/embed/8r3DmE7ZWtY?si=9-claxyORJTffqNd"
+            title="미니프로젝트_interface Ver (2025.10.13)"
+            allowfullscreen></iframe>
+        </div>
+        </div>
+        
       </div>
     </div>
-  </div>
 </section>
 
 
-  <section class="contact my-3">
+  <section id="contact" class="contact my-3">
     <div class="container bg-black" style="display:flex; flex-direction:column; ">
       <h3 class="text-center my-5">Contact Me</h3>
       <br /><br />
