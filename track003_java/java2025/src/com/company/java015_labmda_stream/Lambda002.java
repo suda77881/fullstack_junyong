@@ -32,7 +32,6 @@ public class Lambda002 {
 		InterB2 b4 =  name ->  System.out.println("hi! " + name);  
 		b4.hi("빨강이");
 		
-
 		// interface InterC2{  String hi(); } 
 		System.out.println("\n\n[STEP3] 매개변수X , 리턴값 O"); 
 		//3-1. 익명객체 Good :Day출력
@@ -52,16 +51,13 @@ public class Lambda002 {
 		System.out.println("\n\n[STEP4] 매개변수O , 리턴값 O"); 
 		//4-1. 익명객체  
 		InterD2 d = new InterD2() {
+
 			@Override
-			public String toString(int num, String name) {
-				String star = "";
-				for(int i=0; i<num; i++) {
-					star += "★";
-					return "Lambda002 []";
-				}
+			public void hi(int num, String name) {
 				
-			}
-		};
+				
+			}};
+
 		
 		System.out.println(d.hi( 1, "sally" ));  //hi sally ★★★           
 		System.out.println(d.hi( 2, "sally" ));  //hi sally ★★★★      

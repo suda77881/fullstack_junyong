@@ -21,6 +21,9 @@ public class Lambda001 {
 		Inter1 i22  = new Inter1() { 
 			@Override public void method() { System.out.println("일회용-Hello :D"); }
 		}; i22.method();
+		Inter1 i23 = new Inter1() {
+			@Override public void method() { System.out.println("일회용-Hello :D"); }
+		}; i23.method();
 		//#3. lambda 
 		
 		Inter1 i3 = () -> { System.out.println("줄이기~! Hello :D:D:D");};
