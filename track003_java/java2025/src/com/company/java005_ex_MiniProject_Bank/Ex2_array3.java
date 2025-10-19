@@ -369,7 +369,8 @@ public class Ex2_array3 {
 			
 			case '1':{add_user(id,pass,balance,find,bnkbook,find2);}break;
 			case '2':{login_o(find, id, pass, login, bnkbook);  
-				   fishing(find, login, balance, select, select1, blowfish, carp, shrimp, shark, whale);}break;
+				   fishing(find,login,per,balance,select,select1,
+							blowfish, carp, shrimp, shark, whale);}break;
 			case '3':{login_o(find, id, pass, login, bnkbook);
 				   buy_item(login, find, balance,j, j1, j2, j3);}break;
 			case '4':login_o(find, id, pass, login, bnkbook);

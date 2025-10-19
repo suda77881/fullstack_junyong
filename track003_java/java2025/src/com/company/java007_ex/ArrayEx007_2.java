@@ -22,17 +22,19 @@ public class ArrayEx007_2 {
 //			
 //		}
 		
-		for (int i=0; i < arr.length; i++)
-		{
-			arr[i] = "" + ch ; ch += 1;
-			
-			System.out.printf("%s ",arr[i]);
-			
-		}
-		for(int i=0; i<arr.length; i++) {arr[i] = data++;}
-		for(int i=0; i<arr.length; i++) {System.out.print(arr[i]);}
+//		for (int i=0; i < arr.length; i++)
+//		{
+//			arr[i] = "" + ch ; ch += 1;
+//			
+//			System.out.printf("%s ",arr[i]);
+//			
+//		}
+		for(int i=0; i<arr.length; i++) {arr[i] = i == 0 ? "" + data++ : " " + data++ ; }
+		
+		for(int j=0; j<arr.length; j++) {System.out.print(arr[j]);}
 		
 		
+	
 	}
-
 }
+	

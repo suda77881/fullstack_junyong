@@ -2,7 +2,7 @@ package com.company.java006_ex;
 
 import java.util.Scanner;
 
-public class ArrayExUpgrade001 {
+public class ArrayExUpgrade001_2 {
 	public static void main(String[] args) {
 		char [] answer = {'A', 'C', 'B', 'D', 'A'};
 		char [] correct = new char[answer.length];

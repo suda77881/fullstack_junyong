@@ -15,14 +15,15 @@ public class Arr002 {
 		System.out.println(Arrays.toString(arr2));	//	[0, 0, 0]
 		
 		
-		int data = 10;
-		arr2[0] = data;/* 10 */ data+=10; // data (20)
-		arr2[1] = data;/* 20 */ data+=10; // data (30)
-		arr2[2] = data;/* 30 */ data+=10; // data (40)
-		{arr[2] =data; data+=10;} //데이터 넣고, 10증가
+		 int data = 10;
+		 arr2[0] = data;/* 10 */ data+=10; // data (20)
+		 arr2[1] = data;/* 20 */ data+=10; // data (30)
+		 arr2[2] = data;/* 30 */ data+=10; // data (40)
+	    {arr[2] = data; data+=10;} //데이터 넣고, 10증가
 		
 		for (int i=0; i<arr2.length; i++) {arr2[i] =data; data+=10;	}	// 데이터 넣고, 10증가
 		
 		for (int i=0; i<arr2.length; i++) {System.out.print(arr2[i] + " ");	}
 
+}
 }
