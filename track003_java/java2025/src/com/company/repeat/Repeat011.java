@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.repeat;
 import java.util.Scanner;
 public class Repeat011 {
 

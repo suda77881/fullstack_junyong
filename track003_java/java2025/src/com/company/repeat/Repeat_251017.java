@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.repeat;
 
 interface InterC2{ String hi(); }			// 파라미터x, 리턴O 	- () -> {return}
 interface Ex2 { void print(String s);	}	// 파라미터o, 리턴x 	- (S) -> {	x	}

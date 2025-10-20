@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.repeat;
 
 import java.util.ArrayList;
 import java.util.List;
