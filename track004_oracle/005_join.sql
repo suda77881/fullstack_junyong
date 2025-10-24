@@ -28,6 +28,14 @@ from emp e join dept d using (deptno );
 select *
 from emp e natural join dept d;
 
+select *
+from emp e , dept d
+where e.deptno(+) = d.deptno;
+
+
+select *
+from dept d full outer join emp e on  (e.deptno = d.deptno);
+
 
 --# 2.  외부조인 ( 매칭되지 X )
 

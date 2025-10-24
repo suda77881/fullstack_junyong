@@ -504,7 +504,7 @@ where job in (select job from emp where ename = 'ALLEN' and d.dname = 'SALES') ;
 --급여가 많은 순으로 정렬하되 급여가 같은경우에는 사원번호를 기준으로 오름차순으로 정렬
 
 select empno, ename, dname, hiredate, d.loc, sal, (select grade from SALGRADE where sal between losal and hisal )as grade
-from emp  join dept d on sal > any (select avg(sal) from emp) 
+from emp  join dept d on sal > all (select avg(sal) from emp) 
 where dname = 'SALES'
 order by sal desc ,empno;
 
@@ -520,7 +520,8 @@ order by sal desc ,empno;
 --EMP 테이블에서 다음과 같이 출력하시오.
 --10번부서에서 근무하는 사원 중 30번부서에는 존재하지 않는 직책을 가진 사원들의 사원정보, 부서정보를 다음과 같이 출력하는 SQL문을 작성하시오.
 
-select EMPNO, ENAME, JOB, DEPTNO, DNAME, LOC
+-- ★★★★★
+select EMPNO, ENAME, JOB, DEPTNO, DNAME, LOC 
 from emp natural join dept
 where job in (select job from emp where deptno = 10) and job not in ( select job from emp where deptno = 30); 
 
@@ -549,5 +550,21 @@ order by EMPNO;
 
 
 
+
+
+-- 1-4. EXISTS
+SELECT JOB, EMPNO, DNAME, HIREDATE, LOC, SAL, GRADE
+FROM   EMP E , DEPT D
+WHERE E.DEPTNO;
+
+
+
+-- 3-3. 
+
+SELECT EMPNO, ENAME, SAL, GRADE
+FROM   EMP E , SALGRADE
+WHERE  E.SAL BETWEEN S.LOSAL AND S.HISAL
+AND    SAL > ( SELECT MAX (SAL) FROM EMP WHERE JOB='SALESMAN')
+ORDER  BY EMPNO;
 
 
